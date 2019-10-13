@@ -1,0 +1,24 @@
+//  Catapult Ultra Synthesis 10.4/828904 (Production Release) Thu Jul 25 13:12:11 PDT 2019
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//                        UNPUBLISHED, LICENSED SOFTWARE.
+//             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux mdk@mdk-FX504 5.0.0-29-generic x86_64 aol
+//  
+//  Package information: SIFLIBS v23.4_0.0, HLS_PKGS v23.4_0.0, 
+//                       SIF_TOOLKITS v23.4_0.0, SIF_XILINX v23.4_0.0, 
+//                       SIF_ALTERA v23.4_0.0, CCS_LIBS v23.4_0.0, 
+//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4, 
+//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.7, 
+//                       DesignPad v2.78_1.0
+//  
+if {[info script] != {} && [file isdirectory [file rootname [info script]]]} {
+  project load [file rootname [info script]] 10.4
+} elseif { [file isdirectory /home/mdk/Spector-HLS/histogram/catapult/histogram_hls] } {
+  project load /home/mdk/Spector-HLS/histogram/catapult/histogram_hls 10.4
+} else {
+  error {unable to locate project directory 'histogram_hls'}
+}
+

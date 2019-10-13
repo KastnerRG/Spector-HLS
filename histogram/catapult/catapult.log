@@ -1,0 +1,334 @@
+//  Catapult Ultra Synthesis 10.4/828904 (Production Release) Thu Jul 25 13:12:11 PDT 2019
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//                        UNPUBLISHED, LICENSED SOFTWARE.
+//             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux mdk@mdk-FX504 5.0.0-31-generic x86_64 aol
+//  
+//  Package information: SIFLIBS v23.4_0.0, HLS_PKGS v23.4_0.0, 
+//                       SIF_TOOLKITS v23.4_0.0, SIF_XILINX v23.4_0.0, 
+//                       SIF_ALTERA v23.4_0.0, CCS_LIBS v23.4_0.0, 
+//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4, 
+//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.7, 
+//                       DesignPad v2.78_1.0
+//  
+//  Start time Sat Oct 12 12:32:49 2019
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log3788a42a560c.0"
+# Warning: set_working_dir: Directory '/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4-828904/Mgc_home/bin' not writable, using /tmp
+project load /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.ccs
+# Moving session transcript to file "/home/mdk/Spector-HLS/histogram/catapult/catapult.log"
+solution file add ./histogram_hls.cpp
+# /INPUTFILES/8
+solution file add ./histogram_hls.cpp
+# /INPUTFILES/8
+solution file remove {$PROJECT_HOME/histogram.cpp}
+# File '$PROJECT_HOME/histogram_hls.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/params.h' saved
+# File '$PROJECT_HOME/histogram.h' saved
+# File '$PROJECT_HOME/histogram.h' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_hls.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_hls.cpp' saved
+# File '$PROJECT_HOME/histogram.h' saved
+# File '$PROJECT_HOME/params.h' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/params.h' saved
+# File '$PROJECT_HOME/histogram.h' saved
+# File '$PROJECT_HOME/histogram.h' saved
+# File '$PROJECT_HOME/histogram_hls.cpp' saved
+# File '$PROJECT_HOME/histogram_hls.cpp' saved
+# File '$PROJECT_HOME/histogram_hls.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/histogram_tb.cpp' saved
+# File '$PROJECT_HOME/params.h' saved
+# File '$PROJECT_HOME/histogram.h' saved
+# File '$PROJECT_HOME/histogram_hls.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/params.h /home/mdk/Spector-HLS/histogram/catapult/histogram.h /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/histogram_hls.cpp(332): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/histogram_main.cpp(94): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(94):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(94): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(94):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(96): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(96):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(96): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(96):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(98): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(98):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(98): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(98):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(99): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(99):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(99): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(99):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(101): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(101):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(101): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(101):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(102): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(102):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(102): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(102):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(103): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(103):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(103): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(103):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(104): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(104):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(104): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(104):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Warning: $PROJECT_HOME/histogram_main.cpp(129): last line of file ends without a newline (CRD-1)
+# Warning: $PROJECT_HOME/histogram_main.cpp(129):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-1)
+# $PROJECT_HOME/histogram_hls.cpp(6): Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+# solution design add histogram_hls -type top -unlocked (HC-1)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 2.20 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/histogram_hls.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/params.h /home/mdk/Spector-HLS/histogram/catapult/histogram.h /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/histogram_main.cpp(94): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(94):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(94): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(94):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(96): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(96):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(96): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(96):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(98): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(98):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(98): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(98):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(99): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(99):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(99): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(99):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(101): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(101):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(101): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(101):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(102): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(102):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(102): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(102):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(103): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(103):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(103): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(103):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(104): a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(104):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(104): a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: $PROJECT_HOME/histogram_main.cpp(104):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# $PROJECT_HOME/histogram_hls.cpp(6): Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 2.08 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/histogram.h' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram.h' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+# File '$PROJECT_HOME/histogram_main.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/params.h /home/mdk/Spector-HLS/histogram/catapult/histogram.h /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# $PROJECT_HOME/histogram_hls.cpp(6): Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+# $PROJECT_HOME/histogram_main.cpp(12): Pragma 'hls_design<top>' detected on routine 'histogram_main' (CIN-6)
+# Source file analysis completed (CIN-68)
+# solution design add histogram_hls -type top -unlocked (HC-1)
+# Info: Completed transformation 'analyze' on solution 'solution.v1': elapsed time 2.19 seconds, memory usage 1431084kB, peak memory usage 1431084kB (SOL-9)
+go compile
+# Info: Starting transformation 'compile' on solution 'solution.v1' (SOL-8)
+# Error: record type mismatch, expected open but got mtime at position 15729236
+# Error: 
+# Error: /usr/include/math.h(1248): declaration of function "iseqsig(_T1, _T2)" had a different meaning during compilation of "/home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp" (CRD-1066)
+# Error: /usr/include/math.h(1248):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram.h" (CRD-1066)
+# Error: cannot open source file "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp": Success (CRD-1697)
+# Info: Completed transformation 'analyze' on solution 'solution.v1': elapsed time 0.60 seconds, memory usage 1496620kB, peak memory usage 1496620kB (SOL-9)
+# Error: go compile: Failed compile
+go new
+solution file remove {$PROJECT_HOME/histogram_tb.cpp}
+# Info: Branching solution 'solution.v2' at state 'new' (PRJ-2)
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/params.h /home/mdk/Spector-HLS/histogram/catapult/histogram.h /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# $PROJECT_HOME/histogram_hls.cpp(6): Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+# $PROJECT_HOME/histogram_main.cpp(12): Pragma 'hls_design<top>' detected on routine 'histogram_main' (CIN-6)
+# Source file analysis completed (CIN-68)
+# solution design add histogram_hls -type top -unlocked (HC-1)
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 2.12 seconds, memory usage 1496620kB, peak memory usage 1496620kB (SOL-9)
+go new
+solution file remove {$PROJECT_HOME/histogram.h}
+# Info: Branching solution 'solution.v3' at state 'new' (PRJ-2)
+solution file remove {$PROJECT_HOME/params.h}
+solution file add ./histogram_tb.cpp -exclude true
+# /INPUTFILES/5
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v3' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# $PROJECT_HOME/histogram_hls.cpp(6): Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+# $PROJECT_HOME/histogram_main.cpp(12): Pragma 'hls_design<top>' detected on routine 'histogram_main' (CIN-6)
+# Source file analysis completed (CIN-68)
+# solution design add histogram_hls -type top -unlocked (HC-1)
+# Info: Completed transformation 'analyze' on solution 'solution.v3': elapsed time 1.46 seconds, memory usage 1496620kB, peak memory usage 1496620kB (SOL-9)
+go compile
+# Info: Starting transformation 'compile' on solution 'solution.v3' (SOL-8)
+# Generating synthesis internal form... (CIN-3)
+# $PROJECT_HOME/histogram_hls.cpp(7): Found top design routine 'histogram_hls' specified by directive (CIN-52)
+# $PROJECT_HOME/histogram_hls.cpp(7): Found top design routine 'histogram_hls' specified by directive (CIN-52)
+# $PROJECT_HOME/histogram_hls.cpp(7): Synthesizing routine 'histogram_hls' (CIN-13)
+# $PROJECT_HOME/histogram_hls.cpp(7): Inlining routine 'histogram_hls' (CIN-14)
+# $MGC_HOME/shared/include/ac_int.h(2741): Inlining routine 'operator+=<8, false>' (CIN-14)
+# $PROJECT_HOME/histogram_hls.cpp(7): Optimizing block '/histogram_hls' ... (CIN-4)
+# $PROJECT_HOME/histogram_hls.cpp(7): INOUT port 'data_in' is only used as an input. (OPT-10)
+# $PROJECT_HOME/histogram_hls.cpp(7): INOUT port 'hist_out' is only used as an output. (OPT-11)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 193, Real ops = 33, Vars = 79) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 193, Real ops = 33, Vars = 75) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 180, Real ops = 33, Vars = 61) (SOL-10)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 180, Real ops = 33, Vars = 63) (SOL-10)
+# Info: $PROJECT_HOME/histogram_hls.cpp(65): Splitting object 'pref' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(68): Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(71): Splitting object 'pref#2' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(74): Splitting object 'pref#3' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(77): Splitting object 'pref#4' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(80): Splitting object 'pref#5' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(83): Splitting object 'pref#6' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(86): Splitting object 'pref#7' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(133): Splitting object 'pref#8' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(133): Splitting object 'pref:pref.pref#8' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(133): Splitting object 'pref#9' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(136): Splitting object 'pref#10' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(136): Splitting object 'pref:pref.pref#10' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(136): Splitting object 'pref#11' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(139): Splitting object 'pref#12' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(139): Splitting object 'pref:pref.pref#12' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(139): Splitting object 'pref#13' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(142): Splitting object 'pref#14' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(142): Splitting object 'pref:pref.pref#14' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(142): Splitting object 'pref#15' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(145): Splitting object 'pref#16' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(145): Splitting object 'pref:pref.pref#16' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(145): Splitting object 'pref#17' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(148): Splitting object 'pref#18' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(148): Splitting object 'pref:pref.pref#18' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(148): Splitting object 'pref#19' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(151): Splitting object 'pref#20' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(151): Splitting object 'pref:pref.pref#20' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(151): Splitting object 'pref#21' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(154): Splitting object 'pref#22' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(154): Splitting object 'pref:pref.pref#22' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(154): Splitting object 'pref#23' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(266): Splitting object 'pref#24' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(266): Splitting object 'pref:pref.pref#24' into 2 segments (OPT-19)
+# Info: $MGC_HOME/shared/include/ac_int.h(2741): Splitting object 'operator+=<8,false>:op2' into 2 segments (OPT-19)
+# Info: $MGC_HOME/shared/include/ac_int.h(2741): Splitting object 'pref:pref.pref.pref' into 2 segments (OPT-19)
+# Info: $MGC_HOME/shared/include/ac_int.h(2640): Splitting object 'operator+=<8,false>:ac_int:cctor' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 141, Real ops = 32, Vars = 98) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 123, Real ops = 25, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 123, Real ops = 25, Vars = 23) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 123, Real ops = 25, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 123, Real ops = 25, Vars = 23) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 123, Real ops = 25, Vars = 21) (SOL-10)
+# $PROJECT_HOME/histogram_hls.cpp(63): Loop '/histogram_hls/core/INIT_LOOP_HLS' iterated at most 256 times. (LOOP-2)
+# $PROJECT_HOME/histogram_hls.cpp(132): Loop '/histogram_hls/core/hist_loop' iterated at most 1024 times. (LOOP-2)
+# $PROJECT_HOME/histogram_hls.cpp(264): Loop '/histogram_hls/core/accum_loop' iterated at most 256 times. (LOOP-2)
+# $PROJECT_HOME/histogram_hls.cpp(65): Detected constant initialization of array 'hist1', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# $PROJECT_HOME/histogram_hls.cpp(68): Detected constant initialization of array 'hist2', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# $PROJECT_HOME/histogram_hls.cpp(71): Detected constant initialization of array 'hist3', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# $PROJECT_HOME/histogram_hls.cpp(74): Detected constant initialization of array 'hist4', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# $PROJECT_HOME/histogram_hls.cpp(77): Detected constant initialization of array 'hist5', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# $PROJECT_HOME/histogram_hls.cpp(80): Detected constant initialization of array 'hist6', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# $PROJECT_HOME/histogram_hls.cpp(83): Detected constant initialization of array 'hist7', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# $PROJECT_HOME/histogram_hls.cpp(86): Detected constant initialization of array 'hist8', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 159, Real ops = 25, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 84, Real ops = 11, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 84, Real ops = 11, Vars = 22) (SOL-10)
+# Info: $PROJECT_HOME/histogram_hls.cpp(129): Splitting object 'count' into 3 segments (OPT-19)
+# Info: $PROJECT_HOME/histogram_hls.cpp(264): Splitting object 'accum_loop:i' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 82, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 82, Real ops = 11, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 82, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 82, Real ops = 11, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 82, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 82, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 82, Real ops = 11, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 82, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 82, Real ops = 11, Vars = 20) (SOL-10)
+# Design 'histogram_hls' was read (SOL-1)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/mdk/Spector-HLS/histogram/catapult/histogram_hls/histogram_hls.v1/CDesignChecker/design_checker.sh'
+# Info: Completed transformation 'compile' on solution 'histogram_hls.v1': elapsed time 1.44 seconds, memory usage 1496620kB, peak memory usage 1496620kB (SOL-9)
+solution library add mgc_Xilinx-VIRTEX-7-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-7 -speed -1 -part xc7vx485tffg1157-1
+solution library add Xilinx_RAMS
+solution library add Xilinx_ROMS
+solution library add amba
+solution library add Xilinx_FIFO
+go libraries
+# Info: Starting transformation 'libraries' on solution 'histogram_hls.v1' (SOL-8)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/ccs_ioport.lib' [ccs_ioport]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/ccs_xilinx/mgc_Xilinx-VIRTEX-7-1_beh.lib' [mgc_Xilinx-VIRTEX-7-1_beh]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_RAMS.lib' [Xilinx_RAMS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_ROMS.lib' [Xilinx_ROMS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/ccs_libs/interfaces/amba/amba.lib' [amba]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_FIFO.lib' [Xilinx_FIFO]... (LIB-49)
+# Warning: No Encrypted Liberty technology libraries have been specified (LIB-192)
+# Warning: No Liberty technology libraries have been specified (LIB-192)
+# Warning: No LEF technology libraries have been specified (LIB-192)
+# Warning: No Process Technology File (PTF) technology libraries have been specified (LIB-192)
+# Warning: No Synopsys DB technology libraries have been specified (LIB-192)
+# Info: Completed transformation 'libraries' on solution 'histogram_hls.v1': elapsed time 0.37 seconds, memory usage 1496620kB, peak memory usage 1496620kB (SOL-9)
+directive set -CLOCKS {clk {-CLOCK_PERIOD 10 -CLOCK_EDGE rising -CLOCK_HIGH_TIME 5 -CLOCK_OFFSET 0.000000 -CLOCK_UNCERTAINTY 0.0 -RESET_KIND sync -RESET_SYNC_NAME rst -RESET_SYNC_ACTIVE high -RESET_ASYNC_NAME arst_n -RESET_ASYNC_ACTIVE low -ENABLE_NAME {} -ENABLE_ACTIVE high}}
+# /CLOCKS {clk {-CLOCK_PERIOD 10 -CLOCK_EDGE rising -CLOCK_HIGH_TIME 5 -CLOCK_OFFSET 0.000000 -CLOCK_UNCERTAINTY 0.0 -RESET_KIND sync -RESET_SYNC_NAME rst -RESET_SYNC_ACTIVE high -RESET_ASYNC_NAME arst_n -RESET_ASYNC_ACTIVE low -ENABLE_NAME {} -ENABLE_ACTIVE high}}
+go assembly
+# Info: Starting transformation 'assembly' on solution 'histogram_hls.v1' (SOL-8)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 83, Real ops = 12, Vars = 24) (SOL-10)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 83, Real ops = 12, Vars = 20) (SOL-10)
+# Info: Completed transformation 'assembly' on solution 'histogram_hls.v1': elapsed time 0.14 seconds, memory usage 1496620kB, peak memory usage 1496620kB (SOL-9)
