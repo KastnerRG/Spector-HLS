@@ -1,0 +1,22 @@
+#ifndef PARAMS_H
+#define PARAMS_H
+
+
+#define PRAGMA_SUB(x) _Pragma(#x)
+#define PRAGMA_HLS(x) PRAGMA_SUB(x)
+
+
+ // inhei * inwid // tmphei * tmpwid
+#define tmpdim %1
+#define indim  %2
+#define UNROLL_FACTOR %3
+#define UNROLL_LOOP1 %4
+#define UNROLL_LOOP2 %5
+#define UNROLL_LOOP3 %6
+#define UNROLL_LOOP4 %7
+#define thre   1
+#define size   indim*indim
+#define tmpsize tmpdim*tmpdim
+
+
+#endif
