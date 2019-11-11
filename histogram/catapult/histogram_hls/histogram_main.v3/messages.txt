@@ -1,0 +1,515 @@
+
+# Messages from "go new"
+
+
+# Messages from "go analyze"
+
+Pragma 'hls_design<top>' detected on routine 'histogram_main' (CIN-6)
+solution file add ./histogram_tb.cpp -exclude true
+solution file remove {$PROJECT_HOME/params.h}
+Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v3' (SOL-8)
+/INPUTFILES/5
+Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Info: Branching solution 'solution.v3' at state 'new' (PRJ-2)
+Source file analysis completed (CIN-68)
+solution file remove {$PROJECT_HOME/histogram.h}
+go new
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 2.12 seconds, memory usage 1496620kB, peak memory usage 1496620kB (SOL-9)
+solution design add histogram_hls -type top -unlocked (HC-1)
+go analyze
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/params.h /home/mdk/Spector-HLS/histogram/catapult/histogram.h /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+Pragma 'hls_design<top>' detected on routine 'histogram_main' (CIN-6)
+Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+Source file analysis completed (CIN-68)
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Info: Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/params.h /home/mdk/Spector-HLS/histogram/catapult/histogram.h /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+Source file analysis completed (CIN-68)
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+Pragma 'hls_design<top>' detected on routine 'histogram_main' (CIN-6)
+Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+File '$PROJECT_HOME/histogram.h' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 2.08 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Error: Compilation aborted (CIN-5)
+File '$PROJECT_HOME/histogram.h' saved
+# Error: go analyze: Failed analyze
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/params.h /home/mdk/Spector-HLS/histogram/catapult/histogram.h /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+go analyze
+Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+/INPUTFILES/8
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram.h' saved
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_hls.cpp' saved
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+File '$PROJECT_HOME/params.h' saved
+# Warning: last line of file ends without a newline (CRD-1)
+File '$PROJECT_HOME/histogram.h' saved
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+File '$PROJECT_HOME/histogram.h' saved
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+File '$PROJECT_HOME/histogram_hls.cpp' saved
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_hls.cpp' saved
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+File '$PROJECT_HOME/params.h' saved
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+File '$PROJECT_HOME/histogram.h' saved
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+File '$PROJECT_HOME/params.h' saved
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram.h' saved
+solution file remove {$PROJECT_HOME/histogram.cpp}
+/INPUTFILES/8
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_hls.cpp' saved
+File '$PROJECT_HOME/histogram_hls.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+Front End called with arguments: -- /home/mdk/Spector-HLS/histogram/catapult/histogram_hls.cpp /home/mdk/Spector-HLS/histogram/catapult/params.h /home/mdk/Spector-HLS/histogram/catapult/histogram.h /home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp (CIN-69)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+go analyze
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_main.cpp' saved
+File '$PROJECT_HOME/histogram_hls.cpp' saved
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 2.20 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+go analyze
+# Error: Compilation aborted (CIN-5)
+File '$PROJECT_HOME/histogram_hls.cpp' saved
+# Error: go analyze: Failed analyze
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_hls.cpp' saved
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_main.cpp' saved
+# Error: a reference of type "ac_channel<h_uint> &" (not const-qualified) cannot be initialized with a value of type "DATA_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+File '$PROJECT_HOME/histogram.h' saved
+File '$PROJECT_HOME/params.h' saved
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+solution design add histogram_hls -type top -unlocked (HC-1)
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+Pragma 'hls_design<>' detected on routine 'histogram_hls' (CIN-6)
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+# Error: a reference of type "ac_channel<HIST_MEM> &" (not const-qualified) cannot be initialized with a value of type "HIST_MEM" (CRD-434)
+File '$PROJECT_HOME/histogram_tb.cpp' saved
+# Error:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-434)
+# Warning:           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp" (CRD-1)
+# Warning: last line of file ends without a newline (CRD-1)
+solution file add ./histogram_hls.cpp
+solution file add ./histogram_hls.cpp
+solution file add ./histogram.h
+File '/home/mdk/Spector-HLS/histogram/catapult/histogram_main.cpp' saved
+/INPUTFILES/6
+solution file add ./histogram_main.h
+/INPUTFILES/4
+/INPUTFILES/5
+/INPUTFILES/7
+project save
+solution file remove /home/mdk/Spector-HLS/histogram/catapult/histogram_main.h
+File '/home/mdk/Spector-HLS/histogram/catapult/histogram_tb.cpp' saved
+File '/home/mdk/Spector-HLS/histogram/catapult/histogram_main.h' saved
+solution file add ./params.h
+File '/home/mdk/Spector-HLS/histogram/catapult/histogram_tb.cpp' saved
+File '/home/mdk/Spector-HLS/histogram/catapult/Untitled1' saved
+File '/home/mdk/Spector-HLS/histogram/catapult/histogram.hpp' saved
+File '/home/mdk/Spector-HLS/histogram/catapult/histogram.cpp' saved
+/INPUTFILES/1
+solution file add ./histogram.cpp
+set_working_dir /home/mdk/Spector-HLS/histogram/catapult
+/INPUTFILES/3
+set_working_dir /home/mdk/Spector-HLS/histogram
+File '/home/mdk/Spector-HLS/histogram/catapult/Untitled' saved
+solution file add ./histogram_tb.cpp -exclude true
+solution file remove /home/mdk/Spector-HLS/histogram/catapult/histogram_tb.cpp
+solution file add ./histogram_tb.cpp
+solution file add ./histogram_main.cpp
+/INPUTFILES/2
+
+# Messages from "go compile"
+
+Found design routine 'histogram_hls' specified by directive (CIN-52)
+# Info: Splitting object 'pref#14' into 2 segments (OPT-19)
+Inlining routine 'histogram_main' (CIN-14)
+# Info: Splitting object 'pref#13' into 2 segments (OPT-19)
+Synthesizing routine 'histogram_main' (CIN-13)
+# Info: Splitting object 'pref#15' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#14' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#22' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#21' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#23' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#22' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#19' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#18' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#20' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#20' into 2 segments (OPT-19)
+solution design add histogram_hls -type top -unlocked (HC-1)
+# Info: Optimizing partition '/histogram_main': (Total ops = 84, Real ops = 11, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/histogram_main/core': (Total ops = 0, Real ops = 0, Vars = 0) (SOL-10)
+# Warning: Channel 'dataCh2' is never driven. (OPT-3)
+# Warning: Channel 'dataCh1' is never driven. (OPT-3)
+# Info: Optimizing partition '/histogram_main/core': (Total ops = 305, Real ops = 19, Vars = 84) (SOL-10)
+# Info: Optimizing partition '/histogram_main/core': (Total ops = 326, Real ops = 28, Vars = 146) (SOL-10)
+# Info: Optimizing partition '/histogram_main/core': (Total ops = 7, Real ops = 3, Vars = 2) (SOL-10)
+# Warning: Loop 'MEM_TRANSFER_MAIN' is infinite potentially because of wrong use of ITERATIONS directive. (LOOP-19)
+# Warning: Channel 'dataCh8' is never driven. (OPT-3)
+# Warning: Channel 'dataCh7' is never driven. (OPT-3)
+# Warning: Channel 'histCh2' is never driven. (OPT-3)
+# Warning: Channel 'histCh1' is never driven. (OPT-3)
+# Warning: Channel 'dataCh4' is never driven. (OPT-3)
+# Warning: Channel 'dataCh3' is never driven. (OPT-3)
+# Warning: Channel 'dataCh6' is never driven. (OPT-3)
+# Warning: Channel 'dataCh5' is never driven. (OPT-3)
+# Info: Optimizing partition '/histogram_main/histogram_hls': (Total ops = 84, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Optimizing partition '/histogram_main/histogram_hls/core': (Total ops = 84, Real ops = 11, Vars = 20) (SOL-10)
+# Info: Splitting object 'accum_loop:i' into 2 segments (OPT-19)
+# Info: Splitting object 'count' into 3 segments (OPT-19)
+Detected constant initialization of array 'hist7', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+Detected constant initialization of array 'hist6', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Optimizing partition '/histogram_main/histogram_hls/core': (Total ops = 159, Real ops = 25, Vars = 21) (SOL-10)
+Detected constant initialization of array 'hist8', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+INOUT port 'data_in' is only used as an input. (OPT-10)
+Optimizing block '/histogram_main' ... (CIN-4)
+# Info: Optimizing partition '/histogram_main': (Total ops = 410, Real ops = 39, Vars = 183) (SOL-10)
+INOUT port 'hist_out' is only used as an output. (OPT-11)
+# Info: Optimizing partition '/histogram_main/histogram_hls/core': (Total ops = 82, Real ops = 11, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/histogram_main/histogram_hls/core': (Total ops = 82, Real ops = 11, Vars = 22) (SOL-10)
+Inlining routine 'operator<<16, false>' (CIN-14)
+# Info: Optimizing partition '/histogram_main/histogram_hls': (Total ops = 82, Real ops = 11, Vars = 22) (SOL-10)
+# Warning: Channel 'histCh8' is never driven. (OPT-3)
+# Warning: Channel 'histCh7' is never driven. (OPT-3)
+# Info: Partition '/histogram_main/core' is found empty and is optimized away. (OPT-12)
+# Info: Optimizing partition '/histogram_main': (Total ops = 84, Real ops = 11, Vars = 3) (SOL-10)
+# Warning: Channel 'histCh4' is never driven. (OPT-3)
+# Warning: Channel 'histCh3' is never driven. (OPT-3)
+# Warning: Channel 'histCh6' is never driven. (OPT-3)
+# Warning: Channel 'histCh5' is never driven. (OPT-3)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/mdk/Spector-HLS/histogram/catapult/histogram_hls/histogram_main.v1/CDesignChecker/design_checker.sh'
+# Warning: Unused sub-design '/histogram_main/histogram_hls' has been removed. (OPT-13)
+# Info: Optimizing partition '/histogram_main': (Total ops = 82, Real ops = 11, Vars = 2) (SOL-10)
+Design 'histogram_main' was read (SOL-1)
+# Info: Splitting object 'pref#5' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#4' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#7' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#6' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: Splitting object 'pref' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#3' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#2' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#11' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#10' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#12' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#12' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#8' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#8' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#10' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#9' into 2 segments (OPT-19)
+Inlining routine 'operator<<16, false>' (CIN-14)
+Inlining routine 'operator+<16, false>' (CIN-14)
+Inlining routine 'histogram_hls' (CIN-14)
+Synthesizing routine 'histogram_hls' (CIN-13)
+Inlining routine 'operator+<16, false>' (CIN-14)
+Inlining routine 'operator+<16, false>' (CIN-14)
+Inlining routine 'operator+<16, false>' (CIN-14)
+Inlining routine 'operator+<16, false>' (CIN-14)
+# Info: Optimizing partition '/histogram_main/histogram_hls/core': (Total ops = 193, Real ops = 33, Vars = 75) (SOL-10)
+# Info: Optimizing partition '/histogram_main/histogram_hls': (Total ops = 193, Real ops = 33, Vars = 79) (SOL-10)
+# Info: Optimizing partition '/histogram_main/histogram_hls': (Total ops = 180, Real ops = 33, Vars = 63) (SOL-10)
+# Info: Optimizing partition '/histogram_main/histogram_hls/core': (Total ops = 180, Real ops = 33, Vars = 61) (SOL-10)
+Optimizing block '/histogram_main/histogram_hls' ... (CIN-4)
+Inlining routine 'operator+=<8, false>' (CIN-14)
+INOUT port 'hist_out' is only used as an output. (OPT-11)
+INOUT port 'data_in' is only used as an input. (OPT-10)
+# Info: Optimizing partition '/histogram_main/histogram_hls/core': (Total ops = 141, Real ops = 32, Vars = 98) (SOL-10)
+# Info: Splitting object 'operator+=<8,false>:ac_int:cctor' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_main/histogram_hls': (Total ops = 123, Real ops = 25, Vars = 23) (SOL-10)
+# Info: Optimizing partition '/histogram_main/histogram_hls/core': (Total ops = 123, Real ops = 25, Vars = 21) (SOL-10)
+# Info: Splitting object 'pref:pref.pref#24' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#24' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref.pref' into 2 segments (OPT-19)
+# Info: Splitting object 'operator+=<8,false>:op2' into 2 segments (OPT-19)
+go compile
+Detected constant initialization of array 'hist3', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+/DESIGN_HIERARCHY {histogram_main histogram_hls}
+Detected constant initialization of array 'hist2', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+Generating synthesis internal form... (CIN-3)
+Detected constant initialization of array 'hist5', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Starting transformation 'compile' on solution 'solution.v3' (SOL-8)
+Detected constant initialization of array 'hist4', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Branching solution 'solution.v3' at state 'analyze' (PRJ-2)
+Loop '/histogram_main/histogram_hls/core/hist_loop' iterated at most 1024 times. (LOOP-2)
+CU_DESIGN sid4 ADD {} {VERSION v3 SID sid4 BRANCH_SID sid3 BRANCH_STATE analyze INCREMENTAL 0 STATE analyze TRANSFORMING 0 SOLUTION_DIR {} SYNTHESIS_FLOWPKG Vivado STATES {} INPUTFILES {} OUTPUTFILES {} TECHCONFIG {/CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/VIRTEX-7/PARAMETERS/-1/PARAMETERS/xc7vx485tffg1157-1/PARAMETERS/mgc_Xilinx-VIRTEX-7-1_beh/142 /CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/Xilinx_RAMS/171 /CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/VIRTEX-7/PARAMETERS/Xilinx_ROMS/200 /CONFIG/PARAMETERS/Vivado/PARAMETERS/amba/230 /CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/VIRTEX-7/PARAMETERS/Xilinx_FIFO/201} HCONFIG {ac_private::iv<1>::iv ac_private::iv<1>::iv#1 ac_private::iv<1>::to_int64 ac_private::iv<1>::to_uint64 ac_private::iv<1>::increment ac_private::iv<1>::set_slc<1> {ac_private::iv<1>::add<2, 1>} ac_private::iv<1>::less_than<1> {ac_private::iv<1>::add<1, 2>} {ac_private::iv<1>::add<1, 1>} ac_private::iv<2>::iv ac_private::iv<2>::iv#1 ac_private::iv<2>::to_int64 ac_private::iv<2>::to_uint64 ac_private::iv<2>::set_slc<1> ac_private::iv<2>::set_slc<2> ac_private::iv<3>::iv ac_private::mgc_floor ac_private::ac_assert ac_private::ldexpr32<0> ac_private::ldexpr32<1> ac_private::ldexpr32<-1> ac_private::ldexpr32<2> ac_private::ldexpr32<-2> ac_private::iv_copy<1> ac_private::iv_copy<2> ac_private::iv_equal_zero<0> ac_private::iv_equal_zero<1> ac_private::iv_equal_zero<2> ac_private::iv_equal_ones<0> ac_private::iv_equal_ones<1> ac_private::iv_equal_ones<2> {ac_private::iv_equal<1, 1>} {ac_private::iv_equal_ones_from<0, 1>} {ac_private::iv_equal_ones_from<0, 2>} {ac_private::iv_equal_zeros_from<0, 1>} {ac_private::iv_equal_zeros_from<0, 2>} {ac_private::iv_equal_ones_to<0, 1>} {ac_private::iv_equal_ones_to<0, 2>} {ac_private::iv_equal_zeros_to<0, 1>} {ac_private::iv_equal_zeros_to<0, 2>} {ac_private::iv_compare<1, 1, true>} {ac_private::iv_compare<1, 1, false>} ac_private::iv_extend<-2> ac_private::iv_extend<-1> ac_private::iv_extend<0> ac_private::iv_extend<1> ac_private::iv_extend<2> ac_private::iv_assign_int64<1> ac_private::iv_assign_int64<2> ac_private::iv_assign_uint64<1> ac_private::iv_assign_uint64<2> ac_private::mult_u_u ac_private::mult_u_s ac_private::mult_s_u ac_private::mult_s_s ac_private::accumulate ac_private::accumulate#1 {ac_private::iv_mult<1, 1, 1>} {ac_private::iv_mult<1, 1, 2>} ac_private::iv_uadd_carry<0> ac_private::iv_uadd_carry<1> ac_private::iv_add_int_carry<0> ac_private::iv_add_int_carry<1> ac_private::iv_uadd_n<0> ac_private::iv_uadd_n<1> ac_private::iv_uadd_n<2> {ac_private::iv_add<1, 1, 1>} {ac_private::iv_add<1, 1, 2>} ac_private::iv_sub_int_borrow<0> ac_private::iv_sub_int_borrow<1> ac_private::iv_sub_int_borrow<0>#1 ac_private::iv_sub_int_borrow<1>#1 ac_private::iv_usub_n<1> ac_private::iv_usub_n<2> {ac_private::iv_sub<1, 1, 1>} {ac_private::iv_sub<1, 1, 2>} ac_private::iv_all_bits_same<0> ac_private::iv_all_bits_same<1> ac_private::iv_bitwise_complement_n<1> ac_private::iv_bitwise_complement_n<2> ac_private::iv_bitwise_and_n<1> ac_private::iv_bitwise_and_n<2> ac_private::iv_bitwise_or_n<1> ac_private::iv_bitwise_or_n<2> ac_private::iv_bitwise_xor_n<1> ac_private::iv_bitwise_xor_n<2> {ac_private::iv_shift_l2<1, 1, false>} {ac_private::iv_shift_l2<1, 1, true>} {ac_private::iv_shift_r2<1, 1, false>} {ac_private::iv_shift_r2<1, 1, true>} {ac_private::iv_const_shift_l<1, 1, 0>} {ac_private::iv_const_shift_l<2, 1, 0>} {ac_private::iv_const_shift_r<1, 1, 0>} {ac_private::iv_const_shift_r<2, 1, 0>} ac_private::to_str<AC_DEC> ac_private::to_string ac_private::to_str<AC_HEX> ac_private::to_str<AC_OCT> ac_private::to_str<AC_BIN> ac_private::iv_leading_bits<1> ac_private::c_type_name<bool> ac_private::c_type_name<char> {ac_private::c_type_name<signed char>} {ac_private::c_type_name<unsigned char>} {ac_private::c_type_name<signed short>} {ac_private::c_type_name<unsigned short>} ac_private::c_type_name<int> {ac_private::c_type_name<unsigned int>} {ac_private::c_type_name<signed long>} {ac_private::c_type_name<unsigned long>} {ac_private::c_type_name<signed long long>} {ac_private::c_type_name<unsigned long long>} ac_private::c_type_name<float> ac_private::c_type_name<double> {ac_private::iv_add<1, 2, 1>} value<AC_VAL_0> value<AC_VAL_DC> value<AC_VAL_QUANTUM> value<AC_VAL_MAX> value<AC_VAL_MIN> value<AC_VAL_0>#1 value<AC_VAL_DC>#1 value<AC_VAL_QUANTUM>#1 value<AC_VAL_MAX>#1 value<AC_VAL_MIN>#1 value<AC_VAL_0>#2 value<AC_VAL_DC>#2 value<AC_VAL_QUANTUM>#2 value<AC_VAL_MAX>#2 value<AC_VAL_MIN>#2 value<AC_VAL_0>#3 value<AC_VAL_DC>#3 value<AC_VAL_QUANTUM>#3 value<AC_VAL_MAX>#3 value<AC_VAL_MIN>#3 value<AC_VAL_0>#4 value<AC_VAL_DC>#4 value<AC_VAL_QUANTUM>#4 value<AC_VAL_MAX>#4 value<AC_VAL_MIN>#4 value<AC_VAL_0>#5 value<AC_VAL_DC>#5 value<AC_VAL_QUANTUM>#5 value<AC_VAL_MAX>#5 value<AC_VAL_MIN>#5 value<AC_VAL_0>#6 value<AC_VAL_DC>#6 value<AC_VAL_QUANTUM>#6 value<AC_VAL_MAX>#6 value<AC_VAL_MIN>#6 value<AC_VAL_0>#7 value<AC_VAL_DC>#7 value<AC_VAL_QUANTUM>#7 value<AC_VAL_MAX>#7 value<AC_VAL_MIN>#7 value<AC_VAL_0>#8 value<AC_VAL_DC>#8 value<AC_VAL_QUANTUM>#8 value<AC_VAL_MAX>#8 value<AC_VAL_MIN>#8 value<AC_VAL_0>#9 value<AC_VAL_DC>#9 value<AC_VAL_QUANTUM>#9 value<AC_VAL_MAX>#9 value<AC_VAL_MIN>#9 value<AC_VAL_0>#10 value<AC_VAL_DC>#10 value<AC_VAL_QUANTUM>#10 value<AC_VAL_MAX>#10 value<AC_VAL_MIN>#10 value<AC_VAL_0>#11 value<AC_VAL_DC>#11 value<AC_VAL_QUANTUM>#11 value<AC_VAL_MAX>#11 value<AC_VAL_MIN>#11 {operator+=<8, false>} {operator<<16, false>} {operator+<16, false>} ac_exception::ac_exception ac_channel_exception::msg histogram_hls histogram_main} TECHLIBS {} FLOWPKGS {} DATUM {} MESSAGES {} ALLOCS {} DIRAPPLIES {} SID_DATA {} PROPERTIES {} name solution}: Race condition
+Loop '/histogram_main/histogram_hls/core/INIT_LOOP_HLS' iterated at most 256 times. (LOOP-2)
+solution design add histogram_main -type top -unlocked (HC-1)
+Detected constant initialization of array 'hist1', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+solution design add histogram_hls -type block -unlocked (HC-1)
+Inlining routine 'operator+<16, false>' (CIN-14)
+Loop '/histogram_main/histogram_hls/core/accum_loop' iterated at most 256 times. (LOOP-2)
+Inlining routine 'operator<<16, false>' (CIN-14)
+# Info: Splitting object 'pref:pref.pref#16' into 2 segments (OPT-19)
+Inlining routine 'operator+<16, false>' (CIN-14)
+# Info: Splitting object 'pref#16' into 2 segments (OPT-19)
+Inlining routine 'operator+<16, false>' (CIN-14)
+# Info: Splitting object 'pref#18' into 2 segments (OPT-19)
+Found top design routine 'histogram_main' specified by directive (CIN-52)
+# Info: Splitting object 'pref#17' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#12' into 2 segments (OPT-19)
+Detected constant initialization of array 'hist5', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Splitting object 'pref#12' into 2 segments (OPT-19)
+Detected constant initialization of array 'hist4', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 82, Real ops = 11, Vars = 20) (SOL-10)
+# Info: Splitting object 'pref#19' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 82, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Splitting object 'pref:pref.pref#18' into 2 segments (OPT-19)
+Design 'histogram_hls' was read (SOL-1)
+# Info: Splitting object 'pref:pref.pref#20' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 82, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Splitting object 'pref#20' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#16' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 84, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Splitting object 'pref#16' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 84, Real ops = 11, Vars = 20) (SOL-10)
+# Info: Splitting object 'pref#18' into 2 segments (OPT-19)
+# Info: Splitting object 'accum_loop:i' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#17' into 2 segments (OPT-19)
+# Info: Splitting object 'count' into 3 segments (OPT-19)
+# Info: Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#24' into 2 segments (OPT-19)
+# Info: Splitting object 'pref' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#24' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#3' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref.pref' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#2' into 2 segments (OPT-19)
+# Info: Splitting object 'operator+=<8,false>:op2' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#22' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 193, Real ops = 33, Vars = 75) (SOL-10)
+# Info: Splitting object 'pref#21' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 193, Real ops = 33, Vars = 79) (SOL-10)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 180, Real ops = 33, Vars = 63) (SOL-10)
+# Info: Splitting object 'pref#23' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 180, Real ops = 33, Vars = 61) (SOL-10)
+# Info: Splitting object 'pref:pref.pref#22' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#8' into 2 segments (OPT-19)
+Loop '/histogram_hls/core/hist_loop' iterated at most 1024 times. (LOOP-2)
+# Info: Splitting object 'pref#8' into 2 segments (OPT-19)
+Loop '/histogram_hls/core/INIT_LOOP_HLS' iterated at most 256 times. (LOOP-2)
+# Info: Splitting object 'pref#10' into 2 segments (OPT-19)
+Detected constant initialization of array 'hist1', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Splitting object 'pref#9' into 2 segments (OPT-19)
+Loop '/histogram_hls/core/accum_loop' iterated at most 256 times. (LOOP-2)
+# Info: Splitting object 'pref#5' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 141, Real ops = 32, Vars = 98) (SOL-10)
+# Info: Splitting object 'pref#4' into 2 segments (OPT-19)
+# Info: Splitting object 'operator+=<8,false>:ac_int:cctor' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#7' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls': (Total ops = 123, Real ops = 25, Vars = 23) (SOL-10)
+# Info: Splitting object 'pref#6' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 123, Real ops = 25, Vars = 21) (SOL-10)
+# Info: Completed transformation 'analyze' on solution 'solution.v3': elapsed time 1.46 seconds, memory usage 1496620kB, peak memory usage 1496620kB (SOL-9)
+solution design add histogram_hls -type top -unlocked (HC-1)
+# Info: Starting transformation 'compile' on solution 'solution.v3' (SOL-8)
+go compile
+Optimizing block '/histogram_hls' ... (CIN-4)
+Inlining routine 'operator+=<8, false>' (CIN-14)
+INOUT port 'hist_out' is only used as an output. (OPT-11)
+INOUT port 'data_in' is only used as an input. (OPT-10)
+Found top design routine 'histogram_hls' specified by directive (CIN-52)
+Generating synthesis internal form... (CIN-3)
+Inlining routine 'histogram_hls' (CIN-14)
+Synthesizing routine 'histogram_hls' (CIN-13)
+# Info: CDesignChecker Shell script written to '/home/mdk/Spector-HLS/histogram/catapult/histogram_hls/histogram_hls.v1/CDesignChecker/design_checker.sh'
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: Splitting object 'pref#14' into 2 segments (OPT-19)
+Detected constant initialization of array 'hist7', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Splitting object 'pref#13' into 2 segments (OPT-19)
+Detected constant initialization of array 'hist6', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Splitting object 'pref#15' into 2 segments (OPT-19)
+# Info: Optimizing partition '/histogram_hls/core': (Total ops = 159, Real ops = 25, Vars = 21) (SOL-10)
+# Info: Splitting object 'pref:pref.pref#14' into 2 segments (OPT-19)
+Detected constant initialization of array 'hist8', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Splitting object 'pref#11' into 2 segments (OPT-19)
+Detected constant initialization of array 'hist3', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+# Info: Splitting object 'pref:pref.pref#10' into 2 segments (OPT-19)
+Detected constant initialization of array 'hist2', optimizing loop 'INIT_LOOP_HLS' (LOOP-12)
+
+# Messages from "go libraries"
+
+go libraries
+# Info: Completed transformation 'compile' on solution 'histogram_main.v1': elapsed time 1.53 seconds, memory usage 1432112kB, peak memory usage 1432112kB (SOL-9)
+# Info: Starting transformation 'libraries' on solution 'histogram_main.v1' (SOL-8)
+
+# Messages from "go assembly"
+
+# Info: Branching solution 'histogram_main.v3' at state 'libraries' (PRJ-2)
+/histogram_main/MAP_TO_MODULE {}
+directive set /histogram_main -MAP_TO_MODULE {}
+# Info: Starting transformation 'assembly' on solution 'histogram_main.v3' (SOL-8)
+go assembly
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/mdk/Spector-HLS/histogram/catapult/histogram_hls/histogram_main.v3/CDesignChecker/design_checker.sh'
+/histogram_main/MAP_TO_MODULE {[CCORE]}
+# Info: Optimizing partition '/histogram_main': (Total ops = 0, Real ops = 0, Vars = 4) (SOL-10)
+solution design add histogram_main__FR52ac_channel__tm__34_31ac_int__tm__17_XCiL_1_8XCbL_1_0R28ac_channel__tm__10_8HIST_MEM -type ccore -unlocked (HC-1)
+CU_DESIGN sid6 ADD {} {VERSION v3 SID sid6 BRANCH_SID sid5 BRANCH_STATE libraries INCREMENTAL 0 STATE libraries TRANSFORMING 0 SOLUTION_DIR {} SYNTHESIS_FLOWPKG Vivado UNITS {} STATES {} INPUTFILES {} OUTPUTFILES {} TECHCONFIG {/CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/VIRTEX-7/PARAMETERS/-1/PARAMETERS/xc7vx485tffg1157-1/PARAMETERS/mgc_Xilinx-VIRTEX-7-1_beh/142 /CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/Xilinx_RAMS/171 /CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/VIRTEX-7/PARAMETERS/Xilinx_ROMS/200 /CONFIG/PARAMETERS/Vivado/PARAMETERS/amba/230 /CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/VIRTEX-7/PARAMETERS/Xilinx_FIFO/201} HCONFIG {ac_private::iv<1>::iv ac_private::iv<1>::iv#1 ac_private::iv<1>::to_int64 ac_private::iv<1>::to_uint64 ac_private::iv<1>::increment ac_private::iv<1>::set_slc<1> {ac_private::iv<1>::add<2, 1>} ac_private::iv<1>::less_than<1> {ac_private::iv<1>::add<1, 2>} {ac_private::iv<1>::add<1, 1>} ac_private::iv<2>::iv ac_private::iv<2>::iv#1 ac_private::iv<2>::to_int64 ac_private::iv<2>::to_uint64 ac_private::iv<2>::set_slc<1> ac_private::iv<2>::set_slc<2> ac_private::iv<3>::iv ac_private::mgc_floor ac_private::ac_assert ac_private::ldexpr32<0> ac_private::ldexpr32<1> ac_private::ldexpr32<-1> ac_private::ldexpr32<2> ac_private::ldexpr32<-2> ac_private::iv_copy<1> ac_private::iv_copy<2> ac_private::iv_equal_zero<0> ac_private::iv_equal_zero<1> ac_private::iv_equal_zero<2> ac_private::iv_equal_ones<0> ac_private::iv_equal_ones<1> ac_private::iv_equal_ones<2> {ac_private::iv_equal<1, 1>} {ac_private::iv_equal_ones_from<0, 1>} {ac_private::iv_equal_ones_from<0, 2>} {ac_private::iv_equal_zeros_from<0, 1>} {ac_private::iv_equal_zeros_from<0, 2>} {ac_private::iv_equal_ones_to<0, 1>} {ac_private::iv_equal_ones_to<0, 2>} {ac_private::iv_equal_zeros_to<0, 1>} {ac_private::iv_equal_zeros_to<0, 2>} {ac_private::iv_compare<1, 1, true>} {ac_private::iv_compare<1, 1, false>} ac_private::iv_extend<-2> ac_private::iv_extend<-1> ac_private::iv_extend<0> ac_private::iv_extend<1> ac_private::iv_extend<2> ac_private::iv_assign_int64<1> ac_private::iv_assign_int64<2> ac_private::iv_assign_uint64<1> ac_private::iv_assign_uint64<2> ac_private::mult_u_u ac_private::mult_u_s ac_private::mult_s_u ac_private::mult_s_s ac_private::accumulate ac_private::accumulate#1 {ac_private::iv_mult<1, 1, 1>} {ac_private::iv_mult<1, 1, 2>} ac_private::iv_uadd_carry<0> ac_private::iv_uadd_carry<1> ac_private::iv_add_int_carry<0> ac_private::iv_add_int_carry<1> ac_private::iv_uadd_n<0> ac_private::iv_uadd_n<1> ac_private::iv_uadd_n<2> {ac_private::iv_add<1, 1, 1>} {ac_private::iv_add<1, 1, 2>} ac_private::iv_sub_int_borrow<0> ac_private::iv_sub_int_borrow<1> ac_private::iv_sub_int_borrow<0>#1 ac_private::iv_sub_int_borrow<1>#1 ac_private::iv_usub_n<1> ac_private::iv_usub_n<2> {ac_private::iv_sub<1, 1, 1>} {ac_private::iv_sub<1, 1, 2>} ac_private::iv_all_bits_same<0> ac_private::iv_all_bits_same<1> ac_private::iv_bitwise_complement_n<1> ac_private::iv_bitwise_complement_n<2> ac_private::iv_bitwise_and_n<1> ac_private::iv_bitwise_and_n<2> ac_private::iv_bitwise_or_n<1> ac_private::iv_bitwise_or_n<2> ac_private::iv_bitwise_xor_n<1> ac_private::iv_bitwise_xor_n<2> {ac_private::iv_shift_l2<1, 1, false>} {ac_private::iv_shift_l2<1, 1, true>} {ac_private::iv_shift_r2<1, 1, false>} {ac_private::iv_shift_r2<1, 1, true>} {ac_private::iv_const_shift_l<1, 1, 0>} {ac_private::iv_const_shift_l<2, 1, 0>} {ac_private::iv_const_shift_r<1, 1, 0>} {ac_private::iv_const_shift_r<2, 1, 0>} ac_private::to_str<AC_DEC> ac_private::to_string ac_private::to_str<AC_HEX> ac_private::to_str<AC_OCT> ac_private::to_str<AC_BIN> ac_private::iv_leading_bits<1> ac_private::c_type_name<bool> ac_private::c_type_name<char> {ac_private::c_type_name<signed char>} {ac_private::c_type_name<unsigned char>} {ac_private::c_type_name<signed short>} {ac_private::c_type_name<unsigned short>} ac_private::c_type_name<int> {ac_private::c_type_name<unsigned int>} {ac_private::c_type_name<signed long>} {ac_private::c_type_name<unsigned long>} {ac_private::c_type_name<signed long long>} {ac_private::c_type_name<unsigned long long>} ac_private::c_type_name<float> ac_private::c_type_name<double> {ac_private::iv_add<1, 2, 1>} value<AC_VAL_0> value<AC_VAL_DC> value<AC_VAL_QUANTUM> value<AC_VAL_MAX> value<AC_VAL_MIN> value<AC_VAL_0>#1 value<AC_VAL_DC>#1 value<AC_VAL_QUANTUM>#1 value<AC_VAL_MAX>#1 value<AC_VAL_MIN>#1 value<AC_VAL_0>#2 value<AC_VAL_DC>#2 value<AC_VAL_QUANTUM>#2 value<AC_VAL_MAX>#2 value<AC_VAL_MIN>#2 value<AC_VAL_0>#3 value<AC_VAL_DC>#3 value<AC_VAL_QUANTUM>#3 value<AC_VAL_MAX>#3 value<AC_VAL_MIN>#3 value<AC_VAL_0>#4 value<AC_VAL_DC>#4 value<AC_VAL_QUANTUM>#4 value<AC_VAL_MAX>#4 value<AC_VAL_MIN>#4 value<AC_VAL_0>#5 value<AC_VAL_DC>#5 value<AC_VAL_QUANTUM>#5 value<AC_VAL_MAX>#5 value<AC_VAL_MIN>#5 value<AC_VAL_0>#6 value<AC_VAL_DC>#6 value<AC_VAL_QUANTUM>#6 value<AC_VAL_MAX>#6 value<AC_VAL_MIN>#6 value<AC_VAL_0>#7 value<AC_VAL_DC>#7 value<AC_VAL_QUANTUM>#7 value<AC_VAL_MAX>#7 value<AC_VAL_MIN>#7 value<AC_VAL_0>#8 value<AC_VAL_DC>#8 value<AC_VAL_QUANTUM>#8 value<AC_VAL_MAX>#8 value<AC_VAL_MIN>#8 value<AC_VAL_0>#9 value<AC_VAL_DC>#9 value<AC_VAL_QUANTUM>#9 value<AC_VAL_MAX>#9 value<AC_VAL_MIN>#9 value<AC_VAL_0>#10 value<AC_VAL_DC>#10 value<AC_VAL_QUANTUM>#10 value<AC_VAL_MAX>#10 value<AC_VAL_MIN>#10 value<AC_VAL_0>#11 value<AC_VAL_DC>#11 value<AC_VAL_QUANTUM>#11 value<AC_VAL_MAX>#11 value<AC_VAL_MIN>#11 {operator+=<8, false>} {operator<<16, false>} {operator+<16, false>} ac_exception::ac_exception ac_channel_exception::msg histogram_hls histogram_main} TECHLIBS {} ESTIMATOR {} FLOWPKGS {} DATUM {} MESSAGES {} TOP {} SIF_DESIGN_HIER {} ALLOCS {} DIRAPPLIES {} SID_DATA {} SCOPED_C_INTERFACE {} PROPERTIES {} OPT_INFOS {} name histogram_main}: Race condition
+# Info: Optimizing partition '/histogram_main': (Total ops = 0, Real ops = 0, Vars = 4) (SOL-10)
+# Info: Starting transformation 'assembly' on solution 'histogram_main.v2' (SOL-8)
+# Info: Branching solution 'histogram_main.v2' at state 'libraries' (PRJ-2)
+go assembly
+/histogram_main/MAP_TO_MODULE {[CCORE]}
+solution design add histogram_main__FR52ac_channel__tm__34_31ac_int__tm__17_XCiL_1_8XCbL_1_0R28ac_channel__tm__10_8HIST_MEM -type ccore -unlocked (HC-1)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/mdk/Spector-HLS/histogram/catapult/histogram_hls/histogram_main.v2/CDesignChecker/design_checker.sh'
+CU_DESIGN sid5 ADD {} {VERSION v2 SID sid5 BRANCH_SID sid4 BRANCH_STATE libraries INCREMENTAL 0 STATE libraries TRANSFORMING 0 SOLUTION_DIR {} SYNTHESIS_FLOWPKG Vivado UNITS {} STATES {} INPUTFILES {} OUTPUTFILES {} TECHCONFIG {/CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/VIRTEX-7/PARAMETERS/-1/PARAMETERS/xc7vx485tffg1157-1/PARAMETERS/mgc_Xilinx-VIRTEX-7-1_beh/142 /CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/Xilinx_RAMS/171 /CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/VIRTEX-7/PARAMETERS/Xilinx_ROMS/200 /CONFIG/PARAMETERS/Vivado/PARAMETERS/amba/230 /CONFIG/PARAMETERS/Vivado/PARAMETERS/Xilinx/PARAMETERS/VIRTEX-7/PARAMETERS/Xilinx_FIFO/201} HCONFIG {ac_private::iv<1>::iv ac_private::iv<1>::iv#1 ac_private::iv<1>::to_int64 ac_private::iv<1>::to_uint64 ac_private::iv<1>::increment ac_private::iv<1>::set_slc<1> {ac_private::iv<1>::add<2, 1>} ac_private::iv<1>::less_than<1> {ac_private::iv<1>::add<1, 2>} {ac_private::iv<1>::add<1, 1>} ac_private::iv<2>::iv ac_private::iv<2>::iv#1 ac_private::iv<2>::to_int64 ac_private::iv<2>::to_uint64 ac_private::iv<2>::set_slc<1> ac_private::iv<2>::set_slc<2> ac_private::iv<3>::iv ac_private::mgc_floor ac_private::ac_assert ac_private::ldexpr32<0> ac_private::ldexpr32<1> ac_private::ldexpr32<-1> ac_private::ldexpr32<2> ac_private::ldexpr32<-2> ac_private::iv_copy<1> ac_private::iv_copy<2> ac_private::iv_equal_zero<0> ac_private::iv_equal_zero<1> ac_private::iv_equal_zero<2> ac_private::iv_equal_ones<0> ac_private::iv_equal_ones<1> ac_private::iv_equal_ones<2> {ac_private::iv_equal<1, 1>} {ac_private::iv_equal_ones_from<0, 1>} {ac_private::iv_equal_ones_from<0, 2>} {ac_private::iv_equal_zeros_from<0, 1>} {ac_private::iv_equal_zeros_from<0, 2>} {ac_private::iv_equal_ones_to<0, 1>} {ac_private::iv_equal_ones_to<0, 2>} {ac_private::iv_equal_zeros_to<0, 1>} {ac_private::iv_equal_zeros_to<0, 2>} {ac_private::iv_compare<1, 1, true>} {ac_private::iv_compare<1, 1, false>} ac_private::iv_extend<-2> ac_private::iv_extend<-1> ac_private::iv_extend<0> ac_private::iv_extend<1> ac_private::iv_extend<2> ac_private::iv_assign_int64<1> ac_private::iv_assign_int64<2> ac_private::iv_assign_uint64<1> ac_private::iv_assign_uint64<2> ac_private::mult_u_u ac_private::mult_u_s ac_private::mult_s_u ac_private::mult_s_s ac_private::accumulate ac_private::accumulate#1 {ac_private::iv_mult<1, 1, 1>} {ac_private::iv_mult<1, 1, 2>} ac_private::iv_uadd_carry<0> ac_private::iv_uadd_carry<1> ac_private::iv_add_int_carry<0> ac_private::iv_add_int_carry<1> ac_private::iv_uadd_n<0> ac_private::iv_uadd_n<1> ac_private::iv_uadd_n<2> {ac_private::iv_add<1, 1, 1>} {ac_private::iv_add<1, 1, 2>} ac_private::iv_sub_int_borrow<0> ac_private::iv_sub_int_borrow<1> ac_private::iv_sub_int_borrow<0>#1 ac_private::iv_sub_int_borrow<1>#1 ac_private::iv_usub_n<1> ac_private::iv_usub_n<2> {ac_private::iv_sub<1, 1, 1>} {ac_private::iv_sub<1, 1, 2>} ac_private::iv_all_bits_same<0> ac_private::iv_all_bits_same<1> ac_private::iv_bitwise_complement_n<1> ac_private::iv_bitwise_complement_n<2> ac_private::iv_bitwise_and_n<1> ac_private::iv_bitwise_and_n<2> ac_private::iv_bitwise_or_n<1> ac_private::iv_bitwise_or_n<2> ac_private::iv_bitwise_xor_n<1> ac_private::iv_bitwise_xor_n<2> {ac_private::iv_shift_l2<1, 1, false>} {ac_private::iv_shift_l2<1, 1, true>} {ac_private::iv_shift_r2<1, 1, false>} {ac_private::iv_shift_r2<1, 1, true>} {ac_private::iv_const_shift_l<1, 1, 0>} {ac_private::iv_const_shift_l<2, 1, 0>} {ac_private::iv_const_shift_r<1, 1, 0>} {ac_private::iv_const_shift_r<2, 1, 0>} ac_private::to_str<AC_DEC> ac_private::to_string ac_private::to_str<AC_HEX> ac_private::to_str<AC_OCT> ac_private::to_str<AC_BIN> ac_private::iv_leading_bits<1> ac_private::c_type_name<bool> ac_private::c_type_name<char> {ac_private::c_type_name<signed char>} {ac_private::c_type_name<unsigned char>} {ac_private::c_type_name<signed short>} {ac_private::c_type_name<unsigned short>} ac_private::c_type_name<int> {ac_private::c_type_name<unsigned int>} {ac_private::c_type_name<signed long>} {ac_private::c_type_name<unsigned long>} {ac_private::c_type_name<signed long long>} {ac_private::c_type_name<unsigned long long>} ac_private::c_type_name<float> ac_private::c_type_name<double> {ac_private::iv_add<1, 2, 1>} value<AC_VAL_0> value<AC_VAL_DC> value<AC_VAL_QUANTUM> value<AC_VAL_MAX> value<AC_VAL_MIN> value<AC_VAL_0>#1 value<AC_VAL_DC>#1 value<AC_VAL_QUANTUM>#1 value<AC_VAL_MAX>#1 value<AC_VAL_MIN>#1 value<AC_VAL_0>#2 value<AC_VAL_DC>#2 value<AC_VAL_QUANTUM>#2 value<AC_VAL_MAX>#2 value<AC_VAL_MIN>#2 value<AC_VAL_0>#3 value<AC_VAL_DC>#3 value<AC_VAL_QUANTUM>#3 value<AC_VAL_MAX>#3 value<AC_VAL_MIN>#3 value<AC_VAL_0>#4 value<AC_VAL_DC>#4 value<AC_VAL_QUANTUM>#4 value<AC_VAL_MAX>#4 value<AC_VAL_MIN>#4 value<AC_VAL_0>#5 value<AC_VAL_DC>#5 value<AC_VAL_QUANTUM>#5 value<AC_VAL_MAX>#5 value<AC_VAL_MIN>#5 value<AC_VAL_0>#6 value<AC_VAL_DC>#6 value<AC_VAL_QUANTUM>#6 value<AC_VAL_MAX>#6 value<AC_VAL_MIN>#6 value<AC_VAL_0>#7 value<AC_VAL_DC>#7 value<AC_VAL_QUANTUM>#7 value<AC_VAL_MAX>#7 value<AC_VAL_MIN>#7 value<AC_VAL_0>#8 value<AC_VAL_DC>#8 value<AC_VAL_QUANTUM>#8 value<AC_VAL_MAX>#8 value<AC_VAL_MIN>#8 value<AC_VAL_0>#9 value<AC_VAL_DC>#9 value<AC_VAL_QUANTUM>#9 value<AC_VAL_MAX>#9 value<AC_VAL_MIN>#9 value<AC_VAL_0>#10 value<AC_VAL_DC>#10 value<AC_VAL_QUANTUM>#10 value<AC_VAL_MAX>#10 value<AC_VAL_MIN>#10 value<AC_VAL_0>#11 value<AC_VAL_DC>#11 value<AC_VAL_QUANTUM>#11 value<AC_VAL_MAX>#11 value<AC_VAL_MIN>#11 {operator+=<8, false>} {operator<<16, false>} {operator+<16, false>} ac_exception::ac_exception ac_channel_exception::msg histogram_hls histogram_main} TECHLIBS {} ESTIMATOR {} FLOWPKGS {} DATUM {} MESSAGES {} TOP {} SIF_DESIGN_HIER {} ALLOCS {} DIRAPPLIES {} SID_DATA {} SCOPED_C_INTERFACE {} PROPERTIES {} OPT_INFOS {} name histogram_main}: Race condition
+/histogram_main/MAP_TO_MODULE {}
+directive set /histogram_main -MAP_TO_MODULE {}
+# Info: Starting transformation 'assembly' on solution 'histogram_main.v1' (SOL-8)
+go assembly
+# Info: Completed transformation 'libraries' on solution 'histogram_main.v1': elapsed time 0.18 seconds, memory usage 1432112kB, peak memory usage 1432112kB (SOL-9)
+# Info: Optimizing partition '/histogram_main': (Total ops = 0, Real ops = 0, Vars = 4) (SOL-10)
+
+# Messages from "go architect"
+
+# Info: Completed transformation 'assembly' on solution 'histogram_main.v3': elapsed time 0.02 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Info: Starting transformation 'loops' on solution 'histogram_main.v3' (SOL-8)
+go architect
+# Info: Optimizing partition '/histogram_main': (Total ops = 0, Real ops = 0, Vars = 4) (SOL-10)
+# Info: Starting transformation 'memories' on solution 'histogram_main.v3' (SOL-8)
+# Info: Completed transformation 'loops' on solution 'histogram_main.v3': elapsed time 0.02 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'histogram_main.v3' (SOL-8)
+# Info: Completed transformation 'memories' on solution 'histogram_main.v3': elapsed time 0.03 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Warning: ROM clustering skipped Technology Library(ies) required for Prototyping not found (CLUSTER-24)
+Design 'histogram_main' contains '0' real operations. (SOL-11)
+# Info: Starting transformation 'architect' on solution 'histogram_main.v3' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'histogram_main.v3': elapsed time 0.04 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+
+# Messages from "go allocate"
+
+go allocate
+# Info: Completed transformation 'architect' on solution 'histogram_main.v3': elapsed time 0.03 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'histogram_main.v3' (SOL-8)
+
+# Messages from "go schedule"
+
+# Info: Optimizing partition '/histogram_main': (Total ops = 2, Real ops = 0, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/histogram_main': (Total ops = 0, Real ops = 0, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/histogram_main/histogram_main.struct': (Total ops = 0, Real ops = 0, Vars = 2) (SOL-10)
+Report written to file 'cycle.rpt'
+# Info: Completed transformation 'allocate' on solution 'histogram_main.v3': elapsed time 0.05 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Starting transformation 'schedule' on solution 'histogram_main.v3' (SOL-8)
+go extract
+
+# Messages from "go dpfsm"
+
+# Info: Starting transformation 'dpfsm' on solution 'histogram_main.v3' (SOL-8)
+# Info: Completed transformation 'schedule' on solution 'histogram_main.v3': elapsed time 0.10 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Info: Optimizing partition '/histogram_main': (Total ops = 0, Real ops = 0, Vars = 2) (SOL-10)
+Performing FSM extraction... (FSM-1)
+
+# Messages from "go extract"
+
+Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Starting transformation 'instance' on solution 'histogram_main.v3' (SOL-8)
+# Info: Completed transformation 'dpfsm' on solution 'histogram_main.v3': elapsed time 0.05 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Info: Optimizing partition '/histogram_main': (Total ops = 0, Real ops = 0, Vars = 2) (SOL-10)
+order file name is: rtl.v_order_sim.txt
+Add dependent file: ./rtl.vhdl
+order file name is: rtl.vhdl_order.txt
+order file name is: rtl.vhdl_order_sim.txt
+Finished writing concatenated file: /home/mdk/Spector-HLS/histogram/catapult/histogram_hls/histogram_main.v3/concat_rtl.vhdl
+Netlist written to file 'rtl.vhdl' (NET-4)
+generate concat
+# Info: Xilinx Vivado synthesis script written to 'vivado/rtl.vhdl.xv'
+Finished writing concatenated simulation file: /home/mdk/Spector-HLS/histogram/catapult/histogram_hls/histogram_main.v3/concat_sim_rtl.vhdl
+Add dependent file: ./rtl.vhdl
+# Error: Design has no outputs. SCVerify cannot verify this design.
+# Error: Design has no outputs. SCVerify cannot verify this design.
+# Info: Starting transformation 'extract' on solution 'histogram_main.v3' (SOL-8)
+# Info: Completed transformation 'instance' on solution 'histogram_main.v3': elapsed time 0.06 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)
+# Info: Optimizing partition '/histogram_main': (Total ops = 0, Real ops = 0, Vars = 2) (SOL-10)
+# Info: Xilinx Vivado synthesis script written to 'vivado/rtl.v.xv'
+# Info: Xilinx Vivado synthesis script written to 'vivado/concat_rtl.v.xv'
+# Error: Cannot find a usable clock. SCVerify cannot verify this design. (SCVGEN-7)
+Generating scverify_top.cpp ()
+Report written to file 'rtl.rpt'
+order file name is: rtl.v_order.txt
+generate concat
+# Error: Design has no outputs. SCVerify cannot verify this design.
+# Info: Xilinx Vivado synthesis script written to 'vivado/concat_rtl.vhdl.xv'
+Netlist written to file 'rtl.v' (NET-4)
+# Error: Design has no outputs. SCVerify cannot verify this design.
+Finished writing concatenated simulation file: /home/mdk/Spector-HLS/histogram/catapult/histogram_hls/histogram_main.v3/concat_sim_rtl.v
+Finished writing concatenated file: /home/mdk/Spector-HLS/histogram/catapult/histogram_hls/histogram_main.v3/concat_rtl.v
+Add dependent file: ./rtl.v
+Add dependent file: ./rtl.v
+# Info: Completed transformation 'extract' on solution 'histogram_main.v3': elapsed time 1.27 seconds, memory usage 1365548kB, peak memory usage 1365548kB (SOL-9)

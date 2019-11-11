@@ -1,0 +1,2 @@
+clk 1 std_logic sc_logic
+rst 1 std_logic sc_logic

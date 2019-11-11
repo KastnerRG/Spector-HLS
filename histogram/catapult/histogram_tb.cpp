@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+#include <mc_scverify.h>
 
 #include "histogram.h"
 
@@ -36,7 +37,7 @@ CCS_MAIN(int argc, char **argv)
     
     static ac_channel<HIST_MEM> histogram;
     d_uint histogram_check[KNOB_HIST_SIZE];
-    CCS_DESIGN(histogram_main) (inputData, histogram); // for now not implementing work groups
+    CCS_DESIGN(histogram_main) (inputData, histogram);
     histogram_cpu(inputDataCheck, histogram_check, DATA_SIZE);
     bool success=true;
     HIST_MEM histp = histogram.read();
