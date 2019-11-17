@@ -77,7 +77,7 @@ def removeCombinations(combs):
 def main():
 
     finalCombinations = removeCombinations(allCombinations)
-    file1=open('final_result_impl_dct.csv','w')
+    file1=open('final_result_impl_mergesort.csv','w')
     file1.write("n"+","+"knob_no_size"+","+"knob_outer_unroll"+","+"knob_inner_unroll1"+","+"knob_inner_unroll2"+","+"knob_merge_unroll"+","+"knob_partition_factor"+","+"obj1"+","+"obj2\n")
     for d in sorted(glob.glob('impl_reports/mergesort_export*.xml')):
         m = re.search('mergesort_export(\d+)', d)
@@ -85,7 +85,7 @@ def main():
         synth_path=os.path.join('syn_reports/csynth'+num+'.xml')
         slices,lat=parse_xml(d,synth_path)
         file1.write(num+",")
-        for j in range(5):
+        for j in range(6):
             file1.write(str(finalCombinations[int(num)][j])+",")
         file1.write(str(lat)+","+str(slices)+"\n")
 

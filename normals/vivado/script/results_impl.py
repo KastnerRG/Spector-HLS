@@ -45,7 +45,7 @@ def parse_xml(filename1,filename2):
     tree=ET.parse(filename2)
     root=tree.getroot()
     slices=int(slices)
-    avg_latency = root.find('PerformanceEstimates/SummaryOfOverallLatency/Average-caseLatency').text
+    avg_latency = root.find('PerformanceEstimates/SummaryOfOverallLatency/Worst-caseLatency').text
     #resources       = parse_resources(resources_node)
     #avail_resources = parse_resources(avail_resources_node)
     throughput="{0:.3f}".format(((int(avg_latency)*float(est_clk_period))/1000000000))
@@ -76,7 +76,7 @@ def removeCombinations(combs):
 def main():
 
     finalCombinations = removeCombinations(allCombinations)
-    file1=open('final_result_impl_dct.csv','w')
+    file1=open('final_result_impl_normals.csv','w')
     file1.write("n"+","+"knob_KNOB_WINDOW_SIZE_X"+","+"knob_inner_unroll1"+","+"knob_inner_unroll2"+","+"knob_outer_unroll"+","+"knob_partition_factor"+","+"obj1"+","+"obj2\n")
     for d in sorted(glob.glob('impl_reports/normals_export*.xml')):
         m = re.search('normals_export(\d+)', d)
