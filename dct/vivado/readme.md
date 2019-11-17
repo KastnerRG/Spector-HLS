@@ -33,7 +33,7 @@ for every 8 pixels over image height
 ### Knobs
 
 - `blockdim_x`       : Number of pixels to process in parallel within a block of 8 pixels in a row
-- 'blockdim_y`       : Number of pixels to process in parallel within a block of 8 pixels in a column
+- `blockdim_y`       : Number of pixels to process in parallel within a block of 8 pixels in a column
 - `unroll_dct`       : Unroll factor for DCT8 computation
 - `unroll_width`     : Unroll factor for conputing DCT8*8 over entire image width
 - `unroll_height`    : Unroll factor for conputing DCT8*8 over entire image height
