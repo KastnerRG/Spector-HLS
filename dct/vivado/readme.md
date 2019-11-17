@@ -22,13 +22,13 @@ Each 8x8 block is then processed by calculating DCT for rows, then for columns. 
 
 ```
 for every 8 pixels over image height
-  for every 8 pixels over image width
-    for each row-wise 8 block 
-	    for each row until block dimension in the block
-		    calculate DCT
-	  for each column-wise 8 block 
-	    for each column until block dimension in the block
-		    calculate DCT
+	for every 8 pixels over image width
+		for each row-wise 8 block 
+			for each row in the block until block dimension 
+				calculate DCT
+	  	for each column-wise 8 block 
+	    		for each column in the block until block dimension 
+		    		calculate DCT
 ```
 ### Knobs
 
