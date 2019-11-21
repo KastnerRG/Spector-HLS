@@ -1,6 +1,0 @@
-/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4-828904/Mgc_home/pkgs/ccs_libs/interfaces/amba/amba_comps.vhd
-/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4-828904/Mgc_home/pkgs/ccs_libs/interfaces/amba/ccs_axi4_slave_mem.vhd
-/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4-828904/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
-/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4-828904/Mgc_home/pkgs/siflibs/mgc_in_sync_v2.vhd
-/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4-828904/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.vhd
-./rtl.vhdl

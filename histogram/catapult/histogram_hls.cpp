@@ -1,49 +1,51 @@
-#include <stdio.h>
+#include "histogram_hls.h"
 
-#include "params.h"
-#include "histogram.h"
-
-#pragma hls_design block
-void histogram_hls(ac_channel<DATA_MEM> &data_in, ac_channel<HIST_MEM> &hist_out) {
-// using this to correctly put in precompiled defs in pragmas
-    
-    HIST_MEM histogram;
-    
+#pragma design top
+void histogram_hls(ac_channel<uint9> &data_in, uint17 hist[KNOB_HIST_SIZE])
+{   
     DATA_MEM mem;
+    #ifndef __SYNTHESIS__
+    while(data_in.available(DATA_SIZE))
+    #endif
+    {
     
-    data_in.read(mem);
-    
-	unsigned int hist1[KNOB_HIST_SIZE];
+    LOAD_MEM_MAIN: for(unsigned i=0; i<DATA_SIZE; i++) {
+        mem.data[i] = data_in.read();
+    }
+    }
+
+#if KNOB_NUM_HIST >= 1
+    static uint17 histogram1[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 2
-	unsigned int hist2[KNOB_HIST_SIZE];
+    static uint17 histogram2[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 3
-	unsigned int hist3[KNOB_HIST_SIZE];
+    static uint17 histogram3[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 4
-	unsigned int hist4[KNOB_HIST_SIZE];
+    static uint17 histogram4[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 5
-	unsigned int hist5[KNOB_HIST_SIZE];
+    static uint17 histogram5[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 6
-	unsigned int hist6[KNOB_HIST_SIZE];
+    static uint17 histogram6[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 7
-	unsigned int hist7[KNOB_HIST_SIZE];
+    static uint17 histogram7[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 8
-	unsigned int hist8[KNOB_HIST_SIZE];
+    static uint17 histogram8[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 9
-	unsigned int hist9[KNOB_HIST_SIZE];
+    static uint17 histogram9[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 10
-	unsigned int hist10[KNOB_HIST_SIZE];
+    static uint17 histogram10[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 11
-	unsigned int hist11[KNOB_HIST_SIZE];
+    static uint17 histogram11[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 12
-	unsigned int hist12[KNOB_HIST_SIZE];
+    static uint17 histogram12[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 13
-	unsigned int hist13[KNOB_HIST_SIZE];
+    static uint17 histogram13[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 14
-	unsigned int hist14[KNOB_HIST_SIZE];
+    static uint17 histogram14[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 15
-	unsigned int hist15[KNOB_HIST_SIZE];
+    static uint17 histogram15[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 16
-	unsigned int hist16[KNOB_HIST_SIZE];
+    static uint17 histogram16[KNOB_HIST_SIZE];
 #endif
 #endif
 #endif
@@ -59,56 +61,42 @@ void histogram_hls(ac_channel<DATA_MEM> &data_in, ac_channel<HIST_MEM> &hist_out
 #endif
 #endif
 #endif
-	// begin loop for initializing the arrays
-INIT_LOOP_HLS:for(int i=0; i<KNOB_HIST_SIZE; i++){
-#pragma HLS PIPELINE II=1
-		hist1[i] = 0;
+#endif
 
+    loop_1:for(uint9 i=0; i<KNOB_HIST_SIZE; i++)
+    {
+#if KNOB_NUM_HIST >= 1
+    histogram1[i] = 0;
 #if KNOB_NUM_HIST >= 2
-		hist2[i] = 0;
-		
+    histogram2[i] = 0;
 #if KNOB_NUM_HIST >= 3
-		hist3[i] = 0;
-		
+    histogram3[i] = 0;
 #if KNOB_NUM_HIST >= 4
-		hist4[i] = 0;
-		
+    histogram4[i] = 0;
 #if KNOB_NUM_HIST >= 5
-		hist5[i] = 0;
-		
+    histogram5[i] = 0;
 #if KNOB_NUM_HIST >= 6
-		hist6[i] = 0;
-		
+    histogram6[i] = 0;
 #if KNOB_NUM_HIST >= 7
-		hist7[i] = 0;
-		
+    histogram7[i] = 0;
 #if KNOB_NUM_HIST >= 8
-		hist8[i] = 0;
-		
+    histogram8[i] = 0;
 #if KNOB_NUM_HIST >= 9
-		hist9[i] = 0;
-		
+    histogram9[i] = 0;
 #if KNOB_NUM_HIST >= 10
-		hist10[i] = 0;
-		
+    histogram10[i] = 0;
 #if KNOB_NUM_HIST >= 11
-		hist11[i] = 0;
-		
+    histogram11[i] = 0;
 #if KNOB_NUM_HIST >= 12
-		hist12[i] = 0;
-		
+    histogram12[i] = 0;
 #if KNOB_NUM_HIST >= 13
-		hist13[i] = 0;
-		
+    histogram13[i] = 0;
 #if KNOB_NUM_HIST >= 14
-		hist14[i] = 0;
-		
+    histogram14[i] = 0;
 #if KNOB_NUM_HIST >= 15
-		hist15[i] = 0;
-		
+    histogram15[i] = 0;
 #if KNOB_NUM_HIST >= 16
-		hist16[i] = 0;
-		
+    histogram16[i] = 0;
 #endif
 #endif
 #endif
@@ -124,59 +112,42 @@ INIT_LOOP_HLS:for(int i=0; i<KNOB_HIST_SIZE; i++){
 #endif
 #endif
 #endif
-	}
-
-unsigned long count;
-// assigning values to each histogram specified max-KNOB_NUM_HIST+1
-
-hist_loop:for(count=0; count<TRIPCNT; count+=KNOB_NUM_HIST) {
-		hist1[mem.data[count]]++;
-		
+#endif
+    }
+uint17 offset;
+    loop_2:for(offset=0; offset<TRIPCNT; offset=offset+KNOB_NUM_HIST){
+#if KNOB_NUM_HIST >= 1
+	histogram1[mem.data[offset]]++;
 #if KNOB_NUM_HIST >= 2
-		hist2[mem.data[count+1]]++;
-		
+	histogram2[mem.data[offset+1]]++;
 #if KNOB_NUM_HIST >= 3
-		hist3[mem.data[count+2]]++;
-		
+	histogram3[mem.data[offset+2]]++;
 #if KNOB_NUM_HIST >= 4
-		hist4[mem.data[count+3]]++;
-		
+	histogram4[mem.data[offset+3]]++;
 #if KNOB_NUM_HIST >= 5
-		hist5[mem.data[count+4]]++;
-		
+	histogram5[mem.data[offset+4]]++;
 #if KNOB_NUM_HIST >= 6
-		hist6[mem.data[count+5]]++;
-		
+	histogram6[mem.data[offset+5]]++;
 #if KNOB_NUM_HIST >= 7
-		hist7[mem.data[count+6]]++;
-		
+	histogram7[mem.data[offset+6]]++;
 #if KNOB_NUM_HIST >= 8
-		hist8[mem.data[count+7]]++;
-		
+	histogram8[mem.data[offset+7]]++;
 #if KNOB_NUM_HIST >= 9
-		hist9[mem.data[count+8]]++;
-		
+	histogram9[mem.data[offset+8]]++;
 #if KNOB_NUM_HIST >= 10
-		hist10[mem.data[count+9]]++;
-		
+	histogram10[mem.data[offset+9]]++;
 #if KNOB_NUM_HIST >= 11
-		hist11[mem.data[count+10]]++;
-		
+	histogram11[mem.data[offset+10]]++;
 #if KNOB_NUM_HIST >= 12
-		hist12[mem.data[count+11]]++;
-		
+	histogram12[mem.data[offset+11]]++;
 #if KNOB_NUM_HIST >= 13
-		hist13[mem.data[count+12]]++;
-		
+	histogram13[mem.data[offset+12]]++;
 #if KNOB_NUM_HIST >= 14
-		hist14[mem.data[count+13]]++;
-		
+	histogram14[mem.data[offset+13]]++;
 #if KNOB_NUM_HIST >= 15
-		hist15[mem.data[count+14]]++;
-		
+	histogram15[mem.data[offset+14]]++;
 #if KNOB_NUM_HIST >= 16
-		hist16[mem.data[count+15]]++;
-		
+	histogram16[mem.data[offset+15]]++;
 #endif
 #endif
 #endif
@@ -192,56 +163,40 @@ hist_loop:for(count=0; count<TRIPCNT; count+=KNOB_NUM_HIST) {
 #endif
 #endif
 #endif
-	}
-
+#endif
+    }
 #if LEFTOVER_LOOP >= 1
-	hist1[mem.data[count]]++;
-
+    histogram1[mem.data[offset]]++;
 #if LEFTOVER_LOOP >= 2
-	hist2[mem.data[count+1]]++;
-
+    histogram2[mem.data[offset+1]]++;
 #if LEFTOVER_LOOP >= 3
-	hist3[mem.data[count+2]]++;
-
+    histogram3[mem.data[offset+2]]++;
 #if LEFTOVER_LOOP >= 4
-	hist4[mem.data[count+3]]++;
-
+    histogram4[mem.data[offset+3]]++;
 #if LEFTOVER_LOOP >= 5
-	hist5[mem.data[count+4]]++;
-
+    histogram5[mem.data[offset+4]]++;
 #if LEFTOVER_LOOP >= 6
-	hist6[mem.data[count+5]]++;
-
+    histogram6[mem.data[offset+5]]++;
 #if LEFTOVER_LOOP >= 7
-	hist7[mem.data[count+6]]++;
-
+    histogram7[mem.data[offset+6]]++;
 #if LEFTOVER_LOOP >= 8
-	hist8[mem.data[count+7]]++;
-
+    histogram8[mem.data[offset+7]]++;
 #if LEFTOVER_LOOP >= 9
-	hist9[mem.data[count+8]]++;
-
+    histogram9[mem.data[offset+8]]++;
 #if LEFTOVER_LOOP >= 10
-	hist10[mem.data[count+9]]++;
-
+    histogram10[mem.data[offset+9]]++;
 #if LEFTOVER_LOOP >= 11
-	hist11[mem.data[count+10]]++;
-
+    histogram11[mem.data[offset+10]]++;
 #if LEFTOVER_LOOP >= 12
-	hist12[mem.data[count+11]]++;
-
+    histogram12[mem.data[offset+11]]++;
 #if LEFTOVER_LOOP >= 13
-	hist13[mem.data[count+12]]++;
-
+    histogram13[mem.data[offset+12]]++;
 #if LEFTOVER_LOOP >= 14
-	hist14[mem.data[count+13]]++;
-
+    histogram14[mem.data[offset+13]]++;
 #if LEFTOVER_LOOP >= 15
-	hist15[mem.data[count+14]]++;
-
+    histogram15[mem.data[offset+14]]++;
 #if LEFTOVER_LOOP >= 16
-	hist15[mem.data[count+15]]++;
-
+    histogram16[mem.data[offset+15]]++;
 #endif
 #endif
 #endif
@@ -259,57 +214,40 @@ hist_loop:for(count=0; count<TRIPCNT; count+=KNOB_NUM_HIST) {
 #endif
 #endif
 
-	// Accumulate the local buffers (if using several)
-
-accum_loop:for(int i = 0; i < KNOB_HIST_SIZE; i++){
-
-		histogram.data[i] += hist1[i] +
-
+  loop_3:for(uint9 i=0; i<KNOB_HIST_SIZE; i++)
+    {
+#if KNOB_NUM_HIST >= 1
+        hist[i] = histogram1[i] +
 #if KNOB_NUM_HIST >= 2
-		hist2[i] +
-
+        histogram2[i] +
 #if KNOB_NUM_HIST >= 3
-		hist3[i] +
-
+        histogram3[i] +
 #if KNOB_NUM_HIST >= 4
-		hist4[i] +
-
+        histogram4[i] +
 #if KNOB_NUM_HIST >= 5
-		hist5[i] +
-
+        histogram5[i] +
 #if KNOB_NUM_HIST >= 6
-		hist6[i] +
-
+        histogram6[i] +
 #if KNOB_NUM_HIST >= 7
-		hist7[i] +
-
+        histogram7[i] +
 #if KNOB_NUM_HIST >= 8
-		hist8[i] +
-
+        histogram8[i] +
 #if KNOB_NUM_HIST >= 9
-		hist9[i] +
-
+        histogram9[i] +
 #if KNOB_NUM_HIST >= 10
-		hist10[i] +
-
+        histogram10[i] +
 #if KNOB_NUM_HIST >= 11
-		hist11[i] +
-
+        histogram11[i] +
 #if KNOB_NUM_HIST >= 12
-		hist12[i] +
-
+        histogram12[i] +
 #if KNOB_NUM_HIST >= 13
-		hist13[i] +
-
+        histogram13[i] +
 #if KNOB_NUM_HIST >= 14
-		hist14[i] +
-
+        histogram14[i] +
 #if KNOB_NUM_HIST >= 15
-		hist15[i] +
-
+        histogram15[i] +
 #if KNOB_NUM_HIST >= 16
-		hist16[i] +
-				
+        histogram16[i] +
 #endif
 #endif
 #endif
@@ -325,8 +263,8 @@ accum_loop:for(int i = 0; i < KNOB_HIST_SIZE; i++){
 #endif
 #endif
 #endif
-				0;
-	}
-	
-	hist_out.write(histogram);
+#endif
+ 0 ;
+   }
+
 }

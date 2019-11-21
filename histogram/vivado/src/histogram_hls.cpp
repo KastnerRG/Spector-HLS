@@ -235,7 +235,7 @@ PRAGMA_HLS(HLS UNROLL factor=KNOB_UNROLL_FACTOR)
 	hist15[data[count+offset+14]]++;
 
 #if LEFTOVER_LOOP >= 16
-	hist15[data[count+offset+15]]++;
+	hist16[data[count+offset+15]]++;
 
 #endif
 #endif
