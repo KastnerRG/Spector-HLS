@@ -12,22 +12,30 @@ import datetime
 
 FULL_UNROLL = -1
 
+logName = ""
+logNameSynth = "synth.log"
+logNamePnr = "pnr.log"
+
 
 tparamFilepath = "./src/params.h.template"
 tdirectiveFilepath = "./src/directives.tcl.template"
 
-logName = ""
 outRootPath = "./solutions"
 benchmark_name = "histogram"
 
 files_to_copy = ["./src/histogram_hls.cpp", "./src/histogram_hls.h", "./src/hist_test.cpp"]
+
+run_place_route = False
 
 def run_script(path):
     print(path, "started at", datetime.datetime.now())
 
     try:
         start = time.time()
-        command = " ".join(["timeout 1800", "catapult", "-f", "directives.tcl"])
+        if run_place_route:
+            command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
+        else:
+            command = " ".join(["timeout 1800", "catapult", "-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -153,6 +161,7 @@ def main():
 
     parser = argparse.ArgumentParser(description='Generate HLS RTL set.')
     parser.add_argument('-np', '--num-processes', metavar='N', type=int, default=-1, help='Number of parallel processes (default: all)')
+    parser.add_argument('-pnr', '--place-route', action='store_true', help='Run the place-and-route implementation instead of only the synthesis.')
     parser.add_argument('-dl', '--dir-list', help='Get directories to compile from a file.')
     parser.add_argument('-g', '--generate-only', action='store_true', help='Only generate solution folders.')
     parser.add_argument('-onc', '--output-not-compiled', help='Output list of folders not synthesized.')
@@ -166,11 +175,16 @@ def main():
     else:
         print("Using all available processes")
 
-    logName = logNameSynth
+    run_place_route = args.place_route
 
-    dirlist = write_params(finalCombinations, tparamFilepath, tdirectiveFilepath)
+    if run_place_route:
+        logName = logNamePnr
+    else:
+        logName = logNameSynth
 
     print("Num combinations: " + str(len(finalCombinations)))
+ 
+    dirlist = write_params(finalCombinations, tparamFilepath, tdirectiveFilepath)
 
     if args.dir_list:
         dirlist = [line.strip() for line in open(args.dir_list)]
@@ -212,14 +226,5 @@ def main():
         #pool.map(run_script, dirlist)
         result = pool.map_async(run_script, dirlist).get(31536000) # timeout of 365 days
 
-#i = 0
-#for (num, values) in enumerate(finalCombinations):
-#    i = i + 1
-#    strValues = [str(v) for v in values]
-#    for (i, replace) in reversed(list(enumerate(strValues))):
-#    if i == 1:
-#        break
-
-#if __name__ == "__main__":
-#    main()
-
+if __name__ == "__main__":
+    main()
