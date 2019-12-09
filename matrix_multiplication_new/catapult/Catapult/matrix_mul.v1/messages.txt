@@ -1,0 +1,128 @@
+
+# Messages from "go new"
+
+
+# Messages from "go analyze"
+
+Front End called with arguments: -- /home/mdk/Spector-HLS/matrix_multiplication_new/catapult/src/matrix_mul.cpp (CIN-69)
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+Pragma 'hls_design<top>' detected on routine 'matrix_mul' (CIN-6)
+Source file analysis completed (CIN-68)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 0.86 seconds, memory usage 1301072kB, peak memory usage 1301072kB (SOL-9)
+# Error: Compilation aborted (CIN-5)
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+go analyze
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+Front End called with arguments: -- /home/mdk/Spector-HLS/matrix_multiplication_new/catapult/src/matrix_mul.cpp (CIN-69)
+File '$PROJECT_HOME/src/matrix_mul.cpp' saved
+# Error: go analyze: Failed analyze
+Pragma 'hls_design<top>' detected on routine 'matrix_mul' (CIN-6)
+go analyze
+# Error: expected an expression (CRD-29)
+Moving session transcript to file "/home/mdk/Spector-HLS/matrix_multiplication_new/catapult/catapult.log"
+/INPUTFILES/2
+# Error: go analyze: Failed analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 1.14 seconds, memory usage 1301072kB, peak memory usage 1301072kB (SOL-9)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+go analyze
+Front End called with arguments: -- /home/mdk/Spector-HLS/matrix_multiplication_new/catapult/src/matrix_mul.cpp (CIN-69)
+# Error: expected an expression (CRD-29)
+Pragma 'hls_design<top>' detected on routine 'matrix_mul' (CIN-6)
+# Error: Compilation aborted (CIN-5)
+solution design add matrix_mul -type top -unlocked (HC-1)
+solution file add ./src/matrix_mul.cpp
+solution file add ./src/matrix_mul_test.cpp -exclude true
+/INPUTFILES/1
+
+# Messages from "go compile"
+
+# Info: Splitting object 'loop4:l' into 2 segments (OPT-19)
+# Info: Splitting object 'loop2:p' into 2 segments (OPT-19)
+# Info: Splitting object 'loop2:r' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 38, Real ops = 6, Vars = 11) (SOL-10)
+# Info: Splitting object 'loop2:t' into 2 segments (OPT-19)
+# Info: Splitting object 'loop1:i(31:5)' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:C.ptr.idx.pref#1' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 42, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Splitting object 'pref:C.ptr.idx.pref' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 64, Real ops = 17, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 70, Real ops = 31, Vars = 24) (SOL-10)
+# Info: Splitting object 'LOAD_MEM_MAIN:i' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 79, Real ops = 31, Vars = 30) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 42, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Splitting object 'pref' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 70, Real ops = 31, Vars = 27) (SOL-10)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: Splitting object 'loop4:acc.tdx' into 2 segments (OPT-19)
+# Info: Splitting object 'loop4:mul.sdt' into 3 segments (OPT-19)
+# Info: Splitting object 'loop4:acc.tdx#2' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 38, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Splitting object 'loop4:acc.tdx#1' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 38, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Splitting object 'pref:B.ptr.idx.pref' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:C.ptr.idx.pref.pref#1' into 2 segments (OPT-19)
+Design 'matrix_mul' was read (SOL-1)
+# Info: Splitting object 'pref:B.ptr.idx.pref.pref.pref' into 2 segments (OPT-19)
+# Info: Splitting object 'loop1:i' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:B.ptr.idx.pref.pref' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 66, Real ops = 21, Vars = 15) (SOL-10)
+# Info: Completed transformation 'analyze' on solution 'solution.v1': elapsed time 0.86 seconds, memory usage 1365580kB, peak memory usage 1365580kB (SOL-9)
+# Info: Splitting object 'loop2:t(26:0)' into 2 segments (OPT-19)
+solution design add matrix_mul -type top -unlocked (HC-1)
+# Info: Splitting object 'loop3:j' into 2 segments (OPT-19)
+# Info: Starting transformation 'compile' on solution 'solution.v1' (SOL-8)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 71, Real ops = 23, Vars = 10) (SOL-10)
+go compile
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 90, Real ops = 32, Vars = 42) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 66, Real ops = 21, Vars = 12) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 71, Real ops = 23, Vars = 13) (SOL-10)
+Loop '/matrix_mul/core/loop3' iterated at most 1 times. (LOOP-2)
+Loop '/matrix_mul/core/loop4' iterated at most 32 times. (LOOP-2)
+INOUT port 'A' is only used as an input. (OPT-10)
+Loop '/matrix_mul/core/loop1' iterated at most 32 times. (LOOP-2)
+Optimizing block '/matrix_mul' ... (CIN-4)
+Loop '/matrix_mul/core/loop2' iterated at most 32 times. (LOOP-2)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 79, Real ops = 31, Vars = 33) (SOL-10)
+# Info: Splitting object 'loop2:t:acc.cse' into 2 segments (OPT-19)
+INOUT port 'B' is only used as an input. (OPT-10)
+# Info: Splitting object 'loop2:r:acc.idiv' into 2 segments (OPT-19)
+Found top design routine 'matrix_mul' specified by directive (CIN-52)
+Loop '/matrix_mul/core/LOAD_MEM_MAIN' iterated at most 1024 times. (LOOP-2)
+Generating synthesis internal form... (CIN-3)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 65, Real ops = 21, Vars = 19) (SOL-10)
+Inlining routine 'matrix_mul' (CIN-14)
+Synthesizing routine 'matrix_mul' (CIN-13)
+# Info: CDesignChecker Shell script written to '/home/mdk/Spector-HLS/matrix_multiplication_new/catapult/Catapult/matrix_mul.v1/CDesignChecker/design_checker.sh'
+
+# Messages from "go libraries"
+
+go libraries
+solution library add Xilinx_FIFO
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+# Info: Starting transformation 'libraries' on solution 'matrix_mul.v1' (SOL-8)
+solution library add mgc_Xilinx-VIRTEX-uplus-2_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -2 -part xcvu13p-flga2577-2-i
+# Info: Completed transformation 'compile' on solution 'matrix_mul.v1': elapsed time 0.94 seconds, memory usage 1365580kB, peak memory usage 1365580kB (SOL-9)
+solution library add Xilinx_ROMS
+solution library add Xilinx_RAMS
+Reading component library '$MGC_HOME/pkgs/ccs_xilinx/mgc_Xilinx-VIRTEX-uplus-2_beh.lib' [mgc_Xilinx-VIRTEX-uplus-2_beh]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_ROMS.lib' [Xilinx_ROMS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_RAMS.lib' [Xilinx_RAMS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/ccs_ioport.lib' [ccs_ioport]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_FIFO.lib' [Xilinx_FIFO]... (LIB-49)
+
+# Messages from "go assembly"
+
+directive set -CLOCKS {clk {-CLOCK_PERIOD 10 -CLOCK_EDGE rising -CLOCK_HIGH_TIME 5 -CLOCK_OFFSET 0.000000 -CLOCK_UNCERTAINTY 0.0 -RESET_KIND sync -RESET_SYNC_NAME rst -RESET_SYNC_ACTIVE high -RESET_ASYNC_NAME arst_n -RESET_ASYNC_ACTIVE low -ENABLE_NAME {} -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/matrix_mul': (Total ops = 39, Real ops = 7, Vars = 12) (SOL-10)
+# Info: Completed transformation 'libraries' on solution 'matrix_mul.v1': elapsed time 0.33 seconds, memory usage 1365580kB, peak memory usage 1365580kB (SOL-9)
+# Info: Starting transformation 'assembly' on solution 'matrix_mul.v1' (SOL-8)
+go assembly
+/CLOCKS {clk {-CLOCK_PERIOD 10 -CLOCK_EDGE rising -CLOCK_HIGH_TIME 5 -CLOCK_OFFSET 0.000000 -CLOCK_UNCERTAINTY 0.0 -RESET_KIND sync -RESET_SYNC_NAME rst -RESET_SYNC_ACTIVE high -RESET_ASYNC_NAME arst_n -RESET_ASYNC_ACTIVE low -ENABLE_NAME {} -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 39, Real ops = 7, Vars = 7) (SOL-10)
+# Info: Completed transformation 'assembly' on solution 'matrix_mul.v1': elapsed time 0.09 seconds, memory usage 1365580kB, peak memory usage 1365580kB (SOL-9)

@@ -1,0 +1,38 @@
+//  Catapult Ultra Synthesis 10.4b/841621 (Production Release) Thu Oct 24 17:20:07 PDT 2019
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//                        UNPUBLISHED, LICENSED SOFTWARE.
+//             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux mdk@mdk-FX504 5.0.0-36-generic x86_64 aol
+//  
+//  Package information: SIFLIBS v23.4_2.0, HLS_PKGS v23.4_2.0, 
+//                       SIF_TOOLKITS v23.4_2.0, SIF_XILINX v23.4_2.0, 
+//                       SIF_ALTERA v23.4_2.0, CCS_LIBS v23.4_2.0, 
+//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4b, 
+//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.16, 
+//                       DesignPad v2.78_1.0
+//  
+//  Start time Sun Dec  8 20:30:23 2019
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log22029982a0aed.0"
+solution file add ./normals.cpp
+# /INPUTFILES/1
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Moving session transcript to file "/home/mdk/Spector-HLS/normals/catapult/src/catapult.log"
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $MGC_HOME/shared/include/ac_math/ac_atan_pwl.h(89): #error directive: Please use C++11 or a later standard for compilation. (CRD-35)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 0.81 seconds, memory usage 1301072kB, peak memory usage 1301072kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution maketest
+# Warning: Problem parsing file dependencies for: '/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp'
+# Info: Finished packaging testcase_solution.
+# /home/mdk/Spector-HLS/normals/catapult/src/testcase_solution.tar.gz
+# Info: Testcase package saved to '/home/mdk/Spector-HLS/normals/catapult/src/testcase_solution.tar.gz'
+quit
+# Saving project file '/home/mdk/Spector-HLS/normals/catapult/src/Catapult.ccs'. (PRJ-5)
+// Finish time Sun Dec  8 20:30:59 2019, time elapsed 0:36, peak memory 1.24GB, exit status 0

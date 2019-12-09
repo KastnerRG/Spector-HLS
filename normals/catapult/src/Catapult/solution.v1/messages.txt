@@ -1,0 +1,15 @@
+
+# Messages from "go new"
+
+
+# Messages from "go analyze"
+
+Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Error: #error directive: Please use C++11 or a later standard for compilation. (CRD-35)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+solution file add ./normals.cpp
+# Error: Compilation aborted (CIN-5)
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+go analyze
+Moving session transcript to file "/home/mdk/Spector-HLS/normals/catapult/src/catapult.log"
+/INPUTFILES/1
