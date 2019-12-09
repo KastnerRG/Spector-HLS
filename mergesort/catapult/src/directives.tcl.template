@@ -16,7 +16,7 @@
 //  
 solution new -state initial
 solution options defaults
-solution file add ./normals.cpp -type C++
+solution file add ./mergesort.cpp -type C++
 directive set -DESIGN_GOAL area
 directive set -SPECULATE true
 directive set -MERGEABLE true
@@ -47,7 +47,6 @@ directive set -READY_FLAG {}
 directive set -START_FLAG {}
 directive set -RESET_CLEARS_ALL_REGS use_library
 directive set -CLOCK_OVERHEAD 20.000000
-directive set -CLOCKS {clk {-CLOCK_PERIOD 0.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
 directive set -OPT_CONST_MULTS use_library
 directive set -CHARACTERIZE_ROM false
 directive set -PROTOTYPE_ROM true
@@ -60,4 +59,19 @@ directive set -CLUSTER_FAST_MODE false
 directive set -CLUSTER_TYPE combinational
 directive set -PIPELINE_RAMP_UP true
 go new
-go analyze
+directive set -DESIGN_HIERARCHY mergesort
+go compile
+solution library add mgc_Xilinx-VIRTEX-uplus-2_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -2 -part xcvu13p-flga2577-2-i
+solution library add Xilinx_RAMS
+solution library add Xilinx_ROMS
+solution library add Xilinx_FIFO
+go libraries
+directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+go assembly
+directive set /mergesort/core/loop_LMM -UNROLL %0
+directive set /mergesort/core/loop1 -UNROLL %1
+directive set /mergesort/core/loop2 -UNROLL %2
+directive set /mergesort/core/loop6 -UNROLL %3
+directive set /mergesort/core/loop7 -UNROLL %4
+go architect
+go extract
