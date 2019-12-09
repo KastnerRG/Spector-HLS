@@ -10,7 +10,6 @@
  * AUTHOR: MAYUNK KULKARNI
  */
 void histogram_main(unsigned char data[DATA_SIZE], unsigned int histogram[KNOB_HIST_SIZE]){
-
 #pragma HLS INTERFACE ap_memory port=data
 	// simulating work items in HLS
 

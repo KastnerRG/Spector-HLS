@@ -2,7 +2,6 @@
 #include <stdio.h>
 void histogram_hls(unsigned char data[DATA_SIZE/KNOB_NUM_WORK_GROUPS], unsigned int histogram[KNOB_HIST_SIZE], unsigned long offset) {
 // using this to correctly put in precompiled defs in pragmas
-
 	unsigned int hist1[KNOB_HIST_SIZE];
 #if KNOB_NUM_HIST >= 2
 	unsigned int hist2[KNOB_HIST_SIZE];
