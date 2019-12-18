@@ -1,0 +1,140 @@
+//  Catapult Ultra Synthesis 10.4b/841621 (Production Release) Thu Oct 24 17:20:07 PDT 2019
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//                        UNPUBLISHED, LICENSED SOFTWARE.
+//             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux mdk@mdk-FX504 5.0.0-36-generic x86_64 aol
+//  
+//  Package information: SIFLIBS v23.4_2.0, HLS_PKGS v23.4_2.0, 
+//                       SIF_TOOLKITS v23.4_2.0, SIF_XILINX v23.4_2.0, 
+//                       SIF_ALTERA v23.4_2.0, CCS_LIBS v23.4_2.0, 
+//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4b, 
+//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.16, 
+//                       DesignPad v2.78_1.0
+//  
+//  Start time Mon Dec  9 10:28:45 2019
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log31227e42a251b.0"
+solution file add ./normals.cpp
+# /INPUTFILES/1
+options set Input/CppStandard c++11
+# c++11
+options save
+# Saving options to file '$HOME/.catapult/10.4b-841621.aol.reg'.
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Moving session transcript to file "/home/mdk/Spector-HLS/normals/catapult/src/catapult.log"
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals.cpp(7): identifier "fl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(9): identifier "fl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(9): identifier "fl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(10): identifier "dint32" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(15): identifier "fl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(15): identifier "fl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(15): identifier "fl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(23): incomplete type is not allowed (CRD-70)
+# Error: $PROJECT_HOME/normals.cpp(23): identifier "ac_channel" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(23): identifier "fl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(23): identifier "vmap" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(23): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals.cpp(24): expected a ";" (CRD-65)
+# Warning: $PROJECT_HOME/normals.cpp(68): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals.cpp(69): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(69): identifier "data0" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(69): identifier "index01" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(70): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(70): identifier "data1" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(70): identifier "index10" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(72): "fl" is not a type name (CRD-757)
+# Error: $PROJECT_HOME/normals.cpp(73): expected a declaration (CRD-169)
+# Warning: $PROJECT_HOME/normals.cpp(79): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals.cpp(80): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(80): variable "r" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals.cpp(81): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(81): variable "r" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals.cpp(83): "fl" is not a type name (CRD-757)
+# Error: $PROJECT_HOME/normals.cpp(83): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(84): expected a declaration (CRD-169)
+# Error: $PROJECT_HOME/normals.cpp(87): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(87): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals.cpp(88): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(88): variable "mem2" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals.cpp(88): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals.cpp(89): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(89): variable "mem2" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals.cpp(89): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals.cpp(90): expected a declaration (CRD-169)
+# Warning: $PROJECT_HOME/normals.cpp(95): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals.cpp(96): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(96): a value of type "int" cannot be used to initialize an entity of type "int [1]" (CRD-144)
+# Error: $PROJECT_HOME/normals.cpp(97): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(97): variable "data0" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals.cpp(97): a value of type "int" cannot be used to initialize an entity of type "int [2]" (CRD-144)
+# Error: $PROJECT_HOME/normals.cpp(99): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals.cpp(99): expected a ";" (CRD-65)
+# Warning: $PROJECT_HOME/normals.cpp(117): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals.cpp(118): expected a declaration (CRD-169)
+# Warning: $PROJECT_HOME/normals.cpp(120): parsing restarts here after previous syntax error (CRD-12)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 1.60 seconds, memory usage 1366608kB, peak memory usage 1366608kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution maketest
+# Info: Finished packaging testcase_solution.
+# /home/mdk/Spector-HLS/normals/catapult/src/testcase_solution.tar.gz
+# Info: Testcase package saved to '/home/mdk/Spector-HLS/normals/catapult/src/testcase_solution.tar.gz'
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Info: Running transformation 'analyze' on solution 'solution.v1': elapsed time 3.95 seconds, memory usage 1366608kB, peak memory usage 1366608kB (SOL-15)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals.h(12): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals.cpp(9): no suitable conversion function from "ac_fixed<45, 45, true, AC_TRN, AC_WRAP>" to "double" exists (CRD-413)
+# Error: $PROJECT_HOME/normals.cpp(26): identifier "DATA_MEM" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(28): identifier "col" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(62): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(62):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 5.20 seconds, memory usage 1366608kB, peak memory usage 1366608kB (SOL-9)
+# Error: go analyze: Failed analyze
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals.h(12): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals.cpp(9): no suitable conversion function from "ac_fixed<45, 45, true, AC_TRN, AC_WRAP>" to "double" exists (CRD-413)
+# Error: $PROJECT_HOME/normals.cpp(26): identifier "DATA_MEM" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(28): identifier "col" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(62): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(62):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 1.16 seconds, memory usage 1365580kB, peak memory usage 1366608kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution file remove /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp
+# Info: Branching solution 'solution.v2' at state 'new' (PRJ-2)
+solution file add ./normals.cpp
+# /INPUTFILES/2
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals.h(12): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals.cpp(9): no suitable conversion function from "ac_fixed<45, 45, true, AC_TRN, AC_WRAP>" to "double" exists (CRD-413)
+# Error: $PROJECT_HOME/normals.cpp(26): identifier "DATA_MEM" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(28): identifier "col" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(62): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(62):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 1.16 seconds, memory usage 1365580kB, peak memory usage 1366608kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.h' saved
+# File '$PROJECT_HOME/normals.h' saved
+quit
+# Saving project file '/home/mdk/Spector-HLS/normals/catapult/src/Catapult.ccs'. (PRJ-5)
+// Finish time Tue Dec 10 17:18:19 2019, time elapsed 30:49:34, peak memory 1.30GB, exit status 0
