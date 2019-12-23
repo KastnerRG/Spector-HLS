@@ -17,6 +17,10 @@ logName = ""
 logNameSynth = "synth.log"
 logNamePnr   = "pnr.log"
 
+logNameTimeout=""
+logNameTimeoutSynth="synth_timeout.log"
+logNameTimeoutPnr="pnr_timeout.log"
+
 templateFilepath = "./src/params.h.template" # Knobs template file
 
 outRootPath    = "./solutions"            # Name of output directory where all folders are generated
@@ -52,10 +56,11 @@ def run_script(path):
 
     except subprocess.CalledProcessError:
         print(path, "Timeout at", datetime.datetime.now())
-
-        outFile = open(logName + '.timeout', 'at')
+        outFile = open(logNameTimeout , 'at')
         outFile.write(path + '\n')
         outFile.close()
+        if os.path.isdir(path):
+            subprocess.call(shlex.split('rm -r '+path))
 
     except:
         raise
@@ -141,6 +146,7 @@ def removeCombinations(combs):
 def main():
 
     global logName
+    global logNameTimeout
     global run_place_route
 
     parser = argparse.ArgumentParser(description='Generate HLS solution set.')
@@ -165,9 +171,10 @@ def main():
 
     if run_place_route:
         logName = logNamePnr
+        logNameTimeout=logNameTimeoutPnr
     else:
         logName = logNameSynth
-
+        logNameTimeout=logNameTimeoutSynth
 
     # Create combinations of knobs
     finalCombinations = removeCombinations(allCombinations)
