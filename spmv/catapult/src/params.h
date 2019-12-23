@@ -1,3 +1,4 @@
+
 #define num_rows 512
 #define UNROLL_F 4
 #define outer_unroll 1
