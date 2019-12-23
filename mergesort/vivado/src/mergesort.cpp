@@ -1,5 +1,5 @@
-#include "mergesort.h"
-
+#include"params.h"
+#include<iostream>
 void mergesort(int in[no_size],int out[no_size])
 {
 PRAGMA_HLS(HLS array_partition variable=in factor=partition_factor block)

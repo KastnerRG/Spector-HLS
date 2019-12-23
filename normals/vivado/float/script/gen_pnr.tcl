@@ -9,7 +9,7 @@ add_files -tb params.h
 
 #Solution
 open_solution -reset "solutionx"
-set_part {xc7z020clg400-1} -tool vivado
+set_part {xcvu9p-flga2104-1-e} -tool vivado
 create_clock -period 10
 
 #source "./histogram/solution1/directives.tcl"
