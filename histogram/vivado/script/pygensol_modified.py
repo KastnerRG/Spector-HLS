@@ -9,13 +9,17 @@ import argparse
 import shutil
 import time
 import datetime
-
+import shlex
 
 FULL_UNROLL = -1
 
 logName = ""
 logNameSynth = "synth.log"
 logNamePnr   = "pnr.log"
+
+logNameTimeout=""
+logNameTimeoutSynth="synth_timeout.log"
+logNameTimeoutPnr="pnr_timeout.log"
 
 templateFilepath = "./src/params.h.template" # Knobs template file
 
@@ -34,9 +38,9 @@ def run_script(path):
     try:
         start = time.time()
         if run_place_route:
-            command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
+            command = " ".join(["timeout 3600", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
-            command = " ".join(["timeout 60", "vivado_hls","-f","../../gen_synth.tcl"])
+            command = " ".join(["timeout 600", "vivado_hls","-f","../../gen_synth.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -52,10 +56,12 @@ def run_script(path):
 
     except subprocess.CalledProcessError:
         print(path, "Timeout at", datetime.datetime.now())
-
-        outFile = open(logName + '.timeout', 'at')
+        outFile = open(logNameTimeout , 'at')
         outFile.write(path + '\n')
         outFile.close()
+        if os.path.isdir(path):
+            subprocess.call(shlex.split('rm -r '+path))
+
 
     except:
         raise
@@ -157,6 +163,7 @@ def removeCombinations(combs):
 def main():
 
     global logName
+    global logNameTimeout
     global run_place_route
 
     parser = argparse.ArgumentParser(description='Generate HLS solution set.')
@@ -181,8 +188,10 @@ def main():
 
     if run_place_route:
         logName = logNamePnr
+        logNameTimeout=logNameTimeoutPnr
     else:
         logName = logNameSynth
+        logNameTimeout=logNameTimeoutSynth
 
 
     # Create combinations of knobs
