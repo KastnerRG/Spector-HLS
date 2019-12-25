@@ -23,7 +23,7 @@ tdirectiveFilepath = "./src/directives.tcl.template"
 outRootPath = "./solutions"
 benchmark_name = "histogram"
 
-files_to_copy = ["./src/spmv.cpp", "./src/my_spmv_common.h"]
+files_to_copy = ["./src/spmv.cpp", "./src/spmv.h"]
 
 run_place_route = False
 
@@ -93,9 +93,9 @@ def write_params(finalCombinations, tparamFilepath, tdirectiveFilepath):
                 for (i, replace) in reversed(list(enumerate(strValues))):
                     if replace == 'I' or replace == 'B':
                         if replace == 'I':
-                            replace = "INTERLEAVED"
+                            replace = "INTERLEAVE"
                         else:
-                            replace = "BLOCK"
+                            replace = "BLOCK_SIZE"
                     text = '%' + str(i)
                     newline = newline.replace(text, replace)
 
@@ -121,41 +121,40 @@ def write_params(finalCombinations, tparamFilepath, tdirectiveFilepath):
 # knobs 
 # *****************
 
-KNOB_MAT_SIZE = [32] # 0
-KNOB_UNROLL_LMM = [i for i in range(1,16)] # 1
-
-KNOB_UNROLL_L1  = [i for i in range(1,4)] # 2
-KNOB_UNROLL_L2  = [i for i in range(1,4)] # 3
-KNOB_UNROLL_L3  = [i for i in range(1,4)] # 4
-
-KNOB_DATA_DIV = [True, False] # True for interleave, false for block # 5
-KNOB_DATA_INTERLEAVE = [1, 2] # 6
-KNOB_DATA_BLOCK = [i for i in range(1,8)] # 7
+UNROLL_F = [1, 2, 4, 8, 16, 32] #0
+outer_unroll = [1, 2, 3] #1
+inner_unroll1 = [1, 2, 3, 4] #2
+inner_unroll2 = [1, 2, 3, 4] #3
+array_part1 = [512, 256, 128, 64, 32] #4
+array_part2 = [1, 2, 4, 8, 16, 32] #5
 
 blockCombinations = list(itertools.product(
-    KNOB_MAT_SIZE, #0
-    KNOB_UNROLL_LMM, #1
-    KNOB_UNROLL_L1, #2
-    KNOB_UNROLL_L2, #3
-    KNOB_UNROLL_L3, #4
-    "B", #5
-    KNOB_DATA_BLOCK #6
+    UNROLL_F, #0
+    outer_unroll, #1
+    inner_unroll1, #2
+    inner_unroll2, #3
+    array_part1, #4
+    array_part2, #5
+    "B" #6
     ))
 
-interleaveCombinations = list(itertools.product(
-    KNOB_MAT_SIZE, #0
-    KNOB_UNROLL_LMM, #1
-    KNOB_UNROLL_L1, #2
-    KNOB_UNROLL_L2, #3
-    KNOB_UNROLL_L3, #4
-    "I", #5
-    KNOB_DATA_INTERLEAVE #6
-    ))
-
-print("HELLO")
-finalCombinations = blockCombinations + interleaveCombinations
+finalCombinations = blockCombinations 
 print("final combinations are " + str(len(finalCombinations)))
-# -------------------------------------------------------
+# -----------------------------------------------------
+
+def removeCombinations(combs):
+
+    finalList = []
+
+    for c in combs:
+        copyit = True
+        if c[5] > c[0]:
+            copyit = False
+
+        if copyit:
+            finalList.append(c)
+
+    return finalList
 
 def main():
 
@@ -184,10 +183,11 @@ def main():
         logName = logNamePnr
     else:
         logName = logNameSynth
-
-    print("Num combinations: " + str(len(finalCombinations)))
+    
+    fCombinations = removeCombinations(finalCombinations)
+    print("Num combinations: " + str(len(fCombinations)))
  
-    dirlist = write_params(finalCombinations, tparamFilepath, tdirectiveFilepath)
+    dirlist = write_params(fCombinations, tparamFilepath, tdirectiveFilepath)
 
     if args.dir_list:
         dirlist = [line.strip() for line in open(args.dir_list)]

@@ -75,12 +75,12 @@ directive set /spmv/core/loop_3 -UNROLL %3
 directive set /spmv/core/loop_4 -UNROLL %3
 directive set /spmv/core/loop_5 -UNROLL %3
 directive set /spmv/core/loop_6 -UNROLL %3
-directive set /spmv/core/mem_Ap.data:rsc %4 %5
-directive set /spmv/core/mem_Ax.data:rsc %4 %5
-directive set /spmv/core/mem_Ay.data:rsc %4 %5
-directive set /spmv/core/mem_x.data:rsc %4 %5
-directive set /spmv/core/mem_y.data:rsc %4 %5
-directive set /spmv/core/loop_1:p_Ax:rsc %6 %7
-directive set /spmv/core/loop_1:p_Ay:rsc %6 %7
+directive set /spmv/core/mem_Ap.data:rsc %6 %4
+directive set /spmv/core/mem_Ax.data:rsc %6 %4
+directive set /spmv/core/mem_Ay.data:rsc %6 %4
+directive set /spmv/core/mem_x.data:rsc %6 %4
+directive set /spmv/core/mem_y.data:rsc %6 %4
+directive set /spmv/core/loop_1:p_Ax:rsc %6 %5
+directive set /spmv/core/loop_1:p_Ay:rsc %6 %5
 go architect
 go extract
