@@ -62,7 +62,7 @@ directive set -PIPELINE_RAMP_UP true
 go new
 directive set -DESIGN_HIERARCHY matrix_mul
 go compile
-solution library add mgc_Xilinx-VIRTEX-uplus-2_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -2 -part xcvu13p-flga2577-2-i
+solution library add mgc_Xilinx-VIRTEX-uplus-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -1 -part xcvu9p-flga2104-1-e
 solution library add Xilinx_RAMS
 solution library add Xilinx_ROMS
 solution library add Xilinx_FIFO

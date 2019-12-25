@@ -62,7 +62,7 @@ directive set -PIPELINE_RAMP_UP true
 go new
 directive set -DESIGN_HIERARCHY histogram_hls
 go compile
-solution library add mgc_Xilinx-VIRTEX-7-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-7 -speed -1 -part xc7vx485tffg1157-1
+solution library add mgc_Xilinx-VIRTEX-uplus-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -1 -part xcvu9p-flga2104-1-e
 solution library add Xilinx_RAMS
 solution library add Xilinx_ROMS
 solution library add amba

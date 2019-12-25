@@ -9,7 +9,7 @@ import argparse
 import shutil
 import time
 import datetime
-
+import shlex
 FULL_UNROLL = -1
 
 logName = ""
@@ -35,7 +35,7 @@ def run_script(path):
         if run_place_route:
             command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
-            command = " ".join(["timeout 1800", "catapult", "-f", "directives.tcl"])
+            command = " ".join(["timeout 3600", "catapult","-shell", "-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -49,13 +49,14 @@ def run_script(path):
 
         print(path, "end at", datetime.datetime.now(), " elapsed", end-start)
 
-    except subprocess.CalledSubprocessError:
+    except subprocess.CalledProcessError:
         print(path, "Timeout at", datetime.datetime.now())
 
         outFile = open(logName + '.timeout', 'at')
         outFile.write(path + '\n')
         outfile.close()
-
+        if os.path.isdir(path):
+            subprocess.call(shlex.split('rm -r '+path))
     except:
         raise
 
@@ -93,9 +94,9 @@ def write_params(finalCombinations, tparamFilepath, tdirectiveFilepath):
                 for (i, replace) in reversed(list(enumerate(strValues))):
                     if replace == 'I' or replace == 'B':
                         if replace == 'I':
-                            replace = "INTERLEAVED"
+                            replace = "INTERLEAVE"
                         else:
-                            replace = "BLOCK"
+                            replace = "BLOCK_SIZE"
                     text = '%' + str(i)
                     newline = newline.replace(text, replace)
 
@@ -129,7 +130,7 @@ KNOB_UNROLL_LP  = [i for i in range(1,4)] # 3
 
 KNOB_DATA_DIV = [True, False] # True for interleave, false for block # 4
 KNOB_DATA_INTERLEAVE = [1, 2] # 5
-KNOB_DATA_BLOCK = [i for i in range(1,8)] # 5
+KNOB_DATA_BLOCK = [1024,2048,4096,8192,16384,32768,65536] # 5
 
 blockCombinations = list(itertools.product(
     KNOB_HIST_SIZE, #0
