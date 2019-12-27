@@ -1,0 +1,149 @@
+
+# Messages from "go new"
+
+
+# Messages from "go analyze"
+
+Front End called with arguments: -- /home/mdk/Spector-HLS/sobel_filter/catapult/subdim_x/src/sobel_subdimx.cpp (CIN-69)
+solution design add sobel_x -type top -unlocked (HC-1)
+Source file analysis completed (CIN-68)
+Pragma 'hls_design<top>' detected on routine 'sobel_x' (CIN-6)
+solution file add ./sobel_subdimx.cpp
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+go analyze
+Moving session transcript to file "/home/mdk/Spector-HLS/sobel_filter/catapult/subdim_x/src/catapult.log"
+/INPUTFILES/1
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+
+# Messages from "go compile"
+
+Generating synthesis internal form... (CIN-3)
+# Info: Starting transformation 'compile' on solution 'solution.v1' (SOL-8)
+Synthesizing routine 'sobel_x' (CIN-13)
+Found top design routine 'sobel_x' specified by directive (CIN-52)
+go compile
+# Info: Completed transformation 'analyze' on solution 'solution.v1': elapsed time 0.79 seconds, memory usage 1304016kB, peak memory usage 1304016kB (SOL-9)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 302, Real ops = 120, Vars = 77) (SOL-10)
+# Info: Optimizing partition '/sobel_x': (Total ops = 302, Real ops = 120, Vars = 79) (SOL-10)
+# Info: Optimizing partition '/sobel_x': (Total ops = 326, Real ops = 120, Vars = 77) (SOL-10)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 326, Real ops = 120, Vars = 75) (SOL-10)
+Optimizing block '/sobel_x' ... (CIN-4)
+Inlining routine 'sobel_x' (CIN-14)
+INOUT port 'output_image' is only used as an output. (OPT-11)
+INOUT port 'input_image' is only used as an input. (OPT-10)
+# Info: Splitting object 'pref#2' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:loop_2:exu' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:loop_2:exu#2' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#2' into 2 segments (OPT-19)
+# Info: Splitting object 'pref' into 2 segments (OPT-19)
+# Info: Splitting object 'clamped' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#1' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:loop_2:exu#6' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#4' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#5' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#5' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#3' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#3' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#4' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:loop_2:exu#4' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#7' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#7' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#8' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:loop_2:exu#12' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#6' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:loop_2:exu#8' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:loop_2:exu#10' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#6' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:_qr#2' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:loop_2:exu#16' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:if:loop_3:if:slc(image_reg)(63-32)' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#13' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:loop_2:exu#14' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#8' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#9' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#9' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#14' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:if:loop_3:if:slc(image_reg)(287-256)' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:if:loop_3:if:exu' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#11' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:if:loop_3:if:slc(image_reg)(255-224)' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:if:loop_3:if:slc(image_reg)(159-128)' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:if:loop_3:if:slc(image_reg)(191-160)' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:if:loop_3:if:slc(image_reg)(95-64)' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:if:loop_3:if:exu#4' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#13' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#14' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#17' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#12' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#15' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#16' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:if:loop_3:if:exu#2' into 2 segments (OPT-19)
+# Info: Optimizing partition '/sobel_x': (Total ops = 362, Real ops = 88, Vars = 39) (SOL-10)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 362, Real ops = 88, Vars = 37) (SOL-10)
+# Info: Splitting object 'loop_5:acc#24.psp' into 2 segments (OPT-19)
+# Info: Splitting object 'pixel' into 2 segments (OPT-19)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 341, Real ops = 120, Vars = 140) (SOL-10)
+# Info: Splitting object 'pref:pref.pref.pref' into 2 segments (OPT-19)
+# Info: Optimizing partition '/sobel_x': (Total ops = 380, Real ops = 96, Vars = 38) (SOL-10)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 380, Real ops = 96, Vars = 36) (SOL-10)
+Loop '/sobel_x/core/loop_3' iterated at most 4 times. (LOOP-2)
+Loop '/sobel_x/core/loop_4' iterated at most 3 times. (LOOP-2)
+Loop '/sobel_x/core/loop_1' iterated at most 1078 times. (LOOP-2)
+Loop '/sobel_x/core/loop_2' iterated at most 480 times. (LOOP-2)
+Loop '/sobel_x/core/loop_in2' iterated at most 1920 times. (LOOP-2)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 363, Real ops = 88, Vars = 39) (SOL-10)
+Loop '/sobel_x/core/loop_5' iterated at most 3 times. (LOOP-2)
+Loop '/sobel_x/core/loop_in1' iterated at most 1080 times. (LOOP-2)
+# Info: Optimizing partition '/sobel_x': (Total ops = 294, Real ops = 68, Vars = 30) (SOL-10)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 294, Real ops = 68, Vars = 28) (SOL-10)
+# Info: Splitting object 'loop_in2:j' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_in1:i' into 2 segments (OPT-19)
+Loop '/sobel_x/core/loop_out1' iterated at most 1080 times. (LOOP-2)
+Loop '/sobel_x/core/loop_out2' iterated at most 1920 times. (LOOP-2)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 336, Real ops = 80, Vars = 26) (SOL-10)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 414, Real ops = 88, Vars = 30) (SOL-10)
+# Info: Splitting object 'loop_out1:i' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_5:n' into 2 segments (OPT-19)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 282, Real ops = 68, Vars = 37) (SOL-10)
+# Info: Splitting object 'loop_out2:j' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_2:j' into 3 segments (OPT-19)
+# Info: Splitting object 'loop_1:i' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_4:m' into 2 segments (OPT-19)
+# Info: Splitting object 'loop_3:k' into 2 segments (OPT-19)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: Optimizing partition '/sobel_x': (Total ops = 265, Real ops = 68, Vars = 30) (SOL-10)
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 265, Real ops = 68, Vars = 28) (SOL-10)
+Design 'sobel_x' was read (SOL-1)
+# Info: CDesignChecker Shell script written to '/home/mdk/Spector-HLS/sobel_filter/catapult/subdim_x/src/Catapult/sobel_x.v1/CDesignChecker/design_checker.sh'
+
+# Messages from "go libraries"
+
+# Info: Starting transformation 'libraries' on solution 'sobel_x.v1' (SOL-8)
+solution library add mgc_Xilinx-VIRTEX-uplus-2_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -2 -part xcvu13p-flga2577-2-i
+# Info: Completed transformation 'compile' on solution 'sobel_x.v1': elapsed time 5.20 seconds, memory usage 1304016kB, peak memory usage 1369552kB (SOL-9)
+Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_FIFO.lib' [Xilinx_FIFO]... (LIB-49)
+solution library add Xilinx_ROMS
+solution library add Xilinx_RAMS
+Reading component library '$MGC_HOME/pkgs/ccs_xilinx/mgc_Xilinx-VIRTEX-uplus-2_beh.lib' [mgc_Xilinx-VIRTEX-uplus-2_beh]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_ROMS.lib' [Xilinx_ROMS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_RAMS.lib' [Xilinx_RAMS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/ccs_ioport.lib' [ccs_ioport]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+go libraries
+solution library add Xilinx_FIFO
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+
+# Messages from "go assembly"
+
+# Info: Starting transformation 'assembly' on solution 'sobel_x.v1' (SOL-8)
+go assembly
+/CLOCKS {clk {-CLOCK_PERIOD 10 -CLOCK_EDGE rising -CLOCK_HIGH_TIME 5 -CLOCK_OFFSET 0.000000 -CLOCK_UNCERTAINTY 0.0 -RESET_KIND sync -RESET_SYNC_NAME rst -RESET_SYNC_ACTIVE high -RESET_ASYNC_NAME arst_n -RESET_ASYNC_ACTIVE low -ENABLE_NAME {} -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/sobel_x/core': (Total ops = 266, Real ops = 69, Vars = 28) (SOL-10)
+directive set -CLOCKS {clk {-CLOCK_PERIOD 10 -CLOCK_EDGE rising -CLOCK_HIGH_TIME 5 -CLOCK_OFFSET 0.000000 -CLOCK_UNCERTAINTY 0.0 -RESET_KIND sync -RESET_SYNC_NAME rst -RESET_SYNC_ACTIVE high -RESET_ASYNC_NAME arst_n -RESET_ASYNC_ACTIVE low -ENABLE_NAME {} -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/sobel_x': (Total ops = 266, Real ops = 69, Vars = 32) (SOL-10)
+# Info: Completed transformation 'libraries' on solution 'sobel_x.v1': elapsed time 0.31 seconds, memory usage 1304016kB, peak memory usage 1369552kB (SOL-9)
+# Info: Completed transformation 'assembly' on solution 'sobel_x.v1': elapsed time 0.79 seconds, memory usage 1304016kB, peak memory usage 1369552kB (SOL-9)
