@@ -3,8 +3,6 @@
 #include <ac_int.h>
 #include <ac_channel.h>
 
-#include "params.h"
-
 typedef ac_int<8, false> uint8;
 typedef ac_int<1, false> uint1;
 #define H 1080

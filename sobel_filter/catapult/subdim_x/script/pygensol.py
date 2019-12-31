@@ -21,9 +21,9 @@ tparamFilepath = "./src/params.h.template"
 tdirectiveFilepath = "./src/directives.tcl.template"
 
 outRootPath = "./solutions"
-benchmark_name = "histogram"
+benchmark_name = "sobel subdimx"
 
-files_to_copy = ["./src/mergesort.cpp", "./src/mergesort.h"]
+files_to_copy = ["./src/sobel_subdimx.cpp", "./src/sobel.h"]
 
 run_place_route = False
 
@@ -121,21 +121,17 @@ def write_params(finalCombinations, tparamFilepath, tdirectiveFilepath):
 # knobs 
 # *****************
 
-no_size = [16, 256, 1024, 2048, 4096, 8192]
-outer_unroll = [1,2,3,4]
-inner_unroll1 = [1,2,3,4]
-inner_unroll2 = [1,2,3,4]
-merge_unroll = [1,2,3,4]
-array_part = [4, 8, 16, 32, 64, 128]
+dimx_part_factor = [1,2,4,8]
+dimy_part_factor = [1,2,4,8]
+unroll_factor = [1,2,3,4,5,6,7,8]
+subdim_x = [1,2,4,8,16,32]
 
 blockCombinations = list(itertools.product(
-    no_size, #0
-    outer_unroll, #1
-    inner_unroll1, #2
-    inner_unroll2, #3
-    merge_unroll, #4
-    array_part, #5
-    "B" #6
+    dimx_part_factor, #0
+    dimy_part_factor, #1
+    unroll_factor, #2
+    subdim_x, #3
+    "B" #4
     ))
 
 finalCombinations = blockCombinations 
@@ -184,7 +180,7 @@ def main():
     else:
         logName = logNameSynth
     
-    fCombinations = removeCombinations(finalCombinations)
+    fCombinations =finalCombinations
     print("Num combinations: " + str(len(fCombinations)))
  
     dirlist = write_params(fCombinations, tparamFilepath, tdirectiveFilepath)
