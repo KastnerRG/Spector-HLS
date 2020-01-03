@@ -35,7 +35,7 @@ def run_script(path):
         if run_place_route:
             command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
-            command = " ".join(["timeout 1800", "catapult", "-f", "directives.tcl"])
+            command = " ".join(["timeout 1800", "~/Siva/RA/Mentor_Graphics_10_4/Mgc_home/bin/catapult", "-shell","-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -49,7 +49,7 @@ def run_script(path):
 
         print(path, "end at", datetime.datetime.now(), " elapsed", end-start)
 
-    except subprocess.CalledSubprocessError:
+    except subprocess.CalledProcessError:
         print(path, "Timeout at", datetime.datetime.now())
 
         outFile = open(logName + '.timeout', 'at')
@@ -93,9 +93,9 @@ def write_params(finalCombinations, tparamFilepath, tdirectiveFilepath):
                 for (i, replace) in reversed(list(enumerate(strValues))):
                     if replace == 'I' or replace == 'B':
                         if replace == 'I':
-                            replace = "INTERLEAVED"
+                            replace = "INTERLEAVE"
                         else:
-                            replace = "BLOCK"
+                            replace = "BLOCK_SIZE"
                     text = '%' + str(i)
                     newline = newline.replace(text, replace)
 
