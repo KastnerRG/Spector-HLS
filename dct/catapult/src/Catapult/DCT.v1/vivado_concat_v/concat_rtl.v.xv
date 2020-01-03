@@ -1,0 +1,71 @@
+## HLS SP synthesis script
+## Generated for stage extract
+## Vivado mode is Non-project
+
+# Reporting settings
+puts "-- Requested 4 fractional digits for design 'DCT' timing"
+puts "-- Requested 4 fractional digits for design 'DCT' capacitance"
+puts "-- Characterization mode: p2p "
+
+puts "-- Synthesis Timing report: '/home/mdk/Spector-HLS/dct/catapult/src/Catapult/DCT.v1/vivado_concat_v/timing_summary_synth.rpt' "
+puts "-- Synthesis Utilization report: '/home/mdk/Spector-HLS/dct/catapult/src/Catapult/DCT.v1/vivado_concat_v/utilization_synth.rpt' "
+
+# Environment variable settings
+global env
+set CATAPULT_HOME "/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4b-841621/Mgc_home"
+## Set the variable for file path prefixing 
+set RTL_TOOL_SCRIPT_DIR /home/mdk/Spector-HLS/dct/catapult/src/Catapult/DCT.v1/vivado_concat_v
+set RTL_TOOL_SCRIPT_DIR [file dirname [file normalize [info script] ] ]
+puts "-- RTL_TOOL_SCRIPT_DIR is set to '$RTL_TOOL_SCRIPT_DIR' "
+# Vivado Non-Project mode script starts here
+puts "==========================================="
+puts "Catapult driving Vivado in Non-Project mode"
+puts "==========================================="
+set outputDir /home/mdk/Spector-HLS/dct/catapult/src/Catapult/DCT.v1/vivado_concat_v
+set outputDir $RTL_TOOL_SCRIPT_DIR
+#file mkdir $outputDir
+#
+# STEP#1: setup design sources and constraints
+#
+create_project -force tcl_concat_v
+   read_verilog ../concat_rtl.v
+# set up XPM libraries for XPM-related IP like the Catapult Xilinx_FIFO
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY XPM_FIFO} [current_project]
+read_xdc $outputDir/concat_rtl.v.xv.sdc
+set_property part xcvu13p-flga2577-2-i [current_project]
+#
+# STEP#2: run synthesis, report utilization and timing estimates, write checkpoint design
+#
+synth_design   -top DCT -part xcvu13p-flga2577-2-i -mode out_of_context  -include_dirs ""
+write_checkpoint -force $outputDir/post_synth
+report_utilization -file $outputDir/utilization_synth.rpt
+report_timing_summary -path_type summary -file $outputDir/timing_summary_synth.rpt
+report_timing -nworst 1 -from [all_inputs] -to [all_outputs] -file $outputDir/timing_summary_synth.rpt -append
+if { [llength [all_clocks] ] > 0 } {
+  report_timing -nworst 1 -from [all_inputs] -to [all_clocks]  -file $outputDir/timing_summary_synth.rpt -append
+  report_timing -nworst 1 -from [all_clocks] -to [all_clocks]  -file $outputDir/timing_summary_synth.rpt -append
+  report_timing -nworst 1 -from [all_clocks] -to [all_outputs] -file $outputDir/timing_summary_synth.rpt -append
+}
+if { ([info exists env(Xilinx_RUN_PNR)] && $env(Xilinx_RUN_PNR) ) || 
+     ([info exists env(Xilinx_BITGEN)] && $env(Xilinx_BITGEN) ) } {
+  opt_design
+  place_design
+  read_xdc /home/mdk/Spector-HLS/dct/catapult/src/Catapult/DCT.v1/vivado_concat_v/concat_rtl.v.xv.signoff.sdc
+  phys_opt_design
+  write_checkpoint -force $outputDir/post_place
+  route_design
+  write_checkpoint -force $outputDir/post_route
+  write_verilog -force $outputDir/DCT_impl_netlist.v -sdf_anno false
+  write_xdc -no_fixed_only -force $outputDir/DCT_impl.xdc
+  if { [info exists env(Xilinx_BITGEN)] && $env(Xilinx_BITGEN) } {
+    write_bitstream -force $outputDir/DCT.bit
+  }
+  report_utilization -file $outputDir/utilization_placed.rpt
+  report_timing_summary -path_type summary -file $outputDir/timing_summary_routed.rpt
+  report_timing -nworst 1 -from [all_inputs] -to [all_outputs] -file $outputDir/timing_summary_routed.rpt -append
+  if { [llength [all_clocks] ] > 0 } {
+    report_timing -nworst 1 -from [all_inputs] -to [all_clocks]  -file $outputDir/timing_summary_routed.rpt -append
+    report_timing -nworst 1 -from [all_clocks] -to [all_clocks]  -file $outputDir/timing_summary_routed.rpt -append
+    report_timing -nworst 1 -from [all_clocks] -to [all_outputs] -file $outputDir/timing_summary_routed.rpt -append
+  }
+}

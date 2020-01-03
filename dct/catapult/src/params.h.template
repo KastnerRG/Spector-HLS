@@ -1,3 +1,5 @@
+#ifndef PARAMS_H_
+#define PARAMS_H_
 #define PRAGMA_SUB(x) _Pragma(#x)
 #define PRAGMA_HLS(x) PRAGMA_SUB(x)
 
@@ -14,3 +16,4 @@
 #define imageH 2048
 #define stride 2048
 #define size imageW*imageH
+#endif
