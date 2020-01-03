@@ -1,1 +1,0 @@
-# CDesignChecker user constraints

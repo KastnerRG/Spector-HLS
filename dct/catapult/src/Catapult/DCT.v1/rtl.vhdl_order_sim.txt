@@ -1,4 +1,0 @@
-/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4b-841621/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
-/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4b-841621/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
-/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4b-841621/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.vhd
-./rtl.vhdl
