@@ -15,5 +15,5 @@
 #define imageW 2048
 #define imageH 2048
 #define stride 2048
-#define size imageW*imageH
+#define size_im imageW*imageH
 #endif

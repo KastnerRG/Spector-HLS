@@ -12,13 +12,19 @@ try:
 except:
     pass
 
-for d in sorted(glob.glob('solutions/histogram*')):
-    m = re.search('histogram(\d+)', d)
+for d in sorted(glob.glob('impl/matmul*')):
+    m = re.search('matmul(\d+)', d)
     num = m.group(1)
     try:
-        for f in glob.glob(d + "/histogram_batch/solutionx/impl/report/verilog/*"):
+        for f in glob.glob(d + "/report/verilog/*.xml"):
             basename, ext = os.path.splitext(os.path.basename(f))
             shutil.copy(f, os.path.join(impl_dir, basename + num + ext))
     except:
         print("Error in #" + num)
-
+    try:
+        for f in glob.glob(d+"/matmul_ip/matmul_utilization_routed.rpt"):
+            basename, ext = os.path.splitext(os.path.basename(f))
+            shutil.copy(f, os.path.join(impl_dir, basename + num + ext))
+    except:
+        print("Error in #"+num)
+            
