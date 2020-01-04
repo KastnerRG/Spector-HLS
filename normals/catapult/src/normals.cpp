@@ -2,7 +2,7 @@
 #include <ac_math.h>
 #include "normals.h"
 #include "params.h"
-
+/*
 #pragma hls design inline
 void normalized(fl v[3])
 {
@@ -10,7 +10,7 @@ void normalized(fl v[3])
 	for (dint32 i=0;i<3;i++)
 	v[i]=v[i] * t;
 }
-
+*/
 #pragma hls design inline
 void cross(fl A[3],fl B[3],fl P[3])
 {
@@ -48,7 +48,7 @@ loop1:for(dint32 i=0,j=0;i<(rows)*cols*3;i=i+(KNOB_WINDOW_SIZE_X*3))
 				if(j==cols-1)
 				{
 					j=-1;
-					mem2.data[i + x*3] = NAN;
+					mem2.data[i + x*3] = fl(NAN);
 				}
 				const dint32 index00 = (x + 0) * 3;
 				const dint32 index01 = (x + 1) * 3;
