@@ -1,0 +1,18 @@
+#ifndef PARAMS_H
+#define PARAMS_H
+
+
+ // inhei * inwid // tmphei * tmpwid
+#define tmpdim %0
+#define indim  %1
+#define UNROLL_FACTOR %2
+#define UNROLL_LOOP1 %3
+#define UNROLL_LOOP2 %4
+#define UNROLL_LOOP3 %5
+#define UNROLL_LOOP4 %6
+#define thre   1
+#define size_m indim*indim
+#define tmpsize tmpdim*tmpdim
+
+
+#endif

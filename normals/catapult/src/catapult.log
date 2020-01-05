@@ -5,7 +5,7 @@
 //             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 //                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
 //  
-//  Running on Linux mdk@mdk-FX504 5.0.0-36-generic x86_64 aol
+//  Running on Linux mdk@mdk-FX504 5.0.0-37-generic x86_64 aol
 //  
 //  Package information: SIFLIBS v23.4_2.0, HLS_PKGS v23.4_2.0, 
 //                       SIF_TOOLKITS v23.4_2.0, SIF_XILINX v23.4_2.0, 
@@ -14,108 +14,339 @@
 //                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.16, 
 //                       DesignPad v2.78_1.0
 //  
-//  Start time Mon Dec  9 10:28:45 2019
+//  Start time Fri Jan  3 21:43:35 2020
 # -------------------------------------------------
-# Logging session transcript to file "/tmp/log31227e42a251b.0"
-solution file add ./normals.cpp
+# Logging session transcript to file "/tmp/log177463c2a5aa2.0"
+# Loading options from '$HOME/.catapult/10.4b-841621.aol.reg'.
+solution file add ./normals_fl.cpp
 # /INPUTFILES/1
-options set Input/CppStandard c++11
-# c++11
-options save
-# Saving options to file '$HOME/.catapult/10.4b-841621.aol.reg'.
 go analyze
 # Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
 # Moving session transcript to file "/home/mdk/Spector-HLS/normals/catapult/src/catapult.log"
-# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
 # Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
 # Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
-# Error: $PROJECT_HOME/normals.cpp(7): identifier "fl" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(9): identifier "fl" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(9): identifier "fl" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(10): identifier "dint32" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(15): identifier "fl" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(15): identifier "fl" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(15): identifier "fl" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(23): incomplete type is not allowed (CRD-70)
-# Error: $PROJECT_HOME/normals.cpp(23): identifier "ac_channel" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(23): identifier "fl" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(23): identifier "vmap" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(23): expected a ")" (CRD-18)
-# Error: $PROJECT_HOME/normals.cpp(24): expected a ";" (CRD-65)
-# Warning: $PROJECT_HOME/normals.cpp(68): parsing restarts here after previous syntax error (CRD-12)
-# Error: $PROJECT_HOME/normals.cpp(69): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(69): identifier "data0" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(69): identifier "index01" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(70): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(70): identifier "data1" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(70): identifier "index10" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(72): "fl" is not a type name (CRD-757)
-# Error: $PROJECT_HOME/normals.cpp(73): expected a declaration (CRD-169)
-# Warning: $PROJECT_HOME/normals.cpp(79): parsing restarts here after previous syntax error (CRD-12)
-# Error: $PROJECT_HOME/normals.cpp(80): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(80): variable "r" has already been defined (CRD-247)
-# Error: $PROJECT_HOME/normals.cpp(81): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(81): variable "r" has already been defined (CRD-247)
-# Error: $PROJECT_HOME/normals.cpp(83): "fl" is not a type name (CRD-757)
-# Error: $PROJECT_HOME/normals.cpp(83): identifier "ac_sqrt_pwl" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(84): expected a declaration (CRD-169)
-# Error: $PROJECT_HOME/normals.cpp(87): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(87): expected a ";" (CRD-65)
-# Error: $PROJECT_HOME/normals.cpp(88): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(88): variable "mem2" has already been defined (CRD-247)
-# Error: $PROJECT_HOME/normals.cpp(88): expected a ";" (CRD-65)
-# Error: $PROJECT_HOME/normals.cpp(89): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(89): variable "mem2" has already been defined (CRD-247)
-# Error: $PROJECT_HOME/normals.cpp(89): expected a ";" (CRD-65)
-# Error: $PROJECT_HOME/normals.cpp(90): expected a declaration (CRD-169)
-# Warning: $PROJECT_HOME/normals.cpp(95): parsing restarts here after previous syntax error (CRD-12)
-# Error: $PROJECT_HOME/normals.cpp(96): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(96): a value of type "int" cannot be used to initialize an entity of type "int [1]" (CRD-144)
-# Error: $PROJECT_HOME/normals.cpp(97): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(97): variable "data0" has already been defined (CRD-247)
-# Error: $PROJECT_HOME/normals.cpp(97): a value of type "int" cannot be used to initialize an entity of type "int [2]" (CRD-144)
-# Error: $PROJECT_HOME/normals.cpp(99): this declaration has no storage class or type specifier (CRD-77)
-# Error: $PROJECT_HOME/normals.cpp(99): expected a ";" (CRD-65)
-# Warning: $PROJECT_HOME/normals.cpp(117): parsing restarts here after previous syntax error (CRD-12)
-# Error: $PROJECT_HOME/normals.cpp(118): expected a declaration (CRD-169)
-# Warning: $PROJECT_HOME/normals.cpp(120): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(7): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): identifier "HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): identifier "PRAGMA_HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(24): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals_fl.cpp(25): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(27): identifier "data0" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(32): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals_fl.cpp(34): expected a ";" (CRD-65)
+# Warning: $PROJECT_HOME/normals_fl.cpp(57): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "v01" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "data0" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "index01" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): identifier "v10" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): identifier "index10" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(62): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(65): identifier "v00" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(72): identifier "x" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(76): expected a statement (CRD-127)
+# Warning: $PROJECT_HOME/normals_fl.cpp(81): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(83): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(83): a value of type "int" cannot be used to initialize an entity of type "int [0]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): variable "data0" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): a value of type "int" cannot be used to initialize an entity of type "int [1]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): variable "data0" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): a value of type "int" cannot be used to initialize an entity of type "int [2]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(87): expected a declaration (CRD-169)
+# Warning: $PROJECT_HOME/normals_fl.cpp(105): unrecognized #pragma (CRD-161)
+# Warning: $PROJECT_HOME/normals_fl.cpp(106): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(108): expected a declaration (CRD-169)
+# $PROJECT_HOME/normals_fl.cpp(20): Pragma 'hls_design<top>' detected on routine 'normals' (CIN-6)
+# solution design add normals -type top -unlocked (HC-1)
 # Error: Compilation aborted (CIN-5)
-# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 1.60 seconds, memory usage 1366608kB, peak memory usage 1366608kB (SOL-9)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 2.54 seconds, memory usage 1434200kB, peak memory usage 1434200kB (SOL-9)
 # Error: go analyze: Failed analyze
-solution maketest
-# Info: Finished packaging testcase_solution.
-# /home/mdk/Spector-HLS/normals/catapult/src/testcase_solution.tar.gz
-# Info: Testcase package saved to '/home/mdk/Spector-HLS/normals/catapult/src/testcase_solution.tar.gz'
+# File '$PROJECT_HOME/normals_fl.cpp' saved
 go analyze
 # Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
-# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
 # Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
-# Info: Running transformation 'analyze' on solution 'solution.v1': elapsed time 3.95 seconds, memory usage 1366608kB, peak memory usage 1366608kB (SOL-15)
 # Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
-# Error: $PROJECT_HOME/normals.h(12): expected a ";" (CRD-65)
-# Error: $PROJECT_HOME/normals.cpp(9): no suitable conversion function from "ac_fixed<45, 45, true, AC_TRN, AC_WRAP>" to "double" exists (CRD-413)
-# Error: $PROJECT_HOME/normals.cpp(26): identifier "DATA_MEM" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(28): identifier "col" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(62): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
-# Error: $PROJECT_HOME/normals.cpp(62):  (CRD-2656)
+# Error: $PROJECT_HOME/normals_fl.cpp(7): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): identifier "HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): identifier "PRAGMA_HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(24): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals_fl.cpp(25): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(27): identifier "data0" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(32): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals_fl.cpp(34): expected a ";" (CRD-65)
+# Warning: $PROJECT_HOME/normals_fl.cpp(57): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "v01" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "data0" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "index01" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): identifier "v10" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): identifier "index10" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(62): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(65): identifier "v00" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(72): identifier "x" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(76): expected a statement (CRD-127)
+# Warning: $PROJECT_HOME/normals_fl.cpp(81): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(83): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(83): a value of type "int" cannot be used to initialize an entity of type "int [0]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): variable "data0" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): a value of type "int" cannot be used to initialize an entity of type "int [1]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): variable "data0" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): a value of type "int" cannot be used to initialize an entity of type "int [2]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(87): expected a declaration (CRD-169)
+# Warning: $PROJECT_HOME/normals_fl.cpp(105): unrecognized #pragma (CRD-161)
+# Warning: $PROJECT_HOME/normals_fl.cpp(106): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(108): expected a declaration (CRD-169)
+# $PROJECT_HOME/normals_fl.cpp(20): Pragma 'hls_design<top>' detected on routine 'normals' (CIN-6)
 # Error: Compilation aborted (CIN-5)
-# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 5.20 seconds, memory usage 1366608kB, peak memory usage 1366608kB (SOL-9)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 1.59 seconds, memory usage 1434352kB, peak memory usage 1434352kB (SOL-9)
 # Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals_fl.cpp' saved
 go analyze
 # Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
-# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
 # Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
 # Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
-# Error: $PROJECT_HOME/normals.h(12): expected a ";" (CRD-65)
-# Error: $PROJECT_HOME/normals.cpp(9): no suitable conversion function from "ac_fixed<45, 45, true, AC_TRN, AC_WRAP>" to "double" exists (CRD-413)
-# Error: $PROJECT_HOME/normals.cpp(26): identifier "DATA_MEM" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(28): identifier "col" is undefined (CRD-20)
-# Error: $PROJECT_HOME/normals.cpp(62): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
-# Error: $PROJECT_HOME/normals.cpp(62):  (CRD-2656)
+# Error: $PROJECT_HOME/normals_fl.cpp(7): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): identifier "HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): identifier "PRAGMA_HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(24): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals_fl.cpp(25): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(27): identifier "data0" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(32): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals_fl.cpp(34): expected a ";" (CRD-65)
+# Warning: $PROJECT_HOME/normals_fl.cpp(57): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "v01" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "data0" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "index01" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): identifier "v10" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): identifier "index10" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(62): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(65): identifier "v00" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(72): identifier "x" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(76): expected a statement (CRD-127)
+# Warning: $PROJECT_HOME/normals_fl.cpp(81): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(83): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(83): a value of type "int" cannot be used to initialize an entity of type "int [0]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): variable "data0" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): a value of type "int" cannot be used to initialize an entity of type "int [1]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): variable "data0" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): a value of type "int" cannot be used to initialize an entity of type "int [2]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(87): expected a declaration (CRD-169)
+# Warning: $PROJECT_HOME/normals_fl.cpp(105): this pragma must immediately precede a declaration or statement (CRD-608)
+# Warning: $PROJECT_HOME/normals_fl.cpp(106): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(108): expected a declaration (CRD-169)
+# $PROJECT_HOME/normals_fl.cpp(20): Pragma 'hls_design<top>' detected on routine 'normals' (CIN-6)
 # Error: Compilation aborted (CIN-5)
-# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 1.16 seconds, memory usage 1365580kB, peak memory usage 1366608kB (SOL-9)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 1.60 seconds, memory usage 1434352kB, peak memory usage 1434352kB (SOL-9)
 # Error: go analyze: Failed analyze
-solution file remove /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp
+# File '$PROJECT_HOME/normals_fl.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals_fl.cpp(7): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): identifier "HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): identifier "PRAGMA_HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(24): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals_fl.cpp(25): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(27): identifier "data0" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(32): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals_fl.cpp(34): expected a ";" (CRD-65)
+# Warning: $PROJECT_HOME/normals_fl.cpp(57): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "v01" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "data0" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(58): identifier "index01" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): identifier "v10" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): identifier "index10" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(62): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(65): identifier "v00" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(72): identifier "x" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(76): expected a statement (CRD-127)
+# Warning: $PROJECT_HOME/normals_fl.cpp(81): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(83): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(83): a value of type "int" cannot be used to initialize an entity of type "int [0]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): variable "data0" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals_fl.cpp(84): a value of type "int" cannot be used to initialize an entity of type "int [1]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): this declaration has no storage class or type specifier (CRD-77)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): variable "data0" has already been defined (CRD-247)
+# Error: $PROJECT_HOME/normals_fl.cpp(85): a value of type "int" cannot be used to initialize an entity of type "int [2]" (CRD-144)
+# Error: $PROJECT_HOME/normals_fl.cpp(87): expected a declaration (CRD-169)
+# Warning: $PROJECT_HOME/normals_fl.cpp(105): parsing restarts here after previous syntax error (CRD-12)
+# Error: $PROJECT_HOME/normals_fl.cpp(107): expected a declaration (CRD-169)
+# $PROJECT_HOME/normals_fl.cpp(20): Pragma 'hls_design<top>' detected on routine 'normals' (CIN-6)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 1.63 seconds, memory usage 1434352kB, peak memory usage 1434352kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals_fl.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals_fl.cpp(7): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(9): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(14): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(21): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(23): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(24): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(42): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(47): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals_fl.cpp(47):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 1.01 seconds, memory usage 1499888kB, peak memory usage 1499888kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals_fl.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals_fl.cpp(8): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(15): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(15): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(15): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(22): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(22): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(24): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(25): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(43): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(48): identifier "isnan" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(94): identifier "HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(94): expected a ")" (CRD-18)
+# Error: $PROJECT_HOME/normals_fl.cpp(94): identifier "PRAGMA_HLS" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(95): expected a ";" (CRD-65)
+# $PROJECT_HOME/normals_fl.cpp(21): Pragma 'hls_design<top>' detected on routine 'normals' (CIN-6)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 2.76 seconds, memory usage 1638768kB, peak memory usage 1638768kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals_fl.cpp' saved
+# File '$PROJECT_HOME/normals_fl.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals_fl.cpp(8): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(15): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(15): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(15): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(22): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(22): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(24): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(25): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(43): argument list for class template "ac_float" is missing (CRD-441)
+# Error: $PROJECT_HOME/normals_fl.cpp(48): identifier "isnan" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(59): argument list for class template "ac_float" is missing (CRD-441)
+# $PROJECT_HOME/normals_fl.cpp(21): Pragma 'hls_design<top>' detected on routine 'normals' (CIN-6)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 2.83 seconds, memory usage 1704304kB, peak memory usage 1704304kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals_fl.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals_fl.cpp(6): "ac_float" has already been declared in the current scope (CRD-101)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): no operator "/" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(10):             operand types are: int / ac_float (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(18): no operator "*" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(18):             operand types are: ac_ieee_float<binary32> * int (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(48): identifier "isnan" is undefined (CRD-20)
+# $PROJECT_HOME/normals_fl.cpp(21): Pragma 'hls_design<top>' detected on routine 'normals' (CIN-6)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 3.10 seconds, memory usage 1704304kB, peak memory usage 1704304kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals_fl.cpp' saved
+# File '$PROJECT_HOME/normals_fl.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals_fl.cpp(6): "ac_float" has already been declared in the current scope (CRD-101)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): no operator "/" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(10):             operand types are: int / ac_float (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(12): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(20): no operator "*" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(20):             operand types are: ac_ieee_float<binary32> * int (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(50): identifier "isnan" is undefined (CRD-20)
+# $PROJECT_HOME/normals_fl.cpp(23): Pragma 'hls_design<top>' detected on routine 'normals' (CIN-6)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 2.32 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals_fl.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Error: $PROJECT_HOME/normals_fl.cpp(6): "ac_float" has already been declared in the current scope (CRD-101)
+# Error: $PROJECT_HOME/normals_fl.cpp(10): no operator "/" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(10):             operand types are: int / ac_float (CRD-349)
+# Error: $PROJECT_HOME/normals_fl.cpp(12): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals_fl.cpp(50): identifier "isnan" is undefined (CRD-20)
+# $PROJECT_HOME/normals_fl.cpp(23): Pragma 'hls_design<top>' detected on routine 'normals' (CIN-6)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 3.32 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution file remove /home/mdk/Spector-HLS/normals/catapult/src/normals_fl.cpp
 # Info: Branching solution 'solution.v2' at state 'new' (PRJ-2)
 solution file add ./normals.cpp
 # /INPUTFILES/2
@@ -124,17 +355,400 @@ go analyze
 # Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
 # Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
 # Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
-# Error: $PROJECT_HOME/normals.h(12): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals.h(13): identifier "col" is undefined (CRD-20)
 # Error: $PROJECT_HOME/normals.cpp(9): no suitable conversion function from "ac_fixed<45, 45, true, AC_TRN, AC_WRAP>" to "double" exists (CRD-413)
-# Error: $PROJECT_HOME/normals.cpp(26): identifier "DATA_MEM" is undefined (CRD-20)
 # Error: $PROJECT_HOME/normals.cpp(28): identifier "col" is undefined (CRD-20)
 # Error: $PROJECT_HOME/normals.cpp(62): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
 # Error: $PROJECT_HOME/normals.cpp(62):  (CRD-2656)
 # Error: Compilation aborted (CIN-5)
-# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 1.16 seconds, memory usage 1365580kB, peak memory usage 1366608kB (SOL-9)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 1.09 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution file add ./params.h
+# Info: Branching solution 'solution.v3' at state 'new' (PRJ-2)
+# /INPUTFILES/2
+# File '$PROJECT_HOME/params.h' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v3' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/params.h /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Warning: $PROJECT_HOME/params.h(11): last line of file ends without a newline (CRD-1)
+# Warning: $PROJECT_HOME/params.h(11):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-1)
+# Error: $PROJECT_HOME/normals.cpp(9): no suitable conversion function from "ac_fixed<45, 45, true, AC_TRN, AC_WRAP>" to "double" exists (CRD-413)
+# Error: $PROJECT_HOME/normals.cpp(9):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-413)
+# Error: $PROJECT_HOME/normals.cpp(51): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(51):             operand types are: fl [921600] [ ac_int<65, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(51):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(62): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(62):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v3': elapsed time 1.13 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/params.h' saved
+# Input file has changed
+solution file set {$PROJECT_HOME/params.h} -updated
+# Info: Branching solution 'solution.v4' at state 'new' (PRJ-2)
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v4' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/params.h /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(8): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(8):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(50): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(50):             operand types are: fl [921600] [ ac_int<65, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(50):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(61): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(61):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v4': elapsed time 1.24 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v4' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/params.h /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(9): expected a ";" (CRD-65)
+# Error: $PROJECT_HOME/normals.cpp(9):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-65)
+# Error: $PROJECT_HOME/normals.cpp(10): identifier "t" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(10):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(10): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(10):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(52): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(52):             operand types are: fl [921600] [ ac_int<65, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(52):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(63): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(63):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v4': elapsed time 1.13 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v4' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/params.h /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(10): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(10):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(52): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(52):             operand types are: fl [921600] [ ac_int<65, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(52):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(63): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(63):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v4': elapsed time 1.18 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v4' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/params.h /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(10): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(10):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(52): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(52):             operand types are: fl [921600] [ ac_int<65, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(52):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(63): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(63):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v4': elapsed time 1.17 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v4' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/params.h /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(10): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(10):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(63): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(63):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v4': elapsed time 1.17 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v4' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/params.h /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(10): identifier "ac_sqrt" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(10):           detected during compilation of secondary translation unit "/home/mdk/Spector-HLS/normals/catapult/src/normals.cpp" (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(63): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(63):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v4': elapsed time 0.99 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v4' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/params.h /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(63): assertion failed at: "Isrc/interpret.c", line 7198 (CRD-2656)
+# Error: $PROJECT_HOME/normals.cpp(63):  (CRD-2656)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v4': elapsed time 0.98 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+solution file remove {$PROJECT_HOME/params.h}
+# Info: Branching solution 'solution.v5' at state 'new' (PRJ-2)
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v5' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(84): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(84): type name is not allowed (CRD-254)
+# Warning: $PROJECT_HOME/normals.cpp(88): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 85) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(89): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 85) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(90): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 85) (CRD-780)
+# Error: $PROJECT_HOME/normals.cpp(112): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(112):             operand types are: fl [48] [ ac_int<65, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(112): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(112):             operand types are: fl [921600] [ ac_int<66, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(113): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(113):             operand types are: fl [48] [ ac_int<65, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(113): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(113):             operand types are: fl [921600] [ ac_int<66, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(114): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(114):             operand types are: fl [48] [ ac_int<65, true> ] (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(114): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(114):             operand types are: fl [921600] [ ac_int<66, true> ] (CRD-349)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v5': elapsed time 1.76 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v5' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(84): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Error: $PROJECT_HOME/normals.cpp(84): type name is not allowed (CRD-254)
+# Warning: $PROJECT_HOME/normals.cpp(88): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 85) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(89): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 85) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(90): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 85) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v5': elapsed time 1.73 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v5' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(87): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Warning: $PROJECT_HOME/normals.cpp(91): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(92): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(93): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v5': elapsed time 1.76 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution file remove {$PROJECT_HOME/normals.cpp}
+# Info: Branching solution 'solution.v6' at state 'new' (PRJ-2)
+solution file add ./normals.cpp
+# /INPUTFILES/2
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(87): identifier "ac_sqrt_pwl" is undefined (CRD-20)
+# Warning: $PROJECT_HOME/normals.cpp(91): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(92): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(93): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 1.79 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(87): namespace "ac" has no member "ac_sqrt_pwl" (CRD-135)
+# Warning: $PROJECT_HOME/normals.cpp(91): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(92): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(93): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 1.83 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(87): no instance of overloaded function "ac_math::ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(87):             argument types are: (fl, fl) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(91): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(92): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(93): reference is to variable "i" (declared at line 42) -- under old for-init scoping rules it would have been variable "i" (declared at line 88) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 1.90 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (fl, fl) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(92): reference is to variable "i" (declared at line 43) -- under old for-init scoping rules it would have been variable "i" (declared at line 89) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(93): reference is to variable "i" (declared at line 43) -- under old for-init scoping rules it would have been variable "i" (declared at line 89) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 43) -- under old for-init scoping rules it would have been variable "i" (declared at line 89) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 1.92 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
 # Error: go analyze: Failed analyze
 # File '$PROJECT_HOME/normals.h' saved
+# File '$PROJECT_HOME/normals.cpp' saved
 # File '$PROJECT_HOME/normals.h' saved
-quit
-# Saving project file '/home/mdk/Spector-HLS/normals/catapult/src/Catapult.ccs'. (PRJ-5)
-// Finish time Tue Dec 10 17:18:19 2019, time elapsed 30:49:34, peak memory 1.30GB, exit status 0
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL, FL) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(92): reference is to variable "i" (declared at line 43) -- under old for-init scoping rules it would have been variable "i" (declared at line 89) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(93): reference is to variable "i" (declared at line 43) -- under old for-init scoping rules it would have been variable "i" (declared at line 89) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 43) -- under old for-init scoping rules it would have been variable "i" (declared at line 89) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 1.95 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution file remove -all
+# Info: Branching solution 'solution.v7' at state 'new' (PRJ-2)
+solution file add ./normals.cpp
+# /INPUTFILES/2
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v7' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL, FL) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(92): reference is to variable "i" (declared at line 43) -- under old for-init scoping rules it would have been variable "i" (declared at line 89) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(93): reference is to variable "i" (declared at line 43) -- under old for-init scoping rules it would have been variable "i" (declared at line 89) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 43) -- under old for-init scoping rules it would have been variable "i" (declared at line 89) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v7': elapsed time 1.93 seconds, memory usage 1769840kB, peak memory usage 1769840kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.h' saved
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v7' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL, FL) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: $PROJECT_HOME/normals.cpp(94): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(94):             operand types are: fl [921600] [ ac_fixed<53, 41, true, AC_TRN, AC_WRAP> ] (CRD-349)
+# Warning: $PROJECT_HOME/normals.cpp(95): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: $PROJECT_HOME/normals.cpp(95): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(95):             operand types are: fl [921600] [ ac_fixed<53, 41, true, AC_TRN, AC_WRAP> ] (CRD-349)
+# Warning: $PROJECT_HOME/normals.cpp(96): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: $PROJECT_HOME/normals.cpp(96): no operator "[]" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/normals.cpp(96):             operand types are: fl [921600] [ ac_fixed<53, 41, true, AC_TRN, AC_WRAP> ] (CRD-349)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v7': elapsed time 2.06 seconds, memory usage 1835376kB, peak memory usage 1835376kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v7' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL, FL) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: $PROJECT_HOME/normals.cpp(94): no suitable conversion function from "FL" to "int" exists (CRD-413)
+# Warning: $PROJECT_HOME/normals.cpp(95): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: $PROJECT_HOME/normals.cpp(95): no suitable conversion function from "FL" to "int" exists (CRD-413)
+# Warning: $PROJECT_HOME/normals.cpp(96): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: $PROJECT_HOME/normals.cpp(96): no suitable conversion function from "FL" to "int" exists (CRD-413)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v7': elapsed time 2.04 seconds, memory usage 1835376kB, peak memory usage 1835376kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v7' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL, FL) (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(89): identifier "y" is undefined (CRD-20)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(95): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(96): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v7': elapsed time 2.09 seconds, memory usage 1835376kB, peak memory usage 1835376kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v7' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL, FL) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(95): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(96): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v7': elapsed time 2.08 seconds, memory usage 1835376kB, peak memory usage 1835376kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v7' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL, FL) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(95): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(96): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v7': elapsed time 2.09 seconds, memory usage 1835376kB, peak memory usage 1835376kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.h' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v7' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL, FL) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(95): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(96): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v7': elapsed time 2.19 seconds, memory usage 1835376kB, peak memory usage 1835376kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v7' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL *, FL *) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(95): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(96): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v7': elapsed time 2.22 seconds, memory usage 1835376kB, peak memory usage 1835376kB (SOL-9)
+# Error: go analyze: Failed analyze
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v7' (SOL-8)
+# Front End called with arguments: -- /home/mdk/Spector-HLS/normals/catapult/src/normals.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: $PROJECT_HOME/normals.cpp(88): no instance of overloaded function "ac_sqrt_pwl" matches the argument list (CRD-304)
+# Error: $PROJECT_HOME/normals.cpp(88):             argument types are: (FL *, FL *) (CRD-304)
+# Warning: $PROJECT_HOME/normals.cpp(94): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(95): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Warning: $PROJECT_HOME/normals.cpp(96): reference is to variable "i" (declared at line 41) -- under old for-init scoping rules it would have been variable "i" (declared at line 91) (CRD-780)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v7': elapsed time 2.20 seconds, memory usage 1900912kB, peak memory usage 1900912kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/normals.cpp' saved
+# File '$PROJECT_HOME/normals.cpp' saved
+solution maketest
+# Info: Finished packaging testcase_solution.
+# /home/mdk/Spector-HLS/normals/catapult/src/testcase_solution.tar.gz
+# Info: Testcase package saved to '/home/mdk/Spector-HLS/normals/catapult/src/testcase_solution.tar.gz'
