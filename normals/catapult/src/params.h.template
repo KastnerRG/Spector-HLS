@@ -1,8 +1,5 @@
-
-
-#define PRAGMA_SUB(x) _Pragma(#x)
-#define PRAGMA_HLS(x) PRAGMA_SUB(x)
-
+#ifndef PARAMS_H_
+#define PARAMS_H_
 #define rows 480
 #define cols 640
 #define KNOB_WINDOW_SIZE_X %1
@@ -10,3 +7,4 @@
 #define inner_unroll2 %3
 #define outer_unroll %4
 #define partition_factor %5
+#endif

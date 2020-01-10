@@ -6,30 +6,36 @@ import re
 import numpy as np
 import xml.etree.ElementTree as ET
 
-KNOB_NUM_HIST  = [i for i in range(1, 16)]
-KNOB_HIST_SIZE = [256]
+KNOB_NUM_HIST = [i for i in range(1,16)] # 0
+KNOB_HIST_SIZE = [256] # 1
+B=[0]
+KNOB_UNROLL_LMM = [i for i in range(1,8)] # 2 
+KNOB_UNROLL_LP  = [i for i in range(1,4)] # 3
+I=[1]
+KNOB_DATA_DIV = [True, False] # True for interleave, false for block # 4
+KNOB_DATA_INTERLEAVE = [1, 2] # 5
+KNOB_DATA_BLOCK = [1024,2048,4096,8192,16384,32768,65536] # 5
 
-KNOB_NUM_WORK_ITEMS  = [1, 2, 4, 8]
-KNOB_NUM_WORK_GROUPS = [1, 2, 4, 8]
-KNOB_UNROLL_FACTOR   = [i for i in range(1,16)]
-PIPE_FACTOR          = [0, 1, 2]
-KNOB_SIMD            = [1]
-KNOB_COMPUTE_UNITS   = [1]
-
-KNOB_ACCUM_SMEM      = [0]
-
-
-allCombinations = list(itertools.product(
-    KNOB_NUM_HIST,        # 0
-    KNOB_HIST_SIZE,       # 1
-    KNOB_NUM_WORK_ITEMS,  # 2
-    KNOB_NUM_WORK_GROUPS, # 3
-    KNOB_SIMD,            # 4
-    KNOB_COMPUTE_UNITS,   # 5
-    KNOB_ACCUM_SMEM,      # 6
-    KNOB_UNROLL_FACTOR,    # 7
-    PIPE_FACTOR		  # 8
+blockCombinations = list(itertools.product(
+    KNOB_HIST_SIZE, #0
+    KNOB_NUM_HIST,  #1
+    KNOB_UNROLL_LMM, #2
+    KNOB_UNROLL_LP, #3
+    B, #4
+    KNOB_DATA_BLOCK #5
     ))
+
+interleaveCombinations = list(itertools.product(
+    KNOB_HIST_SIZE, #0
+    KNOB_NUM_HIST,  #1
+    KNOB_UNROLL_LMM, #2
+    KNOB_UNROLL_LP, #3
+    I, #4
+    KNOB_DATA_INTERLEAVE #5
+    ))
+
+#print("HELLO")
+finalCombinations = blockCombinations + interleaveCombinations
 
 def parse_resources(resources_node):
     tags = ['BRAM_18K','DSP48E','FF','LUT']
@@ -37,18 +43,27 @@ def parse_resources(resources_node):
     return list(map(int, resources))
 
 
-def parse_xml(filename1,filename2):
+def parse_xml(filename1,filename2,filename3):
     tree = ET.parse(filename1)
     root = tree.getroot()
 
     #resources_node       = root.find('AreaEstimates/Resources')
     #avail_resources_node = root.find('AreaEstimates/AvailableResources')
     est_clk_period = root.find('TimingReport/AchievedClockPeriod').text
-    slices=root.find('AreaReport/Resources/SLICE').text
-    slices=int(slices)
-    tree=ET.parse(filename2)
-    root=tree.getroot()
-    avg_latency = root.find('PerformanceEstimates/SummaryOfOverallLatency/Average-caseLatency').text
+    f=open(filename3,'r')
+    a=f.readlines()
+    t=(a[76].split('|'))
+    if t[1].strip('  ')=='CLB':
+        slices=int(t[2].strip(' '))
+    f.close()
+
+    f=open(filename2,'r')
+    print(filename2)
+    b=f.readlines()
+    k=(b[23].split())
+    avg_latency=int(k[4])
+    f.close()
+    
     throughput="{0:.4f}".format(((int(avg_latency)*float(est_clk_period))/1000000000))
     #resources       = parse_resources(resources_node)
     #avail_resources = parse_resources(avail_resources_node)
@@ -80,16 +95,16 @@ def removeCombinations(combs):
 
 def main():
 
-    finalCombinations = removeCombinations(allCombinations)
-    file1=open('final_result_impl.csv','w')
-    file1.write("n"+","+"knob_NUM_HIST"+","+"knob_HIST_SIZE"+","+"knob_NUM_WORK_ITEMS"+","+"knob_NUM_WORK_GROUPS"+","+"knob_SIMD"+","+"knob_COMPUTE_UNITS"+","+"knob_ACCUM_SMEM"+","+"knob_UNROLL_FACTOR"+","+"knob_PIPE_FACTOR"+","+"obj1"+","+"obj2"+"\n")
-    for d in sorted(glob.glob('impl_reports/histogram_main_export*.xml')):
-        m = re.search('histogram_main_export(\d+)', d)
+    file1=open('catapult_histogram.csv','w')
+    file1.write("n"+","+"knob_KNOB_HIST_SIZE"+","+"knob_KNOB_NUM_HIST"+","+"knob_KNOB_UNROLL_LLM"+","+"knob_KNOB_UNROLL_LP"+","+"knob_I_B"+","+"knob_KNOB_DATA_BLOCK_INTERLEAVE"+","+"obj1"+","+"obj2"+"\n")
+    for d in sorted(glob.glob('impl_reports/histogram_export*.xml')):
+        m = re.search('histogram_export(\d+)', d)
         num = m.group(1)
-        synth_path=os.path.join('syn_reports/csynth'+num+'.xml')
-        slices,lat=parse_xml(d,synth_path)
+        synth_path=os.path.join('syn_reports/cycle'+num+'.rpt')
+        d2=os.path.join('impl_reports/histogram_utilization_routed'+num+'.rpt')
+        slices,lat=parse_xml(d,synth_path,d2)
         file1.write(num+",")
-        for j in range(9):
+        for j in range(6):
             file1.write(str(finalCombinations[int(num)][j])+",")
         file1.write(str(lat)+","+str(slices)+"\n")
     file1.close()

@@ -10,6 +10,6 @@
 #define imageW 2048
 #define imageH 2048
 #define stride 2048
-#define size_im 2048
+#define size_im 2048*2048
 
 #endif
