@@ -5,7 +5,7 @@
 //             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 //                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
 //  
-//  Running on Linux mdk@mdk-FX504 5.0.0-36-generic x86_64 aol
+//  Running on Linux mdk@mdk-FX504 5.3.0-28-generic x86_64 aol
 //  
 //  Package information: SIFLIBS v23.4_2.0, HLS_PKGS v23.4_2.0, 
 //                       SIF_TOOLKITS v23.4_2.0, SIF_XILINX v23.4_2.0, 
@@ -16,8 +16,9 @@
 //  
 solution new -state initial
 solution options defaults
+solution options set /Input/CppStandard c++11
+solution options set /Output/GenerateCycleNetlist false
 solution file add ./src/matrix_mul.cpp -type C++
-solution file add ./src/matrix_mul_test.cpp -type C++ -exclude true
 directive set -DESIGN_GOAL area
 directive set -SPECULATE true
 directive set -MERGEABLE true
@@ -72,6 +73,7 @@ directive set /matrix_mul/core/LOAD_MEM_MAIN -UNROLL %1
 directive set /matrix_mul/core/loop_1 -UNROLL %2
 directive set /matrix_mul/core/loop_2 -UNROLL %3
 directive set /matrix_mul/core/loop_4 -UNROLL %4
-directive set /matrix_mul/core/mem.data:rsc %5 %6
+directive set /matrix_mul/core/memB.data:rsc %5 %6
+directive set /matrix_mul/core/memC.data:rsc %5 %6
 go assembly
-go assembly
+go extract
