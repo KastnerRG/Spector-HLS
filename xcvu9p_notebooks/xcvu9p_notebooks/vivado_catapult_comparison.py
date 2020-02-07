@@ -12,6 +12,4 @@ print("common columns: ", cmn_col)
 catHistdf1 = catHistdf[cmn_col]
 vivHistdf1 = vivHistdf[cmn_col]
 
-s1 = pd.merge(catHistdf1, vivHistdf1, how='inner', on=['knob_HIST_SIZE', 'knob_NUM_HIST'])
 
-print(s1)

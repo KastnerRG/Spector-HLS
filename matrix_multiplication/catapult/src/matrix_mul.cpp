@@ -12,7 +12,7 @@ void matrix_mul(ac_channel<dtype> &A, ac_channel<dtype> &B, ac_channel<dtype> &C
 		LOAD_MEM_MAIN: for(unsigned i=0; i<TMVAL; i++){
 			memA.data[i] = A.read();
 			memB.data[i] = B.read();
-			memC.data[i] = C.read();
+			memC.data[i] = 0;
 		}
 		loop1:for(int i=0;i<TMVAL;i=i+SUBDIM_X)
 		{
@@ -29,6 +29,8 @@ void matrix_mul(ac_channel<dtype> &A, ac_channel<dtype> &B, ac_channel<dtype> &C
 				}
 			}
 		}
+		loop_5:for(int i=0; i<MVAL; i++)
+						 C.write(memC.data[i]);
 	}
 }
 
