@@ -72,6 +72,6 @@ directive set /matrix_mul/core/LOAD_MEM_MAIN -UNROLL %1
 directive set /matrix_mul/core/loop_1 -UNROLL %2
 directive set /matrix_mul/core/loop_2 -UNROLL %3
 directive set /matrix_mul/core/loop_4 -UNROLL %4
-directive set /matrix_mul/core/mem.data:rsc %5 %6
-go assembly
+directive set /matrix_mul/core/memB.data:rsc %5 %6
+directive set /matrix_mul/core/memC.data:rsc %5 %6
 go assembly
