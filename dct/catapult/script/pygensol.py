@@ -127,7 +127,7 @@ unroll_dct=[1,2,4,8]
 unroll_width=[1,2,4,8]
 unroll_height=[1,2,4,8]
 array_partition=[1,2,4,8]
-channel_partition=[2048,4096,8192,16384]
+channel_partition=[16384]
 
 blockCombinations = list(itertools.product(
     blockdim_x, #0
