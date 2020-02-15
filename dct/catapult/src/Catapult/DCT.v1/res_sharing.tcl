@@ -1,0 +1,13 @@
+directive set /DCT/DCT:core/DCT:core:conc/loop_6:mul#5 RESOURCE_NAME loop_4:mul#2:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_6:mul#7 RESOURCE_NAME loop_4:mul#2:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_6:mul#9 RESOURCE_NAME loop_4:mul#2:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_4:mul#2 RESOURCE_NAME loop_4:mul#2:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_6:acc#11 RESOURCE_NAME loop_6:acc#11:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_6:acc#13 RESOURCE_NAME loop_6:acc#11:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_out:acc#1 RESOURCE_NAME loop_1:acc#5:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_6:loop_6:acc#1 RESOURCE_NAME loop_1:acc#5:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_3:acc#2 RESOURCE_NAME loop_1:acc#5:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_2:acc#5 RESOURCE_NAME loop_1:acc#5:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_1:acc#5 RESOURCE_NAME loop_1:acc#5:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_12:acc#7 RESOURCE_NAME loop_12:acc#7:rg
+directive set /DCT/DCT:core/DCT:core:conc/loop_7:acc#5 RESOURCE_NAME loop_12:acc#7:rg
