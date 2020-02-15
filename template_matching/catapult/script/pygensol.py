@@ -21,7 +21,7 @@ tparamFilepath = "./src/params.h.template"
 tdirectiveFilepath = "./src/directives.tcl.template"
 
 outRootPath = "./solutions"
-benchmark_name = "template matching"
+benchmark_name = "template_matching"
 
 files_to_copy = ["./src/fpga_temp_match.cpp", "./src/fpga_temp_matching.h"]
 

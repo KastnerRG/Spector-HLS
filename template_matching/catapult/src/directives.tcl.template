@@ -18,7 +18,7 @@ solution new -state initial
 solution options defaults
 solution options set /Input/CppStandard c++11
 solution options set /Output/GenerateCycleNetlist false
-solution file add ./src/fpga_temp_match.cpp -type C++
+solution file add /home/ubuntu/Spector-HLS/template_matching/catapult/src/fpga_temp_match.cpp -type C++
 directive set -PIPELINE_RAMP_UP true
 directive set -CLUSTER_TYPE combinational
 directive set -CLUSTER_FAST_MODE false
