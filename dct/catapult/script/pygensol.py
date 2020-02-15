@@ -127,8 +127,7 @@ unroll_dct=[1,2,4,8]
 unroll_width=[1,2,4,8]
 unroll_height=[1,2,4,8]
 array_partition=[1,2,4,8]
-channel_partition=[16384]
-
+channel_partition=[54288, 1048576, 2097152, 4194304]
 blockCombinations = list(itertools.product(
     blockdim_x, #0
     blockdim_y, #1
@@ -140,8 +139,6 @@ blockCombinations = list(itertools.product(
     "B" #7
     ))
 
-finalCombinations = blockCombinations 
-print("final combinations are " + str(len(finalCombinations)))
 # -----------------------------------------------------
 
 def removeCombinations(combs):
@@ -150,14 +147,21 @@ def removeCombinations(combs):
 
     for c in combs:
         copyit = True
-        if c[5] > c[0]:
+        if c[5] == 1 and c[6] != 4194304:
             copyit = False
-
+        if c[5] == 2 and c[6] != 2097152:
+            copyit = False
+        if c[5] == 4 and c[6] != 1048576:
+            copyit = False
+        if c[5] == 8 and c[6] != 54288:
+            copyit = False
         if copyit:
             finalList.append(c)
 
     return finalList
 
+finalCombinations = removeCombinations(blockCombinations)
+print("final combinations are " + str(len(finalCombinations)))
 def main():
 
     global logName
@@ -185,8 +189,9 @@ def main():
         logName = logNamePnr
     else:
         logName = logNameSynth
+    
     #finalCombinations = removeCombinations(finalCombinations)
-    fCombinations =finalCombinations
+    fCombinations = finalCombinations
     print("Num combinations: " + str(len(fCombinations)))
  
     dirlist = write_params(fCombinations, tparamFilepath, tdirectiveFilepath)
