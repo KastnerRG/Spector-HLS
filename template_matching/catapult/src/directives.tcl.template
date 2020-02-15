@@ -70,13 +70,12 @@ solution library add Xilinx_FIFO
 go libraries
 directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
 go assembly
-set directive /SAD_MATCH/core/loop_1 -UNROLL %2
-set directive /SAD_MATCH/core/loop_2 -UNROLL %3
-set directive /SAD_MATCH/core/loop_4 -UNROLL %4
-set directive /SAD_MATCH/core/loop_5 -UNROLL %5
-set directive /SAD_MATCH/core/loop_7 -UNROLL %6
-set directive /SAD_MATCH/core/templ:rsc %9 %7
-set directive /SAD_MATCH/core/win_buf:rsc %9 %0
-set directive /SAD_MATCH/core/input.data:rsc %9 %8
-set directive /SAD_MATCH/core/output.data:rsc %9 %8
+directive set /SAD_MATCH/core/loop_1 -UNROLL %2
+directive set /SAD_MATCH/core/loop_2 -UNROLL %3
+directive set /SAD_MATCH/core/loop_4 -UNROLL %4
+directive set /SAD_MATCH/core/loop_5 -UNROLL %5
+directive set /SAD_MATCH/core/loop_7 -UNROLL %6
+directive set /SAD_MATCH/core/win_buf:rsc %9 %0
+directive set /SAD_MATCH/core/input.data:rsc %9 %8
+directive set /SAD_MATCH/core/output.data:rsc %9 %8
 go extract
