@@ -69,7 +69,7 @@ solution library add Xilinx_FIFO
 go libraries
 directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
 go assembly
-directive set /sobel_x/core/loop_1 -UNROLL %2
-directive set /sobel_x/core/mem_in.data:rsc %4 %0
+directive set /sobel_x/core/loop_1 -UNROLL %1
+directive set /sobel_x/core/mem_in.data:rsc %3 %0
 go architect
 go extract
