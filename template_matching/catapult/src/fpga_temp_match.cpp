@@ -4,13 +4,13 @@
 void SAD_MATCH(ac_channel<axis_t> &INPUT, ac_channel<axis_t> &OUTPUT){
 	
 	DATA_MEM input,output;
+	axis_t templ[tmpsize];
 	#ifndef __SYNTHESIS__
 	while(INPUT.available(size_m))
 	#endif
 	{
 		loop_lmm:for(unsigned i=0; i<size_m; i++)
 			input.data[i] = INPUT.read();
-		axis_t templ[tmpsize];
 		loop_tmpz:for(unsigned i=0; i<tmpsize; i++)
 			templ[i] = 0;
 		axis_t row_buf[tmpdim][tmpdim];
