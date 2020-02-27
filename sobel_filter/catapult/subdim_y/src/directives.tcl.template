@@ -18,7 +18,7 @@ solution new -state initial
 solution options defaults
 solution options set /Input/CppStandard c++11
 solution file add ./sobel_subdimy.cpp -type C++
-directive set -DESIGN_GOAL area
+directive set -DESIGN_GOAL latency
 directive set -SPECULATE true
 directive set -MERGEABLE true
 directive set -REGISTER_THRESHOLD 256
@@ -70,6 +70,6 @@ go libraries
 directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
 go assembly
 directive set /sobel_y/core/loop_1 -UNROLL %1
-directive set /sobel_y/core/mem_in.data:rsc %3 %0
+directive set /sobel_y/input_image:rsc %3 %0
 go architect
 go extract

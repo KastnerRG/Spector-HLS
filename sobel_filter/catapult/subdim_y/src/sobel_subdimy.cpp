@@ -16,15 +16,15 @@ void sobel_y(uint8 input_image[H][W],uint1 output_image[H][W])
         loop_2:for(int j=1;j<W-1;j=j+subdim_y)
         {
 
-        image_reg[0][0]=mem_in.data[((i-1))][j-1];
-        image_reg[0][1]=mem_in.data[((i-1))][j];
-        image_reg[0][2]=mem_in.data[((i-1))][j+1];
-        image_reg[1][0]=mem_in.data[i][j-1];
-        image_reg[1][1]=mem_in.data[i][j];
-        image_reg[1][2]=mem_in.data[i][j+1];
-        image_reg[2][0]=mem_in.data[(i+1)][j-1];
-        image_reg[2][1]=mem_in.data[(i+1)][j];
-        image_reg[2][2]=mem_in.data[(i+1)][j+1];
+        image_reg[0][0]=input_image[((i-1))][j-1];
+        image_reg[0][1]=input_image[((i-1))][j];
+        image_reg[0][2]=input_image[((i-1))][j+1];
+        image_reg[1][0]=input_image[i][j-1];
+        image_reg[1][1]=input_image[i][j];
+        image_reg[1][2]=input_image[i][j+1];
+        image_reg[2][0]=input_image[(i+1)][j-1];
+        image_reg[2][1]=input_image[(i+1)][j];
+        image_reg[2][2]=input_image[(i+1)][j+1];
 
         loop_3:for(int k=0;k<subdim_y;k++)
         {
@@ -35,7 +35,6 @@ void sobel_y(uint8 input_image[H][W],uint1 output_image[H][W])
 			{
 				loop_5:for (int n=0;n<3;n++)
 				{
-				    #pragma hls_uroll 
 					pixel = image_reg[m][n];
 					b = pixel & 0xff;
 					g = (pixel >> 8) & 0xff;
@@ -57,7 +56,7 @@ void sobel_y(uint8 input_image[H][W],uint1 output_image[H][W])
 			temp=resultx+resulty;
 			clamped=temp>32?1:0;
 
-			mem_out.data[i][j+k]=clamped;
+			output_image[i][j+k]=clamped;
 
 			if (k+1<subdim_y)
 			{
@@ -70,9 +69,9 @@ void sobel_y(uint8 input_image[H][W],uint1 output_image[H][W])
 				image_reg[1][1]=image_reg[1][2];
 				image_reg[2][1]=image_reg[2][2];
 				
-				image_reg[0][2]=mem_in.data[(i-1)][j+(k+1)+1];
-				image_reg[1][2]=mem_in.data[i][j+(k+1)+1];
-				image_reg[2][2]=mem_in.data[(i+1)][j+(k+1)+1];
+				image_reg[0][2]=input_image[(i-1)][j+(k+1)+1];
+				image_reg[1][2]=input_image[i][j+(k+1)+1];
+				image_reg[2][2]=input_image[(i+1)][j+(k+1)+1];
 			}
 			if(j+k+2==W)
 				break;
