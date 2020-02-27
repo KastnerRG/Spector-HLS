@@ -21,7 +21,7 @@ tparamFilepath = "./src/params.h.template"
 tdirectiveFilepath = "./src/directives.tcl.template"
 
 outRootPath = "./solutions"
-benchmark_name = "sobel subdimx"
+benchmark_name = "sobel_subdimx"
 
 files_to_copy = ["./src/sobel_subdimx.cpp", "./src/sobel.h"]
 
@@ -35,7 +35,7 @@ def run_script(path):
         if run_place_route:
             command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
-            command = " ".join(["timeout 1800", "catapult", "-f", "directives.tcl"])
+            command = " ".join(["timeout 7200", "~/catapult/Mgc_home/bin/catapult","-shell", "-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -49,12 +49,12 @@ def run_script(path):
 
         print(path, "end at", datetime.datetime.now(), " elapsed", end-start)
 
-    except subprocess.CalledSubprocessError:
+    except subprocess.CalledProcessError:
         print(path, "Timeout at", datetime.datetime.now())
 
         outFile = open(logName + '.timeout', 'at')
         outFile.write(path + '\n')
-        outfile.close()
+        outFile.close()
 
     except:
         raise
@@ -121,14 +121,12 @@ def write_params(finalCombinations, tparamFilepath, tdirectiveFilepath):
 # knobs 
 # *****************
 
-dimx_part_factor = [1,2,4,8]
-dimy_part_factor = [1,2,4,8]
+dimx_part_factor = [2073600 , 1036800 , 518400 , 259200 , 129600 , 64800 , 32400 , 16200 , 8100 , 4050 , 2025,414720,207360,138240,103680,82944]
 unroll_factor = [1,2,3,4,5,6,7,8]
 subdim_x = [1,2,4,8,16,32]
 
 blockCombinations = list(itertools.product(
     dimx_part_factor, #0
-    dimy_part_factor, #1
     unroll_factor, #2
     subdim_x, #3
     "B" #4
@@ -144,8 +142,7 @@ def removeCombinations(combs):
 
     for c in combs:
         copyit = True
-        if c[5] > c[0]:
-            copyit = False
+
 
         if copyit:
             finalList.append(c)

@@ -21,7 +21,7 @@ tparamFilepath = "./src/params.h.template"
 tdirectiveFilepath = "./src/directives.tcl.template"
 
 outRootPath = "./solutions"
-benchmark_name = "template matching"
+benchmark_name = "template_matching"
 
 files_to_copy = ["./src/fpga_temp_match.cpp", "./src/fpga_temp_matching.h"]
 
@@ -33,9 +33,9 @@ def run_script(path):
     try:
         start = time.time()
         if run_place_route:
-            command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
+            command = " ".join(["timeout 7200", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
-            command = " ".join(["timeout 3600", "~/catapult/Mgc_home/bin/catapult","-shell", "-f", "directives.tcl"])
+            command = " ".join(["timeout 7200", "/home/ubuntu/catapult/Mgc_home/bin/catapult","-shell", "-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -49,7 +49,7 @@ def run_script(path):
 
         print(path, "end at", datetime.datetime.now(), " elapsed", end-start)
 
-    except subprocess.CalledSubprocessError:
+    except subprocess.CalledProcessError:
         print(path, "Timeout at", datetime.datetime.now())
 
         outFile = open(logName + '.timeout', 'at')
