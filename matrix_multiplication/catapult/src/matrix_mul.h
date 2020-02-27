@@ -6,8 +6,4 @@
 
 typedef ac_fixed<20, 8, true> dtype;
 
-struct DATA_MEM {
-	dtype data[MVAL*MVAL];
-};
-
 #endif

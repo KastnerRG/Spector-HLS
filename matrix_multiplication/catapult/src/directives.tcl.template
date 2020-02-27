@@ -1,11 +1,11 @@
-//  Catapult Ultra Synthesis 10.4b/841621 (Production Release) Thu Oct 24 17:20:07 PDT 2019
+// PDT 2019
 //  
 //  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
 //                        UNPUBLISHED, LICENSED SOFTWARE.
 //             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 //                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
 //  
-//  Running on Linux mdk@mdk-FX504 5.3.0-28-generic x86_64 aol
+//  Running on Linux mdk@mdk-FX504 5.3.0-40-generic x86_64 aol
 //  
 //  Package information: SIFLIBS v23.4_2.0, HLS_PKGS v23.4_2.0, 
 //                       SIF_TOOLKITS v23.4_2.0, SIF_XILINX v23.4_2.0, 
@@ -17,9 +17,8 @@
 solution new -state initial
 solution options defaults
 solution options set /Input/CppStandard c++11
-solution options set /Output/GenerateCycleNetlist false
-solution file add matrix_mul.cpp -type C++
-directive set -DESIGN_GOAL area
+solution file add ./matrix_mul.cpp -type C++
+directive set -DESIGN_GOAL latency
 directive set -SPECULATE true
 directive set -MERGEABLE true
 directive set -REGISTER_THRESHOLD 256
@@ -63,17 +62,16 @@ directive set -PIPELINE_RAMP_UP true
 go new
 directive set -DESIGN_HIERARCHY matrix_mul
 go compile
-solution library add mgc_Xilinx-VIRTEX-uplus-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -1 -part xcvu9p-flga2104-1-e
+solution library add mgc_Xilinx-VIRTEX-uplus-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -1 -part xcvu9p-flgb2104-1-e
 solution library add Xilinx_RAMS
 solution library add Xilinx_ROMS
 solution library add Xilinx_FIFO
 go libraries
 directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
-directive set /matrix_mul/core/LOAD_MEM_MAIN -UNROLL %1
+go assembly
 directive set /matrix_mul/core/loop1 -UNROLL %2
 directive set /matrix_mul/core/loop2 -UNROLL %3
 directive set /matrix_mul/core/loop4 -UNROLL %4
-directive set /matrix_mul/core/memB.data:rsc %5 %6
-directive set /matrix_mul/core/memC.data:rsc %5 %6
-go assembly
+directive set /matrix_mul/B:rsc %6 %7
+directive set /matrix_mul/C:rsc %6 %7
 go extract

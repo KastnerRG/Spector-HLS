@@ -121,39 +121,38 @@ def write_params(finalCombinations, tparamFilepath, tdirectiveFilepath):
 # knobs 
 # *****************
 
-KNOB_MAT_SIZE = [32] # 0
-KNOB_UNROLL_LMM = [i for i in range(1,16)] # 1
+KNOB_MAT_SIZE = [1024] # 0
+SUBDIM_X =[1,2,4,8,16] # 1 
+SUBDIM_Y =[1,2,4,8,16] # 2
+KNOB_UNROLL_L1  = [1, 2, 4, 8] # 3
+KNOB_UNROLL_L2  = [1, 2, 4, 8] # 4
+KNOB_UNROLL_L3  = [1, 2, 4, 8] # 5
+KNOB_DATA_BLOCK = [1024,512,256,128,64,32] # 6
 
-KNOB_UNROLL_L1  = [i for i in range(1,4)] # 2
-KNOB_UNROLL_L2  = [i for i in range(1,4)] # 3
-KNOB_UNROLL_L3  = [i for i in range(1,4)] # 4
-
-KNOB_DATA_DIV = [True, False] # True for interleave, false for block # 5
-KNOB_DATA_INTERLEAVE = [1, 2] # 6
-KNOB_DATA_BLOCK = [1024,512,256,128,64,32,16] # 7
 
 blockCombinations = list(itertools.product(
     KNOB_MAT_SIZE, #0
-    KNOB_UNROLL_LMM, #1
-    KNOB_UNROLL_L1, #2
-    KNOB_UNROLL_L2, #3
-    KNOB_UNROLL_L3, #4
-    "B", #5
-    KNOB_DATA_BLOCK #6
+    KNOB_UNROLL_L1, #1
+    KNOB_UNROLL_L2, #2
+    KNOB_UNROLL_L3, #3
+    SUBDIM_X, #4
+    SUBDIM_Y, #5
+    "B", #6
+    KNOB_DATA_BLOCK #7
     ))
 
-interleaveCombinations = list(itertools.product(
-    KNOB_MAT_SIZE, #0
-    KNOB_UNROLL_LMM, #1
-    KNOB_UNROLL_L1, #2
-    KNOB_UNROLL_L2, #3
-    KNOB_UNROLL_L3, #4
-    "I", #5
-    KNOB_DATA_INTERLEAVE #6
-    ))
+#interleaveCombinations = list(itertools.product(
+#    KNOB_MAT_SIZE, #0
+#    KNOB_UNROLL_LMM, #1
+#    KNOB_UNROLL_L1, #2
+#    KNOB_UNROLL_L2, #3
+#    KNOB_UNROLL_L3, #4
+#    "I", #5
+#    KNOB_DATA_INTERLEAVE #6
+#    ))
 
 print("HELLO")
-finalCombinations = blockCombinations + interleaveCombinations
+finalCombinations = blockCombinations
 print("final combinations are " + str(len(finalCombinations)))
 # -------------------------------------------------------
 
