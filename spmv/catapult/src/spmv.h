@@ -7,12 +7,4 @@
 
 typedef ac_fixed<20, 8, true> FLOAT_VECT;
 
-struct FL_MEM {
-	FLOAT_VECT data[num_rows];
-};
-
-struct INT_MEM {
-	int data[num_rows];
-};
-
 #endif

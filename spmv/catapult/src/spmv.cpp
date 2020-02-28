@@ -15,58 +15,43 @@ PRAGMA_HLS(HLS UNROLL factor=inner_unroll2)
 }
 */
 #pragma design top
-void spmv(ac_channel<int> &Ap, ac_channel<int> &Aj,ac_channel<FLOAT_VECT> &Ax,ac_channel<FLOAT_VECT> &x,ac_channel<FLOAT_VECT> &y)
+void spmv(int Ap[num_rows], int Aj[num_rows], FLOAT_VECT Ax[num_rows],FLOAT_VECT x[num_rows],FLOAT_VECT y[num_rows])
 {
-INT_MEM mem_Ap, mem_Aj;
-FL_MEM mem_Ax, mem_x, mem_y;
-#ifndef __SYNTHESIS__
-while(Ap.available(num_rows))
-#endif
-{
-LOOP_LMM:for(int i=0; i<num_rows; i++)
-{
-mem_Ap.data[i] = Ap.read();
-mem_Aj.data[i] = Aj.read();
-mem_Ax.data[i] = Ax.read();
-mem_x.data[i] = x.read();
-}
-loop_1:for(int row=0;row<num_rows;row++)
-{
-FLOAT_VECT sum=mem_y.data[row];
-unsigned int row_start=mem_Ap.data[row];
-unsigned int row_end   = mem_Ap.data[row+1];
-int jj,ii,kk;
-FLOAT_VECT p_Ax[UNROLL_F];
-FLOAT_VECT p_x[UNROLL_F];
 
-loop_2:for(jj = row_start; jj < row_end; jj=jj+UNROLL_F)
-		{
-			if(jj+UNROLL_F-1 < row_end)
-			{
-		loop_3:for(ii=0; ii<UNROLL_F; ii++)
-					p_x[ii] = mem_x.data[mem_Aj.data[jj+ii]];
+	loop_1:for(int row=0;row<num_rows;row++)
+	{
+	FLOAT_VECT sum=y[row];
+	unsigned int row_start=Ap[row];
+	unsigned int row_end   = Ap[row+1];
+	int jj,ii,kk;
+	FLOAT_VECT p_Ax[UNROLL_F];
+	FLOAT_VECT p_x[UNROLL_F];
 
-		loop_4:for(ii=0; ii<UNROLL_F; ii++){
-				p_Ax[ii] = mem_Ax.data[jj+ii];
-				FLOAT_VECT tmp_sum=0;
-				loop_5:for(int ii=0;ii<UNROLL_F;ii++)
-					tmp_sum+=p_Ax[ii]*p_x[ii];
-				sum=sum+tmp_sum;
-			}
-				//sum += sub_sum(p_Ax, p_x);
-			}
-			else
+	loop_2:for(jj = row_start; jj < row_end; jj=jj+UNROLL_F)
 			{
-			loop_6:for(kk=jj; kk<row_end; kk++)
+				if(jj+UNROLL_F-1 < row_end)
 				{
-					sum += mem_Ax.data[kk] * mem_x.data[mem_Aj.data[kk]];
-				}
-			}
+			loop_3:for(ii=0; ii<UNROLL_F; ii++)
+						p_x[ii] = x[Aj[jj+ii]];
 
+			loop_4:for(ii=0; ii<UNROLL_F; ii++){
+					p_Ax[ii] = Ax[jj+ii];
+					FLOAT_VECT tmp_sum=0;
+					loop_5:for(int ii=0;ii<UNROLL_F;ii++)
+						tmp_sum+=p_Ax[ii]*p_x[ii];
+					sum=sum+tmp_sum;
+				}
+					//sum += sub_sum(p_Ax, p_x);
+				}
+				else
+				{
+				loop_6:for(kk=jj; kk<row_end; kk++)
+					{
+						sum += Ax[kk] * x[Aj[kk]];
+					}
+				}
+
+			}
+			y[row] = sum;
 		}
-		mem_y.data[row] = sum;
-	}
-LOOP_LOAD:for(int i=0; i<num_rows; i++)
-	y.write(mem_y.data[i]);
-}
 }
