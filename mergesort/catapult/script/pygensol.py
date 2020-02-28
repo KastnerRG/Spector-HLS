@@ -21,7 +21,7 @@ tparamFilepath = "./src/params.h.template"
 tdirectiveFilepath = "./src/directives.tcl.template"
 
 outRootPath = "./solutions"
-benchmark_name = "histogram"
+benchmark_name = "mergesort"
 
 files_to_copy = ["./src/mergesort.cpp", "./src/mergesort.h"]
 
@@ -49,7 +49,7 @@ def run_script(path):
 
         print(path, "end at", datetime.datetime.now(), " elapsed", end-start)
 
-    except subprocess.CalledSubprocessError:
+    except subprocess.CalledProcessError:
         print(path, "Timeout at", datetime.datetime.now())
 
         outFile = open(logName + '.timeout', 'at')
@@ -128,7 +128,7 @@ outer_unroll = [1,2,3,4]
 inner_unroll1 = [1,2,3,4]
 inner_unroll2 = [1,2,3,4]
 merge_unroll = [1,2,3,4]
-array_part = [4, 8, 16, 32, 64, 128]
+array_part = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192]
 
 blockCombinations = list(itertools.product(
     no_size, #0
@@ -140,8 +140,7 @@ blockCombinations = list(itertools.product(
     "B" #6
     ))
 
-finalCombinations = blockCombinations 
-print("final combinations are " + str(len(finalCombinations)))
+finalCombinations = blockCombinations
 # -----------------------------------------------------
 
 def removeCombinations(combs):
@@ -150,7 +149,9 @@ def removeCombinations(combs):
 
     for c in combs:
         copyit = True
-        if c[5] > c[0]:
+        if c[0] % c[5] != 0:
+            copyit = False
+        if c[0] / c[5] > 128:
             copyit = False
 
         if copyit:

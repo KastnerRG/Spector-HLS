@@ -16,8 +16,8 @@
 //  
 solution new -state initial
 solution options defaults
-solution file add ./mergesort.cpp -type C++
-directive set -DESIGN_GOAL area
+solution file add /home/ubuntu/catapult_mergesort/src/mergesort.cpp -type C++
+directive set -DESIGN_GOAL latency
 directive set -SPECULATE true
 directive set -MERGEABLE true
 directive set -REGISTER_THRESHOLD 256
@@ -68,12 +68,14 @@ solution library add Xilinx_FIFO
 go libraries
 directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
 go assembly
+set c %0
+set cnt [expr $c / 2]
 directive set /mergesort/core/loop1 -UNROLL %1
+directive set /mergesort/core/loop2 -ITERATIONS $cnt
 directive set /mergesort/core/loop2 -UNROLL %2
-directive set /mergesort/core/loop6 -UNROLL %3
-directive set /mergesort/core/loop7 -UNROLL %4
-directive set /mergesort/core/mem1.data:rsc %6 %5
-directive set /mergesort/core/mem2.data:rsc %6 %5
-
-go architect
+directive set /mergesort/core/loop3 -ITERATIONS %0
+directive set /mergesort/core/loop3 -UNROLL %3
+directive set /mergesort/core/loop6 -UNROLL %4
+directive set /mergesort/in:rsc %6 %5
+directive set /mergesort/out:rsc %6 %5
 go extract
