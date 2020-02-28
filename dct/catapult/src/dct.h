@@ -6,7 +6,4 @@
 
 typedef ac_fixed<20,8,true> fl1;
 
-struct DATA_MEM {
-	fl1 data[size_im];
-};
 #endif
