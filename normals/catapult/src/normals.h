@@ -10,7 +10,4 @@ typedef ac_fixed<16,8, false, AC_RND, AC_SAT> fl;
 typedef ac_fixed<16, 8, false, AC_RND, AC_SAT> FL;
 typedef ac_int<32, true> dint32;
 
-struct DATA_MEM {
-	fl data[TVAL];
-};
 #endif
