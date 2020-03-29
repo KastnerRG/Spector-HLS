@@ -17,7 +17,7 @@
 solution new -state initial
 solution options defaults
 solution options set /Input/CppStandard c++11
-solution file add /home/ubuntu/catapult_tempmatch/src/fpga_temp_match.cpp -type C++
+solution file add ./fpga_temp_match.cpp -type C++
 directive set -PIPELINE_RAMP_UP true
 directive set -CLUSTER_TYPE combinational
 directive set -CLUSTER_FAST_MODE false
@@ -58,11 +58,11 @@ directive set -MEM_MAP_THRESHOLD 32
 directive set -REGISTER_THRESHOLD 256
 directive set -MERGEABLE true
 directive set -SPECULATE true
-directive set -DESIGN_GOAL latency
+directive set -DESIGN_GOAL area
 go new
 directive set -DESIGN_HIERARCHY SAD_MATCH
 go compile
-solution library add mgc_Xilinx-VIRTEX-uplus-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -1 -part xcvu9p-flgb2104-1-e
+solution library add mgc_Xilinx-VIRTEX-uplus-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -1 -part xcvu9p-flga2104-1-e
 solution library add Xilinx_RAMS
 solution library add Xilinx_ROMS
 solution library add Xilinx_FIFO

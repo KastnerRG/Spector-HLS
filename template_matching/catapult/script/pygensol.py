@@ -33,9 +33,9 @@ def run_script(path):
     try:
         start = time.time()
         if run_place_route:
-            command = " ".join(["timeout 7200", "vivado_hls","-f","../../gen_pnr.tcl"])
+            command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
-            command = " ".join(["timeout 7200", "/home/ubuntu/catapult/Mgc_home/bin/catapult","-shell", "-f", "directives.tcl"])
+            command = " ".join(["timeout 3600", "~/catapult/Mgc_home/bin/catapult","-shell", "-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -54,9 +54,9 @@ def run_script(path):
 
         outFile = open(logName + '.timeout', 'at')
         outFile.write(path + '\n')
-        outfile.close()
-        if os.path.isdir(path):
-            subprocess.call(shlex.split("rm -r"+path))
+        outFile.close()
+        #if os.path.isdir(path):
+            #subprocess.call(shlex.split("rm -r"+path))
 
     except:
         raise
