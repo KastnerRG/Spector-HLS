@@ -9,6 +9,7 @@ import argparse
 import shutil
 import time
 import datetime
+import shlex
 
 FULL_UNROLL = -1
 
@@ -35,7 +36,7 @@ def run_script(path):
         if run_place_route:
             command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
-            command = " ".join(["timeout 1800", "catapult", "-f", "directives.tcl"])
+            command = " ".join(["timeout 7200", "~/catapult/Mgc_home/bin/catapult", "-shell", "-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -49,12 +50,14 @@ def run_script(path):
 
         print(path, "end at", datetime.datetime.now(), " elapsed", end-start)
 
-    except subprocess.CalledSubprocessError:
+    except subprocess.CalledProcessError:
         print(path, "Timeout at", datetime.datetime.now())
 
         outFile = open(logName + '.timeout', 'at')
         outFile.write(path + '\n')
-        outfile.close()
+        outFile.close()
+        #if os.path.isdir(path):
+        #    subprocess.call(shlex.split('rm -r '+path))
 
     except:
         raise
@@ -125,7 +128,7 @@ KNOB_WINDOW_SIZE_X = [1,2,4,8,16,32,64,128]
 inner_unroll1 = [1,2,3,4,5]
 inner_unroll2 = [1,2,3,4,5]
 outer_unroll = [1,2,3,4,5]
-partition_factor = [2,4,8,16,32,64,128]
+partition_factor = [460800,230400,115200,57600,28800,14400,7200]
 
 blockCombinations = list(itertools.product(
     KNOB_WINDOW_SIZE_X, #0

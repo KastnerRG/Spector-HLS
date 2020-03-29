@@ -1,0 +1,106 @@
+
+# Messages from "go new"
+
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+
+# Messages from "go analyze"
+
+/CLUSTER_FAST_MODE false
+directive set -CLUSTER_FAST_MODE false
+/CLUSTER_TYPE combinational
+directive set -CLUSTER_TYPE combinational
+/CLUSTER_OPT_CONSTANT_INPUTS true
+directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+/CLUSTER_RTL_SYN false
+directive set -CLUSTER_RTL_SYN false
+/DESIGN_HIERARCHY histogram_hls
+solution design add histogram_hls -type top -unlocked (HC-1)
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+go compile
+/PIPELINE_RAMP_UP true
+directive set -PIPELINE_RAMP_UP true
+directive set -DESIGN_HIERARCHY histogram_hls
+go new
+Moving session transcript to file "/home/ubuntu/Spector-HLS/histogram/catapult/solutions/histogram0178/catapult.log"
+# Error: Compilation aborted (CIN-5)
+# Error: cannot open source file "sys/cdefs.h" (CRD-1696)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+Front End called with arguments: -- /home/ubuntu/Spector-HLS/histogram/catapult/solutions/histogram0178/histogram_hls.cpp (CIN-69)
+/IDLE_SIGNAL {}
+directive set -IDLE_SIGNAL {}
+/STALL_FLAG false
+directive set -STALL_FLAG false
+/ARRAY_SIZE 1024
+directive set -ARRAY_SIZE 1024
+/REGISTER_IDLE_SIGNAL false
+directive set -REGISTER_IDLE_SIGNAL false
+/READY_FLAG {}
+directive set -READY_FLAG {}
+/START_FLAG {}
+directive set -START_FLAG {}
+/TRANSACTION_DONE_SIGNAL true
+directive set -TRANSACTION_DONE_SIGNAL true
+/DONE_FLAG {}
+directive set -DONE_FLAG {}
+/OPT_CONST_MULTS use_library
+directive set -OPT_CONST_MULTS use_library
+/CHARACTERIZE_ROM false
+directive set -CHARACTERIZE_ROM false
+/RESET_CLEARS_ALL_REGS use_library
+directive set -RESET_CLEARS_ALL_REGS use_library
+/CLOCK_OVERHEAD 20.000000
+directive set -CLOCK_OVERHEAD 20.000000
+/INPUTFILES/1
+/CLUSTER_ADDTREE_IN_WIDTH_THRESHOLD 0
+directive set -CLUSTER_ADDTREE_IN_WIDTH_THRESHOLD 0
+/INPUTFILES/2
+/CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+solution file add ./hist_test.cpp -type C++ -exclude true
+directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+solution options defaults
+/PROTOTYPE_ROM true
+solution.v2
+directive set -PROTOTYPE_ROM true
+/ROM_THRESHOLD 64
+solution file add ./histogram_hls.cpp -type C++
+directive set -ROM_THRESHOLD 64
+/MERGEABLE true
+/FSM_ENCODING none
+directive set -MERGEABLE true
+directive set -FSM_ENCODING none
+/REGISTER_THRESHOLD 256
+/FSM_BINARY_ENCODING_THRESHOLD 64
+directive set -REGISTER_THRESHOLD 256
+directive set -FSM_BINARY_ENCODING_THRESHOLD 64
+/DESIGN_GOAL area
+/MEM_MAP_THRESHOLD 32
+directive set -DESIGN_GOAL area
+directive set -MEM_MAP_THRESHOLD 32
+/SPECULATE true
+/LOGIC_OPT false
+directive set -SPECULATE true
+directive set -LOGIC_OPT false
+/SAFE_FSM false
+directive set -SAFE_FSM false
+/REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+directive set -REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+/REG_MAX_FANOUT 0
+directive set -REG_MAX_FANOUT 0
+/NO_X_ASSIGNMENTS true
+directive set -NO_X_ASSIGNMENTS true
+/TIMING_CHECKS true
+directive set -TIMING_CHECKS true
+/MUXPATH true
+directive set -MUXPATH true
+/REGISTER_SHARING_LIMIT 0
+directive set -REGISTER_SHARING_LIMIT 0
+/ASSIGN_OVERHEAD 0
+directive set -ASSIGN_OVERHEAD 0
+/IO_MODE super
+directive set -IO_MODE super
+/CHAN_IO_PROTOCOL use_library
+directive set -CHAN_IO_PROTOCOL use_library
+/REALLOC true
+directive set -REALLOC true
+/UNROLL no
+directive set -UNROLL no

@@ -1,0 +1,125 @@
+//  Catapult Ultra Synthesis 10.4/828904 (Production Release) Thu Jul 25 13:12:11 PDT 2019
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//                        UNPUBLISHED, LICENSED SOFTWARE.
+//             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux ubuntu@ip-172-31-53-71 4.15.0-1057-aws x86_64 aol
+//  
+//  Package information: SIFLIBS v23.4_0.0, HLS_PKGS v23.4_0.0, 
+//                       SIF_TOOLKITS v23.4_0.0, SIF_XILINX v23.4_0.0, 
+//                       SIF_ALTERA v23.4_0.0, CCS_LIBS v23.4_0.0, 
+//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4, 
+//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.7, 
+//                       DesignPad v2.78_1.0
+//  
+//  Start time Mon Jan 27 21:22:16 2020
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log88982a6a02.0"
+dofile ./directives.tcl
+# > solution new -state initial
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# solution.v2
+# > solution options defaults
+# > solution file add ./histogram_hls.cpp -type C++
+# /INPUTFILES/1
+# > solution file add ./hist_test.cpp -type C++ -exclude true
+# /INPUTFILES/2
+# > directive set -DESIGN_GOAL area
+# /DESIGN_GOAL area
+# > directive set -SPECULATE true
+# /SPECULATE true
+# > directive set -MERGEABLE true
+# /MERGEABLE true
+# > directive set -REGISTER_THRESHOLD 256
+# /REGISTER_THRESHOLD 256
+# > directive set -MEM_MAP_THRESHOLD 32
+# /MEM_MAP_THRESHOLD 32
+# > directive set -LOGIC_OPT false
+# /LOGIC_OPT false
+# > directive set -FSM_ENCODING none
+# /FSM_ENCODING none
+# > directive set -FSM_BINARY_ENCODING_THRESHOLD 64
+# /FSM_BINARY_ENCODING_THRESHOLD 64
+# > directive set -REG_MAX_FANOUT 0
+# /REG_MAX_FANOUT 0
+# > directive set -NO_X_ASSIGNMENTS true
+# /NO_X_ASSIGNMENTS true
+# > directive set -SAFE_FSM false
+# /SAFE_FSM false
+# > directive set -REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+# /REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+# > directive set -REGISTER_SHARING_LIMIT 0
+# /REGISTER_SHARING_LIMIT 0
+# > directive set -ASSIGN_OVERHEAD 0
+# /ASSIGN_OVERHEAD 0
+# > directive set -TIMING_CHECKS true
+# /TIMING_CHECKS true
+# > directive set -MUXPATH true
+# /MUXPATH true
+# > directive set -REALLOC true
+# /REALLOC true
+# > directive set -UNROLL no
+# /UNROLL no
+# > directive set -IO_MODE super
+# /IO_MODE super
+# > directive set -CHAN_IO_PROTOCOL use_library
+# /CHAN_IO_PROTOCOL use_library
+# > directive set -ARRAY_SIZE 1024
+# /ARRAY_SIZE 1024
+# > directive set -REGISTER_IDLE_SIGNAL false
+# /REGISTER_IDLE_SIGNAL false
+# > directive set -IDLE_SIGNAL {}
+# /IDLE_SIGNAL {}
+# > directive set -STALL_FLAG false
+# /STALL_FLAG false
+# > directive set -TRANSACTION_DONE_SIGNAL true
+# /TRANSACTION_DONE_SIGNAL true
+# > directive set -DONE_FLAG {}
+# /DONE_FLAG {}
+# > directive set -READY_FLAG {}
+# /READY_FLAG {}
+# > directive set -START_FLAG {}
+# /START_FLAG {}
+# > directive set -RESET_CLEARS_ALL_REGS use_library
+# /RESET_CLEARS_ALL_REGS use_library
+# > directive set -CLOCK_OVERHEAD 20.000000
+# /CLOCK_OVERHEAD 20.000000
+# > directive set -OPT_CONST_MULTS use_library
+# /OPT_CONST_MULTS use_library
+# > directive set -CHARACTERIZE_ROM false
+# /CHARACTERIZE_ROM false
+# > directive set -PROTOTYPE_ROM true
+# /PROTOTYPE_ROM true
+# > directive set -ROM_THRESHOLD 64
+# /ROM_THRESHOLD 64
+# > directive set -CLUSTER_ADDTREE_IN_WIDTH_THRESHOLD 0
+# /CLUSTER_ADDTREE_IN_WIDTH_THRESHOLD 0
+# > directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+# /CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+# > directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+# /CLUSTER_OPT_CONSTANT_INPUTS true
+# > directive set -CLUSTER_RTL_SYN false
+# /CLUSTER_RTL_SYN false
+# > directive set -CLUSTER_FAST_MODE false
+# /CLUSTER_FAST_MODE false
+# > directive set -CLUSTER_TYPE combinational
+# /CLUSTER_TYPE combinational
+# > directive set -PIPELINE_RAMP_UP true
+# /PIPELINE_RAMP_UP true
+# > go new
+# > directive set -DESIGN_HIERARCHY histogram_hls
+# solution design add histogram_hls -type top -unlocked (HC-1)
+# /DESIGN_HIERARCHY histogram_hls
+# > go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Moving session transcript to file "/home/ubuntu/Spector-HLS/histogram/catapult/solutions/histogram0178/catapult.log"
+# Front End called with arguments: -- /home/ubuntu/Spector-HLS/histogram/catapult/solutions/histogram0178/histogram_hls.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Error: /usr/include/features.h(424): cannot open source file "sys/cdefs.h" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 0.04 seconds, memory usage 885512kB, peak memory usage 885512kB (SOL-9)
+# > end dofile ./directives.tcl
+# Error: go analyze: Failed analyze
+// Finish time Mon Jan 27 21:22:23 2020, time elapsed 0:07, peak memory 864.76MB, exit status 2
