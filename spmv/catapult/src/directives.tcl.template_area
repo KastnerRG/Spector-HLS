@@ -17,8 +17,8 @@
 solution new -state initial
 solution options defaults
 solution options set /Input/CppStandard c++11
-solution file add /home/ubuntu/catapult_spmv/src/spmv.cpp -type C++
-directive set -DESIGN_GOAL latency
+solution file add /home/ubuntu/catapult_spmv_area/src/spmv.cpp -type C++
+directive set -DESIGN_GOAL area
 directive set -SPECULATE true
 directive set -MERGEABLE true
 directive set -REGISTER_THRESHOLD 256
@@ -75,7 +75,7 @@ directive set /spmv/core/loop_4 -UNROLL %3
 directive set /spmv/core/loop_5 -UNROLL %3
 directive set /spmv/Ap:rsc %6 %4
 directive set /spmv/Ax:rsc %6 %4
-directive set /spmv/Ay:rsc %6 %4
+directive set /spmv/Aj:rsc %6 %4
 directive set /spmv/x:rsc %6 %4
 directive set /spmv/y:rsc %6 %4
 directive set /spmv/core/loop_1:p_Ax:rsc %6 %5

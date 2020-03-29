@@ -35,7 +35,7 @@ def run_script(path):
         if run_place_route:
             command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
-            command = " ".join(["timeout 3600", "~/Siva/RA/Mentor_Graphics_10_4/Mgc_home/bin/catapult","-shell", "-f", "directives.tcl"])
+            command = " ".join(["timeout 7200", "~/catapult/Mgc_home/bin/catapult","-shell", "-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -54,7 +54,7 @@ def run_script(path):
 
         outFile = open(logName + '.timeout', 'at')
         outFile.write(path + '\n')
-        outfile.close()
+        outFile.close()
 
     except:
         raise
@@ -121,7 +121,7 @@ def write_params(finalCombinations, tparamFilepath, tdirectiveFilepath):
 # knobs 
 # *****************
 
-UNROLL_F = [1, 2, 4, 8, 16, 32] #0
+UNROLL_F = [2, 4, 8, 16, 32] #0
 outer_unroll = [1, 2, 3] #1
 inner_unroll1 = [1, 2, 3, 4] #2
 inner_unroll2 = [1, 2, 3, 4] #3

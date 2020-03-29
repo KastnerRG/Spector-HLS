@@ -13,21 +13,25 @@ try:
 except:
     pass
 
-for d in sorted(glob.glob('solutions/histogram*')):
-    m = re.search('histogram(\d+)', d)
+for d in sorted(glob.glob('solutions/spmv*')):
+    m = re.search('spmv(\d+)', d)
     num = m.group(1)
     try:
-        for f in glob.glob(d + "/Catapult/histogram_hls.v1/cycle.rpt"):
+        for f in glob.glob(d + "/Catapult/spmv.v1/cycle.rpt"):
             basename, ext = os.path.splitext(os.path.basename(f))
             shutil.copy(f, os.path.join(syn_dir,basename+num+ext))
     except:
         print("Error in #" + num)
     try:
-        for f in glob.glob(d + "/Catapult/histogram_hls.v1/"):
-            t=rtl+'/'+m.group(0)+'/'
-            os.makedirs(t)
-            shutil.copy(f+'rtl.v',t)
-            shutil.copy(f+'concat_rtl.v',t)
+        for f in glob.glob(d + "/Catapult/spmv.v1/"):
+            if os.path.isfile(f+'rtl.v') and os.path.isfile(f+'concat_rtl.v'):
+
+                t=rtl+'/'+m.group(0)+'/'
+                os.makedirs(t)
+                shutil.copy(f+'rtl.v',t)
+                shutil.copy(f+'concat_rtl.v',t)
+            else:
+                pass
     except:
         pass
 
