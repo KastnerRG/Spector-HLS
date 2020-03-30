@@ -33,7 +33,7 @@ def run_script(path):
     try:
         start = time.time()
         if run_place_route:
-            command = " ".join(["timeout 1800", "vivado_hls","-f","../../gen_pnr.tcl"])
+            command = " ".join(["timeout 7200", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
             command = " ".join(["timeout 7200", "~/catapult/Mgc_home/bin/catapult","-shell", "-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)

@@ -18,7 +18,7 @@ solution new -state initial
 solution options defaults
 solution options set /Input/CppStandard c++11
 solution file add ./sobel_subdimx.cpp -type C++
-directive set -DESIGN_GOAL area
+directive set -DESIGN_GOAL latency
 directive set -SPECULATE true
 directive set -MERGEABLE true
 directive set -REGISTER_THRESHOLD 256
@@ -62,13 +62,14 @@ directive set -PIPELINE_RAMP_UP true
 go new
 directive set -DESIGN_HIERARCHY sobel_x
 go compile
-solution library add mgc_Xilinx-VIRTEX-uplus-2_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -2 -part xcvu13p-flga2577-2-i
+solution library add mgc_Xilinx-VIRTEX-uplus-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -1 -part xcvu9p-flga2104-1-e
 solution library add Xilinx_RAMS
 solution library add Xilinx_ROMS
 solution library add Xilinx_FIFO
 go libraries
 directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
 go assembly
-directive set /sobel_x/core/loop_1 -UNROLL 2
+directive set /sobel_x/core/loop_1 -UNROLL %1
+directive set /sobel_x/input_image:rsc %3 %0
 go architect
 go extract

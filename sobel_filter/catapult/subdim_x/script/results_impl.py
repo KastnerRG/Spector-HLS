@@ -10,6 +10,7 @@ dimx_part_factor = [2073600 , 1036800 , 518400 , 259200 , 129600 , 64800 , 32400
 unroll_factor = [1,2,3,4,5,6,7,8]
 subdim_x = [1,2,4,8,16,32]
 B = [0]
+
 blockCombinations = list(itertools.product(
     dimx_part_factor, #0
     unroll_factor, #2
@@ -41,14 +42,17 @@ def parse_xml(filename1,filename2,filename3):
         slices=int(t[2].strip(' '))
     t=(a[79].split('|'))
     if t[1].strip('  ')=='LUT as Logic':
-        lutL=int(t[2].strip(' '))
-    t=(a[83].split('|'))
-    if t[1].strip('  ')=='LUT as Memory':
-        lutM=int(t[2].strip(' '))
+        lut=int(t[2].strip(' '))
     t=(a[86].split('|'))
     if t[1].strip('  ')=='CLB Registers':
-        clbR=int(t[2].strip(' '))
-
+        ff=int(t[2].strip(' '))
+    t=(a[116].split('|'))
+    print(t)
+    if t[1].strip('  ')=='DSPs':
+        dsp=int(t[2].strip(' '))
+    t=(a[102].split('|'))
+    if t[1].strip('  ')=='Block RAM Tile':
+        bram=int(t[2].strip(' '))
 
     f.close()
 
@@ -66,7 +70,7 @@ def parse_xml(filename1,filename2,filename3):
     #resources_util = np.divide(resources, avail_resources)*100
     #for i in range(4):
         #resources_util[i]="{0:.2f}".format(resources_util[i])
-    return slices,throughput,lutL,lutM,clbR
+    return slices,throughput,lut,ff,dsp,bram
 
 
 def removeCombinations(combs):
@@ -90,21 +94,21 @@ def removeCombinations(combs):
 
 def main():
 
-    file1=open('catapult_sobelx_new.csv','w')
-    file1.write("n"+","+"knob_dimx_part_factor"+","+"knob_unroll_factor"+","+"knob_subdim_x"+","+"knob_I_B"+","+"obj1"+","+"obj2"+"LUT_L"+"LUT_M"+"CLB_REG"+"\n")
-    for d in sorted(glob.glob('impl_reports_2/sobelx_export*.xml')):
+    file1=open('catapult_sobelx.csv','w')
+    file1.write("n"+","+"knob_dimx_part_factor"+","+"knob_unroll_factor"+","+"knob_subdim_x"+","+"knob_I_B"+","+"obj1"+","+"obj2"+","+"lut"+","+"ff"+","+"dsp"+","+"bram"+"\n")
+    for d in sorted(glob.glob('impl_reports/sobelx_export*.xml')):
         m = re.search('sobelx_export(\d+)', d)
         num = m.group(1)
         synth_path=os.path.join('syn_reports/cycle'+num+'.rpt')
-        d2=os.path.join('impl_reports_2/sobelx_utilization_routed'+num+'.rpt')
-        slices,lat,lutL,lutM,clbR=parse_xml(d,synth_path,d2)
+        d2=os.path.join('impl_reports/sobelx_utilization_routed'+num+'.rpt')
+        slices,lat,lut,ff,dsp,bram = parse_xml(d, synth_path, d2)
         if slices==0:
             pass
         else:
             file1.write(num+",")
             for j in range(4):
                 file1.write(str(finalCombinations[int(num)][j])+",")
-            file1.write(str(lat)+","+str(slices)+","+str(lutL)+","+str(lutM)+","+str(clbR)+"\n")
+            file1.write(str(lat)+","+str(slices)+","+str(lut)+","+str(ff)+","+str(dsp)+","+str(bram)+"\n")
     file1.close()
 if __name__ == "__main__":
     main()

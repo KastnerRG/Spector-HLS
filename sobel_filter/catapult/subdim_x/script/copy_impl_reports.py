@@ -5,7 +5,7 @@ import glob
 import shutil
 import re
 
-impl_dir = 'impl_reports_2'
+impl_dir = 'impl_reports'
 
 try:
     os.mkdir(impl_dir)

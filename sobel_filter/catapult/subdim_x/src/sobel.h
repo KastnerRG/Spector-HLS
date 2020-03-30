@@ -11,7 +11,14 @@ typedef ac_int<1, false> uint1;
 #define W 1920
 #define HW H*W
 
-void sobel_y(uint8 i[H][W], uint1 o[H][W]);
-void sobel_x(uint8 i[H][W], uint1 o[H][W]);
+struct MEM_INT8 {
+	uint8 data[H][W];
+};
+
+struct MEM_INT1 {
+	uint1 data[H][W];
+};
+void sobel_y(ac_channel<uint8>, ac_channel<uint1>);
+void sobel_x(ac_channel<uint8>, ac_channel<uint1>);
 #endif
 
