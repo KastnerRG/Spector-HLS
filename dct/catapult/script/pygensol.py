@@ -35,7 +35,7 @@ def run_script(path):
         if run_place_route:
             command = " ".join(["timeout 7200", "vivado_hls","-f","../../gen_pnr.tcl"])
         else:
-            command = " ".join(["timeout 7200", "/usr/local/bin/Mentor_Graphics/Catapult_Synthesis_10.4b-841621/Mgc_home/bin/catapult","-shell" ,"-f", "directives.tcl"])
+            command = " ".join(["timeout 7200", "/home/ubuntu/catapult/Mgc_home/bin/catapult","-shell" ,"-f", "directives.tcl"])
         subprocess.check_output(command, cwd=path, shell=True)
         end = time.time()
 
@@ -126,16 +126,17 @@ blockdim_y =[1,2,4,8]
 unroll_dct=[1,2,4,8]
 unroll_width=[1,2,4,8]
 unroll_height=[1,2,4,8]
-array_partition=[1,2,4,8]
-channel_partition=[54288, 1048576, 2097152, 4194304]
+array_partition1=[1,2,4,8]
+array_partition2=[4194304,2097152,1048576,524288]
+
 blockCombinations = list(itertools.product(
     blockdim_x, #0
     blockdim_y, #1
     unroll_dct, #2
     unroll_width, #3
     unroll_height, #4
-    array_partition, #5
-    channel_partition, #6
+    array_partition1, #5
+    array_partition2,#6
     "B" #7
     ))
 
@@ -157,7 +158,7 @@ def removeCombinations(combs):
             copyit = False
         if copyit:
             finalList.append(c)
-
+#
     return finalList
 
 finalCombinations = removeCombinations(blockCombinations)

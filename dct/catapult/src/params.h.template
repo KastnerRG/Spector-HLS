@@ -11,9 +11,9 @@
 #define partition_factor %6
 
 
-#define C_norm 0.35355339059327376220042218105242f
+//#define C_norm 0.35355339059327376220042218105242f
 #define imageW 2048
 #define imageH 2048
 #define stride 2048
-#define size_im imageW*imageH
+#define size_im 2048*2048
 #endif

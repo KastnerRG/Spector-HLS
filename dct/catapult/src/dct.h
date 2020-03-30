@@ -1,6 +1,5 @@
 #ifndef DCT_H
 #define DCT_H
-#include <ac_channel.h>
 #include <ac_fixed.h>
 #include "params.h"
 
