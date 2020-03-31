@@ -1,23 +1,22 @@
-//  Catapult Ultra Synthesis 10.4b/841621 (Production Release) Thu Oct 24 17:20:07 PDT 2019
+//  Catapult Ultra Synthesis 10.5/858548 (Beta Release) Sun Feb 16 19:01:19 PST 2020
 //  
-//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//  Copyright (c) Mentor Graphics Corporation, 1996-2020, All Rights Reserved.
 //                        UNPUBLISHED, LICENSED SOFTWARE.
 //             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 //                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
 //  
-//  Running on Linux mdk@mdk-FX504 5.0.0-37-generic x86_64 aol
+//  Running on Linux siva@siva 5.3.0-42-generic x86_64 aol
 //  
-//  Package information: SIFLIBS v23.4_2.0, HLS_PKGS v23.4_2.0, 
-//                       SIF_TOOLKITS v23.4_2.0, SIF_XILINX v23.4_2.0, 
-//                       SIF_ALTERA v23.4_2.0, CCS_LIBS v23.4_2.0, 
-//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4b, 
-//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.16, 
+//  Package information: SIFLIBS v23.5_0.0, HLS_PKGS v23.5_0.0, 
+//                       SIF_TOOLKITS v23.5_0.0, SIF_XILINX v23.5_0.0, 
+//                       SIF_ALTERA v23.5_0.0, CCS_LIBS v23.5_0.0, 
+//                       CDS_PPRO v10.3c_2, CDS_DesigChecker v10.5_beta2, 
+//                       CDS_OASYS v19.1_3.7, CDS_PSR v19.2_0.9, 
 //                       DesignPad v2.78_1.0
 //  
 solution new -state initial
 solution options defaults
-solution options set /Input/CppStandard c++11
-solution file add ./spmv.cpp -type C++
+solution file add ./normals.cpp -type C++
 directive set -DESIGN_GOAL area
 directive set -SPECULATE true
 directive set -MERGEABLE true
@@ -60,25 +59,20 @@ directive set -CLUSTER_FAST_MODE false
 directive set -CLUSTER_TYPE combinational
 directive set -PIPELINE_RAMP_UP true
 go new
-directive set -DESIGN_HIERARCHY spmv
-go compile
-solution library add mgc_Xilinx-VIRTEX-uplus-1_beh -- -rtlsyntool Vivado -manufacturer Xilinx -family VIRTEX-uplus -speed -1 -part xcvu9p-flga2104-1-e
-solution library add Xilinx_RAMS
-solution library add Xilinx_ROMS
-solution library add Xilinx_FIFO
+solution library add nangate-45nm_beh -- -rtlsyntool OasysRTL -vendor Nangate -technology 045nm
+solution library add ram_nangate-45nm_pipe_beh
+solution library add ram_nangate-45nm-separate_beh
+solution library add ram_nangate-45nm-register-file_beh
+solution library add rom_nangate-45nm_beh
+solution library add rom_nangate-45nm-sync_regin_beh
+solution library add rom_nangate-45nm-sync_regout_beh
 go libraries
 directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
 go assembly
-directive set /spmv/core/loop_1 -UNROLL %1
-directive set /spmv/core/loop_3 -UNROLL %3
-directive set /spmv/core/loop_4 -UNROLL %3
-directive set /spmv/core/loop_5 -UNROLL %3
-directive set /spmv/Ap:rsc %6 %4
-directive set /spmv/Ax:rsc %6 %4
-directive set /spmv/Aj:rsc %6 %4
-directive set /spmv/x:rsc %6 %4
-directive set /spmv/y:rsc %6 %4
-directive set /spmv/core/loop_1:p_Ax:rsc %6 %5
-directive set /spmv/core/loop_1:p_x:rsc %6 %5
-go architect
+directive set /normals/vmap:rsc %5 %4
+directive set /normals/core/loop_1 -UNROLL %3
+directive set /normals/core/loop_2 -UNROLL %1
+directive set /normals/core/loop_3 -UNROLL %2
+directive set /normals/core/loop_4 -UNROLL %2
 go extract
+flow run /OasysRTL/launch_tool ./concat_rtl.v.or v

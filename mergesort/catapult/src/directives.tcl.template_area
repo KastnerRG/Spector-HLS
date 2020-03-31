@@ -16,7 +16,7 @@
 //  
 solution new -state initial
 solution options defaults
-solution file add /home/ubuntu/catapult_mergesort/src/mergesort.cpp -type C++
+solution file add ./mergesort.cpp -type C++
 directive set -DESIGN_GOAL area
 directive set -SPECULATE true
 directive set -MERGEABLE true
