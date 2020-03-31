@@ -81,3 +81,4 @@ directive set /mergesort/in:rsc %6 %5
 directive set /mergesort/out:rsc %6 %5
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
+solution table export -file data.csv

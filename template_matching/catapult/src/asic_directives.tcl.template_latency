@@ -79,3 +79,4 @@ directive set /SAD_MATCH/INPUT:rsc %9 %8
 directive set /SAD_MATCH/OUTPUT:rsc %9 %8
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
+solution table export -file data.csv

@@ -86,3 +86,4 @@ directive set /DCT/core/loop_10 -UNROLL yes
 }
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
+solution table export -file data.csv

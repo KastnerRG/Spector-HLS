@@ -75,7 +75,9 @@ directive set /SAD_MATCH/core/loop_4 -UNROLL %4
 directive set /SAD_MATCH/core/loop_5 -UNROLL %5
 directive set /SAD_MATCH/core/loop_7 -UNROLL %6
 directive set /SAD_MATCH/core/win_buf:rsc %9 %0
+
 directive set /SAD_MATCH/INPUT:rsc %9 %8
 directive set /SAD_MATCH/OUTPUT:rsc %9 %8
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
+solution table export -file data.csv

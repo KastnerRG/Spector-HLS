@@ -75,3 +75,4 @@ directive set /histogram_hls/core/loop_3 -UNROLL %3
 directive set /histogram_hls/core/mem.data:rsc %4 %5
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
+solution table export -file data.csv

@@ -82,3 +82,4 @@ directive set /spmv/core/loop_1:p_Ax:rsc %6 %5
 directive set /spmv/core/loop_1:p_x:rsc %6 %5
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
+solution table export -file data.csv

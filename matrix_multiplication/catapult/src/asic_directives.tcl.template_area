@@ -77,3 +77,4 @@ directive set /matrix_mul/B:rsc %6 %7
 directive set /matrix_mul/C:rsc %6 %7
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
+solution table export -file data.csv

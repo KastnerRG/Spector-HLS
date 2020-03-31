@@ -76,3 +76,4 @@ directive set /normals/core/loop_3 -UNROLL %2
 directive set /normals/core/loop_4 -UNROLL %2
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
+solution table export -file data.csv
