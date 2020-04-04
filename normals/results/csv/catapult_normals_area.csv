@@ -1,4 +1,4 @@
-n,knob_KNOB_WINDOW_SIZE_X,knob_inner_unroll1,knob_inner_unroll2,knob_outer_unroll,knob_partition_factor,knob_I_B,,obj1,obj2,lut,ff,dsp,bram
+n,knob_KNOB_WINDOW_SIZE_X,knob_inner_unroll1,knob_inner_unroll2,knob_outer_unroll,knob_partition_factor,knob_I_B,obj1,obj2,lut,ff,dsp,bram
 0000,1,1,1,1,460800,0,0.523444,312,1866,544,4,1
 0001,1,1,1,1,230400,0,0.532323,337,2037,548,4,1
 0002,1,1,1,1,115200,0,0.524733,444,2413,587,4,1
