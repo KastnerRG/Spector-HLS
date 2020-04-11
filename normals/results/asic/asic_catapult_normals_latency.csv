@@ -1,4 +1,4 @@
-n,knob_KNOB_WINDOW_SIZE_X,knob_inner_unroll1,knob_inner_unroll2,knob_partition_factor,knob_I_B,Latency,Area
+n,knob_KNOB_WINDOW_SIZE_X,knob_inner_unroll1,knob_inner_unroll2,knob_outer_unroll,knob_partition_factor,knob_I_B,Latency,Area
 0000,1,1,1,1,460800,0,0.150326,23441.250
 0001,1,1,1,1,230400,0,0.147028,25452.742
 0002,1,1,1,1,115200,0,0.147706,22039.963
