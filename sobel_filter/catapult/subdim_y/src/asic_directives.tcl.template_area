@@ -73,4 +73,4 @@ directive set /sobel_y/core/loop_1 -UNROLL %1
 directive set /sobel_y/input_image:rsc %3 %0
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
-solution table export -file data.csv
+
