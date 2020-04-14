@@ -74,6 +74,7 @@ def parse_xml(filename1,filename2,filename3):
     f.close()
     
     throughput="{0:.6f}".format(((int(avg_latency)*float(est_clk_period))/1000000000))
+    throughput=1.0/float(throughput)
     #resources       = parse_resources(resources_node)
     #avail_resources = parse_resources(avail_resources_node)
 
