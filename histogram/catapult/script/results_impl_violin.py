@@ -6,42 +6,34 @@ import re
 import numpy as np
 import xml.etree.ElementTree as ET
 
-KNOB_NUM_HIST = [i for i in range(1,16)] # 0
-KNOB_HIST_SIZE = [256] # 1
-B=[0]
-KNOB_UNROLL_LMM = [i for i in range(1,8)] # 2 
-KNOB_UNROLL_LP  = [i for i in range(1,4)] # 3
-I=[1]
-KNOB_DATA_DIV = [True, False] # True for interleave, false for block # 4
-KNOB_DATA_INTERLEAVE = [1, 2] # 5
-KNOB_DATA_BLOCK = [1024,2048,4096,8192,16384,32768,65536] # 5
+# ***************************************************************************
+# Knobs
+# ***********
+blockdim_x =[1,2,4,8]
+blockdim_y =[1,2,4,8]
+unroll_dct=[1,2,4,8]
+unroll_width=[1,2,4,8]
+unroll_height=[1,2,4,8]
+array_partition=[1,2,4,8]
 
-blockCombinations = list(itertools.product(
-    KNOB_HIST_SIZE, #0
-    KNOB_NUM_HIST,  #1
-    KNOB_UNROLL_LMM, #2
-    KNOB_UNROLL_LP, #3
-    B, #4
-    KNOB_DATA_BLOCK #5
-    ))
 
-interleaveCombinations = list(itertools.product(
-    KNOB_HIST_SIZE, #0
-    KNOB_NUM_HIST,  #1
-    KNOB_UNROLL_LMM, #2
-    KNOB_UNROLL_LP, #3
-    I, #4
-    KNOB_DATA_INTERLEAVE #5
-    ))
+allCombinations = list(itertools.product(
+    blockdim_x,
+    blockdim_y,
+    unroll_dct,
+    unroll_width,
+    unroll_height,
+    array_partition))
 
-#print("HELLO")
-finalCombinations = blockCombinations + interleaveCombinations
+
+
+# ***************************************************************************
+
 
 def parse_resources(resources_node):
     tags = ['BRAM_18K','DSP48E','FF','LUT']
     resources = [ resources_node.find(t).text for t in tags ]
     return list(map(int, resources))
-
 
 def parse_xml(filename1,filename2,filename3):
     tree = ET.parse(filename1)
@@ -63,6 +55,7 @@ def parse_xml(filename1,filename2,filename3):
         ff=int(t[2].strip(' '))
     try:
         t=(a[117].split('|'))
+    
         if t[1].strip('  ')=='DSPs':
             dsp=int(t[2].strip(' '))
     except:
@@ -70,7 +63,6 @@ def parse_xml(filename1,filename2,filename3):
         t=(a[118].split('|'))
         if t[1].strip('  ')=='DSPs':
             dsp=int(t[2].strip(' '))
-
     t=(a[102].split('|'))
     if t[1].strip('  ')=='Block RAM Tile':
         bram=float(t[2].strip(' '))
@@ -86,6 +78,7 @@ def parse_xml(filename1,filename2,filename3):
     f.close()
     
     throughput="{0:.6f}".format(((int(avg_latency)*float(est_clk_period))/1000000000))
+    throughput=1.0/float(throughput)
     #resources       = parse_resources(resources_node)
     #avail_resources = parse_resources(avail_resources_node)
 
@@ -94,19 +87,15 @@ def parse_xml(filename1,filename2,filename3):
         #resources_util[i]="{0:.2f}".format(resources_util[i])
     return slices,throughput,lut,ff,dsp,bram
 
-
 def removeCombinations(combs):
 
     finalList = []
 
     for c in combs:
         copyit = True
-
-        if c[4] > c[2]: copyit = False
-        if c[5] > c[3]: copyit = False
-        if c[6] == 1 and (c[3] > 1 or c[2] == 1): copyit = False
-        if c[6] == 1 and c[4] > 1: copyit = False
-        if c[2] * c[3] > 1 and c[1] == 256 and c[0] > 4: copyit = False
+	
+        #if c[2]>c[0] or c[2]>c[1]:
+            #copyit =False
 
         if copyit:
             finalList.append(c)
@@ -116,22 +105,21 @@ def removeCombinations(combs):
 
 def main():
 
-    file1=open('catapult_histogram_latency.csv','w')
-    file1.write("n"+","+"knob_KNOB_HIST_SIZE"+","+"knob_KNOB_NUM_HIST"+","+"knob_KNOB_UNROLL_LLM"+","+"knob_KNOB_UNROLL_LP"+","+"knob_I_B"+","+"knob_KNOB_DATA_BLOCK_INTERLEAVE"+","+"obj1"+","+"obj2"+","+"lut"+","+"ff"+","+"dsp"+","+"bram"+"\n")
+    #finalCombinations = removeCombinations(allCombinations)
+    file1=open('catapult_histogram_area_violin.csv','w')
+    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Resource_Type"+","+"Resource_Value"+","+"Flow"+"\n")
     for d in sorted(glob.glob('impl_reports/histogram_export*.xml')):
         m = re.search('histogram_export(\d+)', d)
         num = m.group(1)
         synth_path=os.path.join('syn_reports/cycle'+num+'.rpt')
         d2=os.path.join('impl_reports/histogram_utilization_routed'+num+'.rpt')
-        slices,lat,lut,ff,dsp,bram=parse_xml(d,synth_path,d2)
-        if slices==0:
-            pass
-        else:
-            file1.write(num+",")
-            for j in range(6):
-                file1.write(str(finalCombinations[int(num)][j])+",")
-            file1.write(str(lat)+","+str(slices)+","+str(lut)+","+str(ff)+","+str(dsp)+","+str(bram)+"\n")
-    
+        slices,lat,lut,ff,dsp,bram = parse_xml(d, synth_path, d2)
+        
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"CLB"+","+str(slices)+","+"area"+"\n")
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"LUT"+","+str(lut)+","+"area"+"\n")
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"FF"+","+str(ff)+","+"area"+"\n")
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"DSP"+","+str(dsp)+","+"area"+"\n")
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"BRAM"+","+str(bram)+","+"area"+"\n")
     file1.close()
 if __name__ == "__main__":
     main()
