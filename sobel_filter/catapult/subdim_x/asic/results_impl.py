@@ -9,12 +9,12 @@ import xml.etree.ElementTree as ET
 B=[0]
 dimx_part_factor = [2073600 , 1036800 , 518400 , 259200 , 129600 , 64800 , 32400 , 16200 , 8100 , 4050 , 2025,414720,207360,138240,103680,82944]
 unroll_factor = [1,2,3,4,5,6,7,8]
-subdim_x = [1,2,4,8,16,32]
+subdim_y = [1,2,4,8,16,32]
 
 blockCombinations = list(itertools.product(
     dimx_part_factor, #0
     unroll_factor, #2
-    subdim_x, #3
+    subdim_y, #3
     B #4
     ))
 
@@ -78,8 +78,8 @@ def removeCombinations(combs):
 
 def main():
 
-    file1=open('asic_catapult_sobelx_area.csv','w')
-    file1.write("n"+","+"knob_dimx_part_factor"+","+"knob_unroll_factor"+","+"knob_subdim_x"+","+"knob_I_B"+","+"Latency"+","+"Area"+"\n")
+    file1=open('asic_catapult_sobely_latency.csv','w')
+    file1.write("n"+","+"knob_dimx_part_factor"+","+"knob_unroll_factor"+","+"knob_subdim_y"+","+"knob_I_B"+","+"Latency"+","+"Area"+"\n")
     for d in sorted(glob.glob('syn_reports/cycle*.rpt')):
         m = re.search('cycle(\d+)', d)
         num = m.group(1)
