@@ -6,32 +6,28 @@ import re
 import numpy as np
 import xml.etree.ElementTree as ET
 
-B=[0]
-tmpsize = [25, 100, 400]
-size = [10000, 40000, 160000]
-tmpdim =[5,10,20]
-indim =[100,200,400]
-UNROLL_FACTOR= [1,2,3,4]
-UNROLL_LOOP1=[1,2,3,4]
-UNROLL_LOOP2=[1,2,3,4]
-UNROLL_LOOP3=[1,2,3,4]
-UNROLL_LOOP4=[1,2,3,4]
+# ***************************************************************************
+# Knobs
+# ***********
+blockdim_x =[1,2,4,8]
+blockdim_y =[1,2,4,8]
+unroll_dct=[1,2,4,8]
+unroll_width=[1,2,4,8]
+unroll_height=[1,2,4,8]
+array_partition=[1,2,4,8]
 
-blockCombinations = list(itertools.product(
-    tmpdim, #0
-    indim, #1
-    UNROLL_FACTOR, #2
-    UNROLL_LOOP1, #3
-    UNROLL_LOOP2, #4
-    UNROLL_LOOP3, #5
-    UNROLL_LOOP4, #6
-    tmpsize, #7
-    size, #8
-    B #9
-    ))
 
-finalCombinations = blockCombinations 
-#print("HELLO")
+allCombinations = list(itertools.product(
+    blockdim_x,
+    blockdim_y,
+    unroll_dct,
+    unroll_width,
+    unroll_height,
+    array_partition))
+
+
+
+# ***************************************************************************
 
 
 def parse_resources(resources_node):
@@ -39,15 +35,18 @@ def parse_resources(resources_node):
     resources = [ resources_node.find(t).text for t in tags ]
     return list(map(int, resources))
 
-
 def parse_xml(filename1,filename2):
 
     with open(filename2, 'r') as f:
         last_line = f.readlines()[-1]
         last_line=last_line.split()
         print(last_line)
-        area=last_line[5].split('=')[1]
-        slack=last_line[8].split('=')[1]
+        try:
+            area=last_line[5].split('=')[1]
+            slack=last_line[8].split('=')[1]
+        except:
+            area=0
+            slack=0
 
     f.close()
     est_clk_period=10-float(slack)
@@ -61,6 +60,10 @@ def parse_xml(filename1,filename2):
     f.close()
     
     throughput="{0:.6f}".format(((int(avg_latency)*float(est_clk_period))/1000000000))
+    try:
+        throughput=1.0/float(throughput)
+    except:
+        throughput=0
     #resources       = parse_resources(resources_node)
     #avail_resources = parse_resources(avail_resources_node)
 
@@ -68,40 +71,38 @@ def parse_xml(filename1,filename2):
     #for i in range(4):
         #resources_util[i]="{0:.2f}".format(resources_util[i])
     return area,throughput
-
 def removeCombinations(combs):
 
     finalList = []
 
     for c in combs:
         copyit = True
-        if c[7] != (c[0]*c[0]):
-            copyit = False
-        if c[8] != (c[1]*c[1]):
-            copyit = False
+	
+        #if c[2]>c[0] or c[2]>c[1]:
+            #copyit =False
+
         if copyit:
             finalList.append(c)
 
     return finalList
 
 
-finalCombinations = removeCombinations(blockCombinations) 
-
 def main():
 
-    file1=open('asic_catapult_tempmatch_area.csv','w')
-    file1.write("n"+","+"knob_tmpdim"+","+"knob_indim"+","+"knob_UNROLL_FACTOR"+","+"knob_UNROLL_LOOP1"+","+"knob_UNROLL_LOOP2"+","+"knob_UNROLL_LOOP3"+","+"knob_UNROLL_LOOP4"+","+"knob_tmpsize"+","+"knob_size"+","+"knob_I_B"+","+"obj1"+","+"obj2"+"\n")
+    finalCombinations = removeCombinations(allCombinations)
+    file1=open('asic_catapult_tempmatch_area_violin.csv','w')
+    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Parameter2"+","+"Area_Value"+","+"Flow"+"\n")
     for d in sorted(glob.glob('syn_reports/cycle*.rpt')):
         m = re.search('cycle(\d+)', d)
         num = m.group(1)
-        print(num)
         log=os.path.join('syn_reports/concat_rtl.v.or'+num+'.log')
         if os.path.isfile(log):
             area,lat=parse_xml(d,log)
-            file1.write(num+",")
-            for j in range(10):
-                file1.write(str(finalCombinations[int(num)][j])+",")
-            file1.write(str(lat)+","+str(area)+"\n")
+            print(lat)
+            if area==0 or lat==0:
+                pass
+            else: 
+                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"Area"+","+str(area)+","+"catapult_asic_area"+"\n")
     file1.close()
 if __name__ == "__main__":
     main()
