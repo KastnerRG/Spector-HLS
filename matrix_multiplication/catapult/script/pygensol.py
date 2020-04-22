@@ -18,7 +18,7 @@ logNamePnr = "pnr.log"
 
 
 tparamFilepath = "./src/params.h.template"
-tdirectiveFilepath = "./src/directives.tcl.template"
+tdirectiveFilepath = "./src/asic_directives.tcl.template_area"
 
 outRootPath = "./solutions"
 benchmark_name = "matmul"
@@ -127,7 +127,7 @@ SUBDIM_Y =[1,2,4,8,16] # 2
 KNOB_UNROLL_L1  = [1, 2, 4, 8] # 3
 KNOB_UNROLL_L2  = [1, 2, 4, 8] # 4
 KNOB_UNROLL_L3  = [1, 2, 4, 8] # 5
-KNOB_DATA_BLOCK = [1024,512,256,128,64,32] # 6
+KNOB_DATA_BLOCK = [1048576,524288,262144,131072,65536,32768] # 6
 
 
 blockCombinations = list(itertools.product(
@@ -140,7 +140,6 @@ blockCombinations = list(itertools.product(
     "B", #6
     KNOB_DATA_BLOCK #7
     ))
-
 #interleaveCombinations = list(itertools.product(
 #    KNOB_MAT_SIZE, #0
 #    KNOB_UNROLL_LMM, #1
@@ -156,6 +155,19 @@ finalCombinations = blockCombinations
 print("final combinations are " + str(len(finalCombinations)))
 # -------------------------------------------------------
 
+def removeCombinations(combs):
+
+    finalList = []
+
+    for c in combs:
+        copyit = True
+        if c[3] > c[5]:
+            copyit = False
+
+        if copyit:
+            finalList.append(c)
+
+    return finalList
 def main():
 
     global logName
@@ -184,9 +196,10 @@ def main():
     else:
         logName = logNameSynth
 
-    print("Num combinations: " + str(len(finalCombinations)))
+    fCombinations = removeCombinations(finalCombinations)
+    print("Num combinations: " + str(len(fCombinations)))
  
-    dirlist = write_params(finalCombinations, tparamFilepath, tdirectiveFilepath)
+    dirlist = write_params(fCombinations, tparamFilepath, tdirectiveFilepath)
 
     if args.dir_list:
         dirlist = [line.strip() for line in open(args.dir_list)]
