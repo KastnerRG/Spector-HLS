@@ -70,11 +70,17 @@ solution library add rom_nangate-45nm-sync_regout_beh
 go libraries
 directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
 go assembly
-directive set /matrix_mul/core/loop1 -UNROLL %2
-directive set /matrix_mul/core/loop2 -UNROLL %3
-directive set /matrix_mul/core/loop4 -UNROLL %4
+set c1 %4
+set c2 %5
+directive set /matrix_mul/core/loop1 -UNROLL %1
+if { $c1 != 1 } {
+directive set /matrix_mul/core/loop2 -UNROLL %2
+}
+if { $c2 != 1 } {
+directive set /matrix_mul/core/loop4 -UNROLL %3
+}
 directive set /matrix_mul/B:rsc %6 %7
 directive set /matrix_mul/C:rsc %6 %7
 go extract
 flow run /OasysRTL/launch_tool ./concat_rtl.v.or v
-solution table export -file data.csv
+
