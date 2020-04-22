@@ -94,8 +94,8 @@ def removeCombinations(combs):
 
 def main():
 
-    file1=open('catapult_histogram.csv','w')
-    file1.write("n"+","+"knob_KNOB_HIST_SIZE"+","+"knob_KNOB_NUM_HIST"+","+"knob_KNOB_UNROLL_LLM"+","+"knob_KNOB_UNROLL_LP"+","+"knob_I_B"+","+"knob_KNOB_DATA_BLOCK_INTERLEAVE"+","+"Latency"+","+"Area"+"\n")
+    file1=open('asic_catapult_histogram_latency.csv','w')
+    file1.write("n"+","+"knob_KNOB_HIST_SIZE"+","+"knob_KNOB_NUM_HIST"+","+"knob_KNOB_UNROLL_LLM"+","+"knob_KNOB_UNROLL_LP"+","+"knob_I_B"+","+"knob_KNOB_DATA_BLOCK_INTERLEAVE"+","+"obj1"+","+"obj2"+"\n")
     for d in sorted(glob.glob('syn_reports/cycle*.rpt')):
         m = re.search('cycle(\d+)', d)
         num = m.group(1)
