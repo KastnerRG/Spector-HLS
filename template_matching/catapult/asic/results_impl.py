@@ -42,6 +42,17 @@ def parse_resources(resources_node):
 
 def parse_xml(filename1,filename2):
 
+    global ff 
+    with open(filename2, 'r') as f:
+        a=f.readlines()
+    f.close() 
+    li=[x.split() for x in a]
+    for i in range(len(li)):
+        try:
+            if li[i][0]=='Number' and li[i][2]=='total':
+                ff=li[i][5]
+        except:
+            pass
     with open(filename2, 'r') as f:
         last_line = f.readlines()[-1]
         last_line=last_line.split()
@@ -67,7 +78,7 @@ def parse_xml(filename1,filename2):
     #resources_util = np.divide(resources, avail_resources)*100
     #for i in range(4):
         #resources_util[i]="{0:.2f}".format(resources_util[i])
-    return area,throughput
+    return area,throughput,ff
 
 def removeCombinations(combs):
 
@@ -90,18 +101,18 @@ finalCombinations = removeCombinations(blockCombinations)
 def main():
 
     file1=open('asic_catapult_tempmatch_area.csv','w')
-    file1.write("n"+","+"knob_tmpdim"+","+"knob_indim"+","+"knob_UNROLL_FACTOR"+","+"knob_UNROLL_LOOP1"+","+"knob_UNROLL_LOOP2"+","+"knob_UNROLL_LOOP3"+","+"knob_UNROLL_LOOP4"+","+"knob_tmpsize"+","+"knob_size"+","+"knob_I_B"+","+"obj1"+","+"obj2"+"\n")
+    file1.write("n"+","+"knob_tmpdim"+","+"knob_indim"+","+"knob_UNROLL_FACTOR"+","+"knob_UNROLL_LOOP1"+","+"knob_UNROLL_LOOP2"+","+"knob_UNROLL_LOOP3"+","+"knob_UNROLL_LOOP4"+","+"knob_tmpsize"+","+"knob_size"+","+"knob_I_B"+","+"obj1"+","+"obj2"+","+"FF"+"\n")
     for d in sorted(glob.glob('syn_reports/cycle*.rpt')):
         m = re.search('cycle(\d+)', d)
         num = m.group(1)
         print(num)
         log=os.path.join('syn_reports/concat_rtl.v.or'+num+'.log')
         if os.path.isfile(log):
-            area,lat=parse_xml(d,log)
+            area,lat,ff=parse_xml(d,log)
             file1.write(num+",")
             for j in range(10):
                 file1.write(str(finalCombinations[int(num)][j])+",")
-            file1.write(str(lat)+","+str(area)+"\n")
+            file1.write(str(lat)+","+str(area)+","+str(ff)+"\n")
     file1.close()
 if __name__ == "__main__":
     main()
