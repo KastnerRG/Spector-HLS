@@ -100,8 +100,8 @@ def removeCombinations(combs):
 def main():
 
     #finalCombinations = removeCombinations(allCombinations)
-    file1=open('catapult_sobely_latency_violin.csv','w')
-    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Resource_Type"+","+"Resource_Value"+","+"Flow"+"\n")
+    file1=open('catapult_sobely_area_violin.csv','w')
+    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Resource_Type"+","+"Resource_Value"+","+"Parameter3"+","+"FF_Value"+","+"Flow"+"\n")
     for d in sorted(glob.glob('impl_reports/sobely_export*.xml')):
         m = re.search('sobely_export(\d+)', d)
         num = m.group(1)
@@ -109,11 +109,11 @@ def main():
         d2=os.path.join('impl_reports/sobely_utilization_routed'+num+'.rpt')
         slices,lat,lut,ff,dsp,bram = parse_xml(d, synth_path, d2)
         
-        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"CLB"+","+str(slices)+","+"latency"+"\n")
-        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"LUT"+","+str(lut)+","+"latency"+"\n")
-        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"FF"+","+str(ff)+","+"latency"+"\n")
-        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"DSP"+","+str(dsp)+","+"latency"+"\n")
-        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"BRAM"+","+str(bram)+","+"latency"+"\n")
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"CLB"+","+str(slices)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"LUT"+","+str(lut)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"FF"+","+str(ff)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"DSP"+","+str(dsp)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
+        file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"BRAM"+","+str(bram)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
     file1.close()
 if __name__ == "__main__":
     main()
