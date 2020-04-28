@@ -45,6 +45,17 @@ def parse_resources(resources_node):
 
 def parse_xml(filename1,filename2):
 
+    global ff 
+    with open(filename2, 'r') as f:
+        a=f.readlines()
+    f.close() 
+    li=[x.split() for x in a]
+    for i in range(len(li)):
+        try:
+            if li[i][0]=='Number' and li[i][2]=='total':
+                ff=li[i][5]
+        except:
+            pass
     with open(filename2, 'r') as f:
         last_line = f.readlines()[-1]
         last_line=last_line.split()
@@ -70,7 +81,7 @@ def parse_xml(filename1,filename2):
     #resources_util = np.divide(resources, avail_resources)*100
     #for i in range(4):
         #resources_util[i]="{0:.2f}".format(resources_util[i])
-    return area,throughput
+    return area,throughput,ff
 
 
 def removeCombinations(combs):
@@ -95,16 +106,16 @@ def removeCombinations(combs):
 def main():
 
     file1=open('asic_catapult_histogram_latency.csv','w')
-    file1.write("n"+","+"knob_KNOB_HIST_SIZE"+","+"knob_KNOB_NUM_HIST"+","+"knob_KNOB_UNROLL_LLM"+","+"knob_KNOB_UNROLL_LP"+","+"knob_I_B"+","+"knob_KNOB_DATA_BLOCK_INTERLEAVE"+","+"obj1"+","+"obj2"+"\n")
+    file1.write("n"+","+"knob_KNOB_HIST_SIZE"+","+"knob_KNOB_NUM_HIST"+","+"knob_KNOB_UNROLL_LLM"+","+"knob_KNOB_UNROLL_LP"+","+"knob_I_B"+","+"knob_KNOB_DATA_BLOCK_INTERLEAVE"+","+"obj1"+","+"obj2"+","+"FF"+"\n")
     for d in sorted(glob.glob('syn_reports/cycle*.rpt')):
         m = re.search('cycle(\d+)', d)
         num = m.group(1)
         log=os.path.join('syn_reports/concat_rtl.v.or'+num+'.log')
-        area,lat=parse_xml(d,log)
+        area,lat,ff=parse_xml(d,log)
         file1.write(num+",")
         for j in range(6):
             file1.write(str(finalCombinations[int(num)][j])+",")
-        file1.write(str(lat)+","+str(area)+"\n")
+        file1.write(str(lat)+","+str(area)+","+str(ff)+"\n")
     file1.close()
 if __name__ == "__main__":
     main()
