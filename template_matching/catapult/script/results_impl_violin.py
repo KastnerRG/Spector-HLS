@@ -100,7 +100,7 @@ def main():
 
     #finalCombinations = removeCombinations(allCombinations)
     file1=open('catapult_tempmatch_area_violin.csv','w')
-    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Resource_Type"+","+"Resource_Value"+","+"Flow"+"\n")
+    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Resource_Type"+","+"Resource_Value"+","+"Parameter3"+","+"FF_Value"+","+"Flow"+"\n")
     for d in sorted(glob.glob('impl_reports/tempmatch_export*.xml')):
         m = re.search('tempmatch_export(\d+)', d)
         num = m.group(1)
@@ -112,11 +112,11 @@ def main():
             if slices==0:
                 pass
             else:
-                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"CLB"+","+str(slices)+","+"area"+"\n")
-                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"LUT"+","+str(lut)+","+"area"+"\n")
-                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"FF"+","+str(ff)+","+"area"+"\n")
-                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"DSP"+","+str(dsp)+","+"area"+"\n")
-                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"BRAM"+","+str(bram)+","+"area"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"CLB"+","+str(slices)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"LUT"+","+str(lut)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"FF"+","+str(ff)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"DSP"+","+str(dsp)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"BRAM"+","+str(bram)+","+"FF"+","+str(ff)+","+"catapult_fpga_area"+"\n")
         except:
             pass
     file1.close()
