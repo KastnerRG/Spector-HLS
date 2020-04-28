@@ -5,7 +5,7 @@ import glob
 import re
 import numpy as np
 import xml.etree.ElementTree as ET
-
+import subprocess
 B=[0]
 blockdim_x =[1,2,4,8]
 blockdim_y =[1,2,4,8]
@@ -35,25 +35,35 @@ def parse_resources(resources_node):
 
 def parse_xml(filename1,filename2):
 
+    global ff 
     with open(filename2, 'r') as f:
-        last_line = f.readlines()[-1]
-        last_line=last_line.split()
-        print(last_line)
+        a=f.readlines()
+    f.close() 
+    li=[x.split() for x in a]
+    for i in range(len(li)):
         try:
+            if li[i][0]=='Number' and li[i][2]=='total':
+                ff=li[i][5]
+        except:
+            pass
+    with open(filename2, 'r') as f:
+        try:
+            last_line = f.readlines()[-1]
+            last_line=last_line.split()
+        
+        
             area=last_line[5].split('=')[1]
             slack=last_line[8].split('=')[1]
         except:
             area=0
             slack=0
-
+        
     f.close()
     est_clk_period=10-float(slack)
 
     f=open(filename1,'r')
-    print(filename1)
     b=f.readlines()
     k=(b[23].split())
-    print(k)
     avg_latency=int(k[4])
     f.close()
     
@@ -64,7 +74,7 @@ def parse_xml(filename1,filename2):
     #resources_util = np.divide(resources, avail_resources)*100
     #for i in range(4):
         #resources_util[i]="{0:.2f}".format(resources_util[i])
-    return area,throughput
+    return area,throughput,ff
 
 
 def removeCombinations(combs):
@@ -79,7 +89,7 @@ def removeCombinations(combs):
             copyit = False
         if c[5] == 4 and c[6] != 1048576:
             copyit = False
-        if c[5] == 8 and c[6] != 54288:
+        if c[5] == 8 and c[6] != 524288:
             copyit = False
         if copyit:
             finalList.append(c)
@@ -92,21 +102,20 @@ finalCombinations = removeCombinations(finalCombinations)
 def main():
 
     file1=open('asic_catapult_dct_area.csv','w')
-    file1.write("n"+","+"knob_blockdim_x"+","+"knob_blockdim_y"+","+"knob_unroll_dct"+","+"knob_unroll_width"+","+"knob_unroll_height"+","+"knob_array_partition1"+","+"knob_array_partition2"+","+"knob_I_B"+","+"Latency"+","+"Area"+"\n")
+    file1.write("n"+","+"knob_blockdim_x"+","+"knob_blockdim_y"+","+"knob_unroll_dct"+","+"knob_unroll_width"+","+"knob_unroll_height"+","+"knob_array_partition1"+","+"knob_array_partition2"+","+"knob_I_B"+","+"Latency"+","+"Area"+","+"FF"+"\n")
     for d in sorted(glob.glob('syn_reports/cycle*.rpt')):
         m = re.search('cycle(\d+)', d)
         num = m.group(1)
-        print(num)
         log=os.path.join('syn_reports/concat_rtl.v.or'+num+'.log')
         if os.path.isfile(log):
-            area,lat=parse_xml(d,log)
+            area,lat,ff=parse_xml(d,log)
             if area==0:
                 pass
             else:
                 file1.write(num+",")
                 for j in range(8):
                     file1.write(str(finalCombinations[int(num)][j])+",")
-                file1.write(str(lat)+","+str(area)+"\n")
+                file1.write(str(lat)+","+str(area)+","+str(ff)+"\n")
     file1.close()
 if __name__ == "__main__":
     main()

@@ -38,10 +38,10 @@ def parse_resources(resources_node):
 def parse_xml(filename1,filename2):
 
     with open(filename2, 'r') as f:
-        last_line = f.readlines()[-1]
-        last_line=last_line.split()
-        print(last_line)
         try:
+            last_line = f.readlines()[-1]
+            last_line=last_line.split()
+            print(last_line)
             area=last_line[5].split('=')[1]
             slack=last_line[8].split('=')[1]
         except:
@@ -87,7 +87,7 @@ def removeCombinations(combs):
 def main():
 
     finalCombinations = removeCombinations(allCombinations)
-    file1=open('asic_catapult_dct_latency_violin.csv','w')
+    file1=open('asic_catapult_dct_area_violin.csv','w')
     file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Parameter2"+","+"Area_Value"+","+"Flow"+"\n")
     for d in sorted(glob.glob('syn_reports/cycle*.rpt')):
         m = re.search('cycle(\d+)', d)
@@ -98,7 +98,7 @@ def main():
             if area==0:
                 pass
             else: 
-                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"Area"+","+str(area)+","+"latency"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"Area"+","+str(area)+","+"catapult_asic_area"+"\n")
     file1.close()
 if __name__ == "__main__":
     main()
