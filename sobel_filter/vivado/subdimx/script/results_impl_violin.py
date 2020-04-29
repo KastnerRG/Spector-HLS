@@ -81,7 +81,7 @@ def main():
 
     #finalCombinations = removeCombinations(allCombinations)
     file1=open('vivado_sobelx_violin.csv','w')
-    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Resource_Type"+","+"Resource_Value"+","+"Flow"+"\n")
+    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Resource_Type"+","+"Resource_Value"+","+"Parameter3"+","+"FF_Value"+","+"Flow"+"\n")
     for d in sorted(glob.glob('impl_reports/sobel_x_export*.xml')):
         m = re.search('sobel_x_export(\d+)', d)
         num = m.group(1)
@@ -90,11 +90,11 @@ def main():
         if slices==0:
             pass
         else:
-            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"CLB"+","+str(slices)+","+"None"+"\n")
-            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"LUT"+","+str(lut)+","+"None"+"\n")
-            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"FF"+","+str(ff)+","+"None"+"\n")
-            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"DSP"+","+str(dsp)+","+"None"+"\n")
-            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"BRAM"+","+str(bram)+","+"None"+"\n")
+            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"CLB"+","+str(slices)+","+"FF"+","+str(ff)+","+"None"+"\n")
+            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"LUT"+","+str(lut)+","+"FF"+","+str(ff)+","+"None"+"\n")
+            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"FF"+","+str(ff)+","+"FF"+","+str(ff)+","+"None"+"\n")
+            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"DSP"+","+str(dsp)+","+"FF"+","+str(ff)+","+"None"+"\n")
+            file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"BRAM"+","+str(bram)+","+"FF"+","+str(ff)+","+"None"+"\n")
     file1.close()
 if __name__ == "__main__":
     main()
