@@ -98,7 +98,7 @@ def removeCombinations(combs):
 def main():
 
     finalCombinations = removeCombinations(allCombinations)
-    file1=open('asic_catapult_dct_latency_violin.csv','w')
+    file1=open('asic_catapult_dct_area_violin.csv','w')
     file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Parameter2"+","+"Area_Value"+","+"Parameter3"+","+"FF_Value"+","+"Flow"+"\n")
     for d in sorted(glob.glob('syn_reports/cycle*.rpt')):
         m = re.search('cycle(\d+)', d)
@@ -109,7 +109,7 @@ def main():
             if area==0:
                 pass
             else: 
-                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"Area"+","+str(area)+","+"FF"+","+str(ff)+","+"catapult_asic_latency"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"Area"+","+str(area)+","+"FF"+","+str(ff)+","+"catapult_asic_area"+"\n")
     file1.close()
 if __name__ == "__main__":
     main()
