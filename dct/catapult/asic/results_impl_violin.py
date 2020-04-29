@@ -37,6 +37,17 @@ def parse_resources(resources_node):
 
 def parse_xml(filename1,filename2):
 
+    global ff 
+    with open(filename2, 'r') as f:
+        a=f.readlines()
+    f.close() 
+    li=[x.split() for x in a]
+    for i in range(len(li)):
+        try:
+            if li[i][0]=='Number' and li[i][2]=='total':
+                ff=li[i][5]
+        except:
+            pass
     with open(filename2, 'r') as f:
         try:
             last_line = f.readlines()[-1]
@@ -67,7 +78,7 @@ def parse_xml(filename1,filename2):
     #resources_util = np.divide(resources, avail_resources)*100
     #for i in range(4):
         #resources_util[i]="{0:.2f}".format(resources_util[i])
-    return area,throughput
+    return area,throughput,ff
 def removeCombinations(combs):
 
     finalList = []
@@ -87,18 +98,18 @@ def removeCombinations(combs):
 def main():
 
     finalCombinations = removeCombinations(allCombinations)
-    file1=open('asic_catapult_dct_area_violin.csv','w')
-    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Parameter2"+","+"Area_Value"+","+"Flow"+"\n")
+    file1=open('asic_catapult_dct_latency_violin.csv','w')
+    file1.write("Parameter"+","+"Throughput_Value"+","+"Tool"+","+"Parameter2"+","+"Area_Value"+","+"Parameter3"+","+"FF_Value"+","+"Flow"+"\n")
     for d in sorted(glob.glob('syn_reports/cycle*.rpt')):
         m = re.search('cycle(\d+)', d)
         num = m.group(1)
         log=os.path.join('syn_reports/concat_rtl.v.or'+num+'.log')
         if os.path.isfile(log):
-            area,lat=parse_xml(d,log)
+            area,lat,ff=parse_xml(d,log)
             if area==0:
                 pass
             else: 
-                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"Area"+","+str(area)+","+"catapult_asic_area"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"catapult"+","+"Area"+","+str(area)+","+"FF"+","+str(ff)+","+"catapult_asic_latency"+"\n")
     file1.close()
 if __name__ == "__main__":
     main()
