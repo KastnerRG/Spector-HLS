@@ -1,9 +1,0 @@
-#ifndef PARAMS_H
-#define PARAMS_H
-
-#define MVAL %0
-#define TMVAL MVAL*MVAL
-#define Mlog 5
-#define SUBDIM_X %4
-#define SUBDIM_Y %5
-#endif
