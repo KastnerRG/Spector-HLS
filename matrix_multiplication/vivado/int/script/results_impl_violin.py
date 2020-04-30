@@ -82,11 +82,11 @@ def main():
             if slices==0:
                 pass
             else:
-                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"CLB"+","+str(slices)+","+"FF"+","+str(ff)+","+"None"+"\n")
-                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"LUT"+","+str(lut)+","+"FF"+","+str(ff)+","+"None"+"\n")
-                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"FF"+","+str(ff)+","+"FF"+","+str(ff)+","+"None"+"\n")
-                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"DSP"+","+str(dsp)+","+"FF"+","+str(ff)+","+"None"+"\n")
-                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"BRAM"+","+str(bram)+","+"FF"+","+str(ff)+","+"None"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"CLB"+","+str(slices)+","+"FF"+","+str(ff)+","+"vivado"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"LUT"+","+str(lut)+","+"FF"+","+str(ff)+","+"vivado"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"FF"+","+str(ff)+","+"FF"+","+str(ff)+","+"vivado"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"DSP"+","+str(dsp)+","+"FF"+","+str(ff)+","+"vivado"+"\n")
+                file1.write("Throughput"+","+str(lat)+","+"vivado"+","+"BRAM"+","+str(bram)+","+"FF"+","+str(ff)+","+"vivado"+"\n")
         except:
             pass
     file1.close()
