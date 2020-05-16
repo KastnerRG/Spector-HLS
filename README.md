@@ -2,13 +2,7 @@
 
 ### Organization
 
-The benchmarks will be organized on the basis of directories showing various
-benchmarks and each of these benchmarks will be divided into two separate 
-project directories (for now) mainly vivado and catapult. 
-
-This would help compare the various HLS tools and help in better organization.
-
-**Miscellaneous** consist of the csv files and notebooks present in the results, the incomplete implementation of FIR filter, few of the vivado results for the pynq board and some script files. 
+There are eight benchmarks: **DCT**, **histogram**, **matrix multiplication**, **merge sort**, **normals**, **Sobel filter**, **sparse matrix vector multiply**, and **template matching**. Each benchmark is divided into its own directory. Each benchmark directory has implementations and results for Mentor Graphics Catapult HLS and Xilinx Vivado HLS. Additionally, there is a **results** subfolder holding Jupyter notebooks that perform different analysis on the various design spaces. 
 
 Folder organisation is of the following format:
 
@@ -23,6 +17,8 @@ Folder organisation is of the following format:
 			- FPGA csv files having latency and resources outputs
 		- asic
 			- ASIC Design space having area and latency outputs
+
+Note: the **miscellaneous** directory consists of the csv files and notebooks present in the results, the incomplete implementation of FIR filter, few of the vivado results for the Pynq board and some script files. 
 
 ### Design Spaces
 The repository tries to get a wide variety of algorithms to generate various design spaces from the tools for analysis and prediction. The results display the design spaces of these algorithms when passing through various tools or various modes of the tools. 
