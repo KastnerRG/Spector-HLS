@@ -31,3 +31,6 @@ The idea is to be able to provide a set of algorithms which a researcher can pla
 
 This repository is inspired by [Spector](https://github.com/KastnerRG/spector "Spector"), an OpenCL benchmark suite for FPGA.
 
+### This project was supported by:
+<img src="AWS-Cloud-Credits-for-Research-Program.png"  height="75">  
+<img src="mentor_graphics_logo.png"  height="75"> 
