@@ -161,4 +161,3 @@ temp_match,Catapult-ASIC--TP,AD-test,0.809229,0.152325,True,True
 temp_match,Catapult-ASIC--Area,ttest,2.104839,0.035319,False,True
 temp_match,Catapult-ASIC--Area,KS-test,0.038207,3e-06,False,True
 temp_match,Catapult-ASIC--Area,AD-test,12.682956,0.001,False,True
->>>>>>> b37feacd2c9089fd1a4e958cd27fd5047ae4075a
